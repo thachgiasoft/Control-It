@@ -2,15 +2,14 @@
 //  ContentView.swift
 //  Control It
 //
-//  Created by Ingra Cristina on 23/02/21.
+//  Created by Ingra Cristina on 24/02/21.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EF1B0F4925E552460001F01D /* Control_ItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B0F4825E552460001F01D /* Control_ItApp.swift */; };
-		EF1B0F4B25E552460001F01D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B0F4A25E552460001F01D /* ContentView.swift */; };
 		EF1B0F4D25E552460001F01D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F4C25E552460001F01D /* Assets.xcassets */; };
 		EF1B0F5025E552460001F01D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F4F25E552460001F01D /* Preview Assets.xcassets */; };
 		EF1B0F5B25E552470001F01D /* Control_ItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B0F5A25E552470001F01D /* Control_ItTests.swift */; };
@@ -23,6 +22,21 @@
 		EF1B0F8425E552480001F01D /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B0F8325E552480001F01D /* ComplicationController.swift */; };
 		EF1B0F8625E552480001F01D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F8525E552480001F01D /* Assets.xcassets */; };
 		EF1B0F8925E552480001F01D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F8825E552480001F01D /* Preview Assets.xcassets */; };
+		EF3FCD7E25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF3FCD7C25E68D0F0050DA98 /* Storage.xcdatamodeld */; };
+		EF3FCD7F25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF3FCD7C25E68D0F0050DA98 /* Storage.xcdatamodeld */; };
+		EF3FCD8025E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF3FCD7C25E68D0F0050DA98 /* Storage.xcdatamodeld */; };
+		EF3FCD8125E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF3FCD7C25E68D0F0050DA98 /* Storage.xcdatamodeld */; };
+		EF84186D25E6922E00451368 /* CDHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84186C25E6922E00451368 /* CDHabitRepository.swift */; };
+		EF84186E25E6922E00451368 /* CDHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84186C25E6922E00451368 /* CDHabitRepository.swift */; };
+		EF84186F25E6922E00451368 /* CDHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84186C25E6922E00451368 /* CDHabitRepository.swift */; };
+		EF84187025E6922E00451368 /* CDHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84186C25E6922E00451368 /* CDHabitRepository.swift */; };
+		EF84188D25E6989300451368 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84188C25E6989300451368 /* ContentView.swift */; };
+		EF84188E25E6989300451368 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84188C25E6989300451368 /* ContentView.swift */; };
+		EF84188F25E6989300451368 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84188C25E6989300451368 /* ContentView.swift */; };
+		EF84189625E6990700451368 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84189525E6990700451368 /* Habit.swift */; };
+		EF84189725E6990700451368 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84189525E6990700451368 /* Habit.swift */; };
+		EF84189825E6990700451368 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84189525E6990700451368 /* Habit.swift */; };
+		EF84189925E6990700451368 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84189525E6990700451368 /* Habit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +98,6 @@
 /* Begin PBXFileReference section */
 		EF1B0F4525E552460001F01D /* Control It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Control It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1B0F4825E552460001F01D /* Control_ItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control_ItApp.swift; sourceTree = "<group>"; };
-		EF1B0F4A25E552460001F01D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF1B0F4C25E552460001F01D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF1B0F4F25E552460001F01D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF1B0F5125E552460001F01D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +120,10 @@
 		EF1B0F8825E552480001F01D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF1B0F8A25E552480001F01D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF1B0F8B25E552480001F01D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		EF3FCD7D25E68D0F0050DA98 /* Storage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Storage.xcdatamodel; sourceTree = "<group>"; };
+		EF84186C25E6922E00451368 /* CDHabitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHabitRepository.swift; sourceTree = "<group>"; };
+		EF84188C25E6989300451368 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF84189525E6990700451368 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +161,8 @@
 		EF1B0F3C25E552450001F01D = {
 			isa = PBXGroup;
 			children = (
+				EF84187625E694F700451368 /* Domain */,
+				EF3FCD7A25E68BC20050DA98 /* Data */,
 				EF1B0F4725E552460001F01D /* Control It */,
 				EF1B0F5925E552470001F01D /* Control ItTests */,
 				EF1B0F6425E552470001F01D /* Control ItUITests */,
@@ -169,10 +188,10 @@
 			isa = PBXGroup;
 			children = (
 				EF1B0F4825E552460001F01D /* Control_ItApp.swift */,
-				EF1B0F4A25E552460001F01D /* ContentView.swift */,
 				EF1B0F4C25E552460001F01D /* Assets.xcassets */,
 				EF1B0F5125E552460001F01D /* Info.plist */,
 				EF1B0F4E25E552460001F01D /* Preview Content */,
+				EF84188C25E6989300451368 /* ContentView.swift */,
 			);
 			path = "Control It";
 			sourceTree = "<group>";
@@ -234,6 +253,39 @@
 				EF1B0F8825E552480001F01D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EF3FCD7A25E68BC20050DA98 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EF3FCD7B25E68BDB0050DA98 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		EF3FCD7B25E68BDB0050DA98 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				EF3FCD7C25E68D0F0050DA98 /* Storage.xcdatamodeld */,
+				EF84186C25E6922E00451368 /* CDHabitRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		EF84187625E694F700451368 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				EF84187725E6950100451368 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		EF84187725E6950100451368 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF84189525E6990700451368 /* Habit.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,8 +478,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF1B0F4B25E552460001F01D /* ContentView.swift in Sources */,
 				EF1B0F4925E552460001F01D /* Control_ItApp.swift in Sources */,
+				EF84189625E6990700451368 /* Habit.swift in Sources */,
+				EF3FCD7E25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
+				EF84188D25E6989300451368 /* ContentView.swift in Sources */,
+				EF84186D25E6922E00451368 /* CDHabitRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +491,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1B0F5B25E552470001F01D /* Control_ItTests.swift in Sources */,
+				EF84189725E6990700451368 /* Habit.swift in Sources */,
+				EF3FCD7F25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
+				EF84188E25E6989300451368 /* ContentView.swift in Sources */,
+				EF84186E25E6922E00451368 /* CDHabitRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +503,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1B0F6625E552470001F01D /* Control_ItUITests.swift in Sources */,
+				EF84189825E6990700451368 /* Habit.swift in Sources */,
+				EF3FCD8025E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
+				EF84188F25E6989300451368 /* ContentView.swift in Sources */,
+				EF84186F25E6922E00451368 /* CDHabitRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,9 +515,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1B0F8025E552480001F01D /* NotificationController.swift in Sources */,
+				EF3FCD8125E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
 				EF1B0F7E25E552480001F01D /* ContentView.swift in Sources */,
 				EF1B0F8425E552480001F01D /* ComplicationController.swift in Sources */,
 				EF1B0F7C25E552480001F01D /* Control_ItApp.swift in Sources */,
+				EF84187025E6922E00451368 /* CDHabitRepository.swift in Sources */,
+				EF84189925E6990700451368 /* Habit.swift in Sources */,
 				EF1B0F8225E552480001F01D /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -883,6 +949,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EF3FCD7C25E68D0F0050DA98 /* Storage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EF3FCD7D25E68D0F0050DA98 /* Storage.xcdatamodel */,
+			);
+			currentVersion = EF3FCD7D25E68D0F0050DA98 /* Storage.xcdatamodel */;
+			path = Storage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EF1B0F3D25E552450001F01D /* Project object */;
 }
