@@ -34,5 +34,7 @@
 	</dict>
 	<key>WKRunsIndependentlyOfCompanionApp</key>
 	<true/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Precisamos de acesso ao seu microfone para registrar como você se sente</string>
 </dict>
 </plist>
