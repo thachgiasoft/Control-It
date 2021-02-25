@@ -9,10 +9,11 @@ import SwiftUI
 
 @main
 struct Control_ItApp: App {
+    let repository = CDHabitRepository()
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                ContentView(repository: repository)
             }
         }
 

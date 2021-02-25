@@ -40,7 +40,7 @@ class CDHabitRepository : HabitRepository {
         
         let context = container.viewContext
         
-        let newHabit = NSEntityDescription.insertNewObject(forEntityName: "Habit", into: context) as! CDHabit
+        let newHabit = NSEntityDescription.insertNewObject(forEntityName: "CDHabit", into: context) as! CDHabit
         
         newHabit.annotation = habit.annotation
         newHabit.audio = habit.audio
@@ -60,7 +60,7 @@ class CDHabitRepository : HabitRepository {
         
         let context = container.viewContext
         
-        let fetchRequest = NSFetchRequest<CDHabit>(entityName: "Habit")
+        let fetchRequest = NSFetchRequest<CDHabit>(entityName: "CDHabit")
         
         do {
             let cdHabits = try context.fetch(fetchRequest)

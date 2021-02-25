@@ -17,7 +17,7 @@ enum Mood : String {
     case nervous
 }
 
-class Habit {
+struct Habit {
     var annotation : String?
     var audio : String?
     var date : Date
