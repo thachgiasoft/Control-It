@@ -26,6 +26,7 @@
 		EF3FCD7F25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF3FCD7C25E68D0F0050DA98 /* Storage.xcdatamodeld */; };
 		EF3FCD8025E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF3FCD7C25E68D0F0050DA98 /* Storage.xcdatamodeld */; };
 		EF3FCD8125E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF3FCD7C25E68D0F0050DA98 /* Storage.xcdatamodeld */; };
+		EF40AEA325E7E77000D0F038 /* MoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF40AEA225E7E77000D0F038 /* MoodList.swift */; };
 		EF84186D25E6922E00451368 /* CDHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84186C25E6922E00451368 /* CDHabitRepository.swift */; };
 		EF84186E25E6922E00451368 /* CDHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84186C25E6922E00451368 /* CDHabitRepository.swift */; };
 		EF84186F25E6922E00451368 /* CDHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84186C25E6922E00451368 /* CDHabitRepository.swift */; };
@@ -121,6 +122,7 @@
 		EF1B0F8A25E552480001F01D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF1B0F8B25E552480001F01D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		EF3FCD7D25E68D0F0050DA98 /* Storage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Storage.xcdatamodel; sourceTree = "<group>"; };
+		EF40AEA225E7E77000D0F038 /* MoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodList.swift; path = ../MoodList.swift; sourceTree = "<group>"; };
 		EF84186C25E6922E00451368 /* CDHabitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHabitRepository.swift; sourceTree = "<group>"; };
 		EF84188C25E6989300451368 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF84189525E6990700451368 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			children = (
 				EF1B0F7B25E552480001F01D /* Control_ItApp.swift */,
 				EF1B0F7D25E552480001F01D /* ContentView.swift */,
+				EF40AEA225E7E77000D0F038 /* MoodList.swift */,
 				EF1B0F7F25E552480001F01D /* NotificationController.swift */,
 				EF1B0F8125E552480001F01D /* NotificationView.swift */,
 				EF1B0F8325E552480001F01D /* ComplicationController.swift */,
@@ -515,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1B0F8025E552480001F01D /* NotificationController.swift in Sources */,
+				EF40AEA325E7E77000D0F038 /* MoodList.swift in Sources */,
 				EF3FCD8125E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
 				EF1B0F7E25E552480001F01D /* ContentView.swift in Sources */,
 				EF1B0F8425E552480001F01D /* ComplicationController.swift in Sources */,
