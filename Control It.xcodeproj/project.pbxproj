@@ -10,6 +10,10 @@
 		353DBFE725E7DC650022088D /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353DBFE625E7DC650022088D /* RecordingView.swift */; };
 		353DBFEE25E7FC8E0022088D /* RecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353DBFED25E7FC8E0022088D /* RecordingViewModel.swift */; };
 		353DBFF525E7FEB60022088D /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353DBFF425E7FEB60022088D /* RecordButton.swift */; };
+		353DBFFC25E814610022088D /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353DBFFB25E814610022088D /* Recording.swift */; };
+		353DC00825E814A40022088D /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353DBFFB25E814610022088D /* Recording.swift */; };
+		353DC00E25E814A50022088D /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353DBFFB25E814610022088D /* Recording.swift */; };
+		353DC01425E814A50022088D /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353DBFFB25E814610022088D /* Recording.swift */; };
 		EF1B0F4925E552460001F01D /* Control_ItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B0F4825E552460001F01D /* Control_ItApp.swift */; };
 		EF1B0F4D25E552460001F01D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F4C25E552460001F01D /* Assets.xcassets */; };
 		EF1B0F5025E552460001F01D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F4F25E552460001F01D /* Preview Assets.xcassets */; };
@@ -102,6 +106,7 @@
 		353DBFE625E7DC650022088D /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
 		353DBFED25E7FC8E0022088D /* RecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewModel.swift; sourceTree = "<group>"; };
 		353DBFF425E7FEB60022088D /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		353DBFFB25E814610022088D /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		EF1B0F4525E552460001F01D /* Control It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Control It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1B0F4825E552460001F01D /* Control_ItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control_ItApp.swift; sourceTree = "<group>"; };
 		EF1B0F4C25E552460001F01D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -293,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				EF84189525E6990700451368 /* Habit.swift */,
+				353DBFFB25E814610022088D /* Recording.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -488,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1B0F4925E552460001F01D /* Control_ItApp.swift in Sources */,
+				353DC00825E814A40022088D /* Recording.swift in Sources */,
 				EF84189625E6990700451368 /* Habit.swift in Sources */,
 				EF3FCD7E25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
 				EF84188D25E6989300451368 /* ContentView.swift in Sources */,
@@ -500,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1B0F5B25E552470001F01D /* Control_ItTests.swift in Sources */,
+				353DC00E25E814A50022088D /* Recording.swift in Sources */,
 				EF84189725E6990700451368 /* Habit.swift in Sources */,
 				EF3FCD7F25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
 				EF84188E25E6989300451368 /* ContentView.swift in Sources */,
@@ -512,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1B0F6625E552470001F01D /* Control_ItUITests.swift in Sources */,
+				353DC01425E814A50022088D /* Recording.swift in Sources */,
 				EF84189825E6990700451368 /* Habit.swift in Sources */,
 				EF3FCD8025E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
 				EF84188F25E6989300451368 /* ContentView.swift in Sources */,
@@ -530,6 +539,7 @@
 				EF1B0F8425E552480001F01D /* ComplicationController.swift in Sources */,
 				EF1B0F7C25E552480001F01D /* Control_ItApp.swift in Sources */,
 				353DBFF525E7FEB60022088D /* RecordButton.swift in Sources */,
+				353DBFFC25E814610022088D /* Recording.swift in Sources */,
 				353DBFE725E7DC650022088D /* RecordingView.swift in Sources */,
 				EF84187025E6922E00451368 /* CDHabitRepository.swift in Sources */,
 				EF84189925E6990700451368 /* Habit.swift in Sources */,

@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let arrayTest: [Int] = [1, 2, 3, 4, 5]
+
 struct RecordingView: View {
     @ObservedObject var model: RecordingViewModel
     
@@ -15,16 +17,44 @@ struct RecordingView: View {
     }
     
     var body: some View {
-        VStack {
-            RecordButton(
-                // O state recording está sendo setado dentro das funções do model
-                isRecording: $model.recording,
-                onRecord: {
-                    self.model.startRecording()
-                },
-                onStop: {
-                    self.model.stopRecording()
+        List {
+            Section(
+                header:
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            model.recordButtonTapped()
+                        }, label: {
+                            Image(model.recording ? "Stop Icon" : "Record Icon")
+                        })
+                        .buttonStyle(PlainButtonStyle())
+                        Spacer()
+                    },
+                footer:
+                    HStack {
+                        Spacer()
+                        Text("Conte como está se sentindo e o que houve.")
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
+                        Spacer()
+                    }.frame(width: .infinity)
+            ) {
+                ForEach(Array(model.recordings.enumerated()), id: \.element) { _, record in
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("Gravação")
+                            .font(.caption)
+                            .bold()
+                        Text(record.fileURL.absoluteString)
+                            .font(.caption2)
+                            .lineLimit(1)
+                    })
+                }
+                .onDelete(perform: { indexSet in
+                    print("Delete item")
                 })
+            }
         }
     }
 }

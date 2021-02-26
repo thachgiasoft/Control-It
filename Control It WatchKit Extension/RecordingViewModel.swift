@@ -19,6 +19,7 @@ extension Date {
 
 class RecordingViewModel: ObservableObject {
     var audioRecorder: AVAudioRecorder
+    @Published var recordings = [Recording]()
     @Published var recording = false
     
     init(audioRecorder: AVAudioRecorder = .init()) {
@@ -59,5 +60,38 @@ class RecordingViewModel: ObservableObject {
     func stopRecording(){
         audioRecorder.stop()
         recording = false
+        
+        fetchRecordings()
+    }
+    
+    func fetchRecordings(){
+        recordings.removeAll()
+        
+        let fileManager = FileManager.default
+        let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let directoryContents = try! fileManager.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil)
+        for audio in directoryContents {
+            let recording = Recording(fileURL: audio, createdAt: getCreationDate(for: audio))
+            recordings.append(recording)
+        }
+        
+        recordings.sort(by: { $0.createdAt.compare($1.createdAt) == .orderedAscending})
+    }
+    
+    func recordButtonTapped(){
+        if recording {
+            stopRecording()
+        } else {
+            startRecording()
+        }
+    }
+    
+    private func getCreationDate(for file: URL) -> Date {
+        if let attributes = try? FileManager.default.attributesOfItem(atPath: file.path) as [FileAttributeKey: Any],
+            let creationDate = attributes[FileAttributeKey.creationDate] as? Date {
+            return creationDate
+        } else {
+            return Date()
+        }
     }
 }

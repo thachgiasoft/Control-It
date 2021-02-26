@@ -35,6 +35,5 @@ struct RecordButton: View {
             }
         })
         .clipShape(Circle())
-        .background(Circle().foregroundColor(.gray))
     }
 }
