@@ -37,7 +37,7 @@ struct RecordingView: View {
                             .multilineTextAlignment(.center)
                             .foregroundColor(.white)
                         Spacer()
-                    }.frame(width: .infinity)
+                    }
             ) {
                 ForEach(Array(model.recordings.enumerated()), id: \.element) { _, record in
                     Button(action: {

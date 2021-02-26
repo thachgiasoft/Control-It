@@ -36,7 +36,7 @@ class RecordingViewModel: ObservableObject {
             print("Failed to set up recording session")
         }
 
-        let documentPath = FileManager.default.urls(for: .documentDirectory, in: .systemDomainMask)[0]
+        let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
 
         let audioFilename = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss")).m4a")
 
