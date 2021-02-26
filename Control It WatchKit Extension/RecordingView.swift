@@ -14,6 +14,7 @@ struct RecordingView: View {
     
     init(model: RecordingViewModel = .init()) {
         self.model = model
+        model.fetchRecordings()
     }
     
     var body: some View {
@@ -37,7 +38,7 @@ struct RecordingView: View {
                             .multilineTextAlignment(.center)
                             .foregroundColor(.white)
                         Spacer()
-                    }.frame(width: .infinity)
+                    }
             ) {
                 ForEach(Array(model.recordings.enumerated()), id: \.element) { _, record in
                     Button(action: {
