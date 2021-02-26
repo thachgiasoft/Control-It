@@ -7,14 +7,14 @@
 
 import Foundation
 
-enum Mood : String {
+enum Mood : String, CaseIterable {
     case happy
     case sad
     case tired
     case angry
     case anxious
     case bored
-    case nervous
+    //case nervous
 }
 
 struct Habit {
