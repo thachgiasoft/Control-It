@@ -13,7 +13,7 @@ struct Control_ItApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView(repository: repository)
+                RecordingView()
             }
         }
 
