@@ -9,7 +9,28 @@ import SwiftUI
 
 struct RegisterMood: View {
     var body: some View {
-        Text("Hello, World!")
+       
+            VStack{
+                Image("checkRegister")
+                    .offset()
+                    .padding()
+    
+                    Text("string!")
+                       // .padding()
+                        .font(.largeTitle)
+                        .padding()
+                
+               // Text("Continue a nadar!")
+                   // .padding()
+                Button("OK!") {
+                    // your action here
+                }
+                //.padding()
+                    
+            }
+                    
+        
+        
     }
 }
 
