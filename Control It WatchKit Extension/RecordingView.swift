@@ -14,7 +14,7 @@ struct RecordingView: View {
     
     init(model: RecordingViewModel = .init()) {
         self.model = model
-        model.fetchRecordings()
+        model.listAllRecordings()
     }
     
     var body: some View {
