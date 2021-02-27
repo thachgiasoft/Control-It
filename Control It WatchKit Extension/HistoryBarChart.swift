@@ -24,18 +24,21 @@ struct HistoryBarChart : View  {
     
     var body : some View {
         GeometryReader { firstReader in
-            let lineHeight = firstReader.size.height / CGFloat(maxHeight)
-
+            let fullHeight = firstReader.size.height
+            let fullWidth = firstReader.size.width
+            let lineHeight = (fullHeight - 20) / CGFloat(maxHeight)
+            
             VStack {
                 HStack {
                     VStack(spacing:0) {
                         ForEach(0..<yLabels.count - 1) { index in
                             ZStack(alignment: Alignment.top, content: {
                                 Rectangle().foregroundColor(.black)
-                                Text("\(yLabels[index])").padding(-3.5)
+                                Text("\(yLabels[index])").padding(-3)
                             }).frame(height: lineHeight * 5)
                         }
-                    }.frame(width: firstReader.size.width * 0.15, height: firstReader.size.height)
+                        Text("0").frame(height: 20)
+                    }.frame(width: fullWidth * 0.15, height: fullHeight)
                     GeometryReader { secondReader in
                         let spacingBetweenBars : CGFloat = 8
                         let barWidth = (secondReader.size.width / CGFloat(numbersOfBars)) - spacingBetweenBars
@@ -49,23 +52,12 @@ struct HistoryBarChart : View  {
                                     RoundedRectangle(cornerRadius: 10)
                                         .fill(Color.purple)
                                         .frame(width: barWidth, height: barHeights[index] * lineHeight).padding(0)
-                                    //Text(xLabels[index])
+                                    Text(xLabels[index]).frame(height: 20)
                                 }
                             }
                         }
-                    }.frame(width: firstReader.size.width * 0.85, height: firstReader.size.height)
-                }.frame(width: firstReader.size.width, height: firstReader.size.height)
-                HStack(spacing: 0) {
-                    Text("0").frame(width: firstReader.size.width * 0.15).padding(0)
-                    HStack(spacing: 10) {
-                        ForEach(0..<numbersOfBars) { index in
-                            VStack(spacing : 10) {
-                                Text(xLabels[index])
-                            }
-                        }
-                    }.frame(width: firstReader.size.width * 0.85)
-                    
-                }.frame(width: firstReader.size.width)
+                    }.frame(width: fullWidth * 0.85, height: fullHeight)
+                }.frame(width: fullWidth, height: fullHeight)
             }
         }
     }
