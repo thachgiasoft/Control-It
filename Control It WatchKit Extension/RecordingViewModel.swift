@@ -5,15 +5,21 @@
 //  Created by Leonardo Viana on 25/02/21.
 //
 
+import Foundation
+import AVFoundation
 import Combine
 
-class RecordingViewModel: ObservableObject {
-    @Published var recordings = [Recording]()
-    @Published var recording = false
+class RecordingViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
+    @Published var recordings: [Recording] = [Recording]()
+    @Published var recording: Bool = false
+    @Published var isAudioPlaying: Bool = false
     var audioRecorderService: AudioRecorderService
+    var audioPlayerService: AudioPlayerService
     
-    init(audioRecorderService: AudioRecorderService = .init()) {
+    init(audioRecorderService: AudioRecorderService = .init(),
+         audioPlayerService: AudioPlayerService = .init()) {
         self.audioRecorderService = audioRecorderService
+        self.audioPlayerService = audioPlayerService
     }
     
     func recordButtonTapped(){
@@ -33,7 +39,31 @@ class RecordingViewModel: ObservableObject {
         }
     }
     
+    func audioItemTapped(_ item: Recording){
+        if !isAudioPlaying {
+            let playAudioResult = audioPlayerService.startPlayback(audio: item.fileURL)
+            
+            switch playAudioResult {
+            case .success(let audioPlayer):
+                audioPlayer.delegate = self
+                self.isAudioPlaying.toggle()
+            case .failure(let error):
+                print(error)
+            }
+        } else {
+            // Parar de tocar o áudio
+            print("Stop audio")
+        }
+    }
+    
     func listAllRecordings(){
         recordings = audioRecorderService.fetchRecordings(lastRecordings: recordings)
     }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if flag {
+            isAudioPlaying = false
+        }
+    }
+    
 }

@@ -42,7 +42,7 @@ struct RecordingView: View {
             ) {
                 ForEach(Array(model.recordings.enumerated()), id: \.element) { _, record in
                     Button(action: {
-                        
+                        model.audioItemTapped(record)
                     }, label: {
                         Text("Gravação")
                             .font(.caption)
