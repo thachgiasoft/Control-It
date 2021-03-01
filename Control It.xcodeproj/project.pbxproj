@@ -25,6 +25,13 @@
 		AEC0173425ED207B00D13907 /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */; };
 		AEC0173525ED207B00D13907 /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */; };
 		AEC0173B25ED207C00D13907 /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */; };
+		AEC0174E25ED3D2D00D13907 /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */; };
+		AEC0174F25ED3D2D00D13907 /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */; };
+		AEC0175025ED3D2D00D13907 /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */; };
+		AEC0175125ED3D2D00D13907 /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */; };
+		AEC0175725ED3DFE00D13907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F8525E552480001F01D /* Assets.xcassets */; };
+		AEC0175D25ED3DFF00D13907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F8525E552480001F01D /* Assets.xcassets */; };
+		AEC0176325ED3DFF00D13907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F8525E552480001F01D /* Assets.xcassets */; };
 		AED17E4625ECA1AA00E41464 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED17E4525ECA1AA00E41464 /* StatisticsView.swift */; };
 		EF1B0F4925E552460001F01D /* Control_ItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B0F4825E552460001F01D /* Control_ItApp.swift */; };
 		EF1B0F4D25E552460001F01D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F4C25E552460001F01D /* Assets.xcassets */; };
@@ -126,6 +133,7 @@
 		358EAF7F25ED2775009C50BD /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		AEA42BDE25EAF3DB00D348E2 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBarChart.swift; sourceTree = "<group>"; };
+		AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationService.swift; sourceTree = "<group>"; };
 		AED17E4525ECA1AA00E41464 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		EF1B0F4525E552460001F01D /* Control It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Control It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1B0F4825E552460001F01D /* Control_ItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control_ItApp.swift; sourceTree = "<group>"; };
@@ -234,6 +242,7 @@
 			children = (
 				3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */,
 				3542A26925E9493200FEA3AD /* AudioPlayerService.swift */,
+				AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -529,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1B0F5025E552460001F01D /* Preview Assets.xcassets in Resources */,
+				AEC0175725ED3DFE00D13907 /* Assets.xcassets in Resources */,
 				EF1B0F4D25E552460001F01D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,6 +547,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC0175D25ED3DFF00D13907 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +555,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC0176325ED3DFF00D13907 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1B0F4925E552460001F01D /* Control_ItApp.swift in Sources */,
+				AEC0174E25ED3D2D00D13907 /* UserNotificationService.swift in Sources */,
 				353DC00825E814A40022088D /* Recording.swift in Sources */,
 				EF84189625E6990700451368 /* Habit.swift in Sources */,
 				EF3FCD7E25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
@@ -587,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1B0F5B25E552470001F01D /* Control_ItTests.swift in Sources */,
+				AEC0174F25ED3D2D00D13907 /* UserNotificationService.swift in Sources */,
 				353DC00E25E814A50022088D /* Recording.swift in Sources */,
 				EF84189725E6990700451368 /* Habit.swift in Sources */,
 				EF3FCD7F25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
@@ -602,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1B0F6625E552470001F01D /* Control_ItUITests.swift in Sources */,
+				AEC0175025ED3D2D00D13907 /* UserNotificationService.swift in Sources */,
 				353DC01425E814A50022088D /* Recording.swift in Sources */,
 				EF84189825E6990700451368 /* Habit.swift in Sources */,
 				EF3FCD8025E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
@@ -631,6 +646,7 @@
 				353DBFFC25E814610022088D /* Recording.swift in Sources */,
 				AEA42BDF25EAF3DB00D348E2 /* StatisticsViewModel.swift in Sources */,
 				353DBFE725E7DC650022088D /* RecordingView.swift in Sources */,
+				AEC0175125ED3D2D00D13907 /* UserNotificationService.swift in Sources */,
 				EF84187025E6922E00451368 /* CDHabitRepository.swift in Sources */,
 				EF84189925E6990700451368 /* Habit.swift in Sources */,
 				3542A27125E9493C00FEA3AD /* AudioRecorderService.swift in Sources */,

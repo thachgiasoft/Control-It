@@ -19,8 +19,9 @@ struct MoodListCell: View {
              .resizable()
              .offset(x: -6)
              .frame(width: 40, height: 40)
+                .padding(.leading)
             Spacer()
-            Text(name)
+            Text(name.capitalized)
             Spacer()
         }
     }
