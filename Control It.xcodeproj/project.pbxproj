@@ -18,6 +18,12 @@
 		3542A27125E9493C00FEA3AD /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */; };
 		AEA42BDF25EAF3DB00D348E2 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA42BDE25EAF3DB00D348E2 /* StatisticsViewModel.swift */; };
 		AEBF616025E93A4D007E83A4 /* HistoryBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */; };
+		AEC0172725ED207600D13907 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A26925E9493200FEA3AD /* AudioPlayerService.swift */; };
+		AEC0172D25ED207700D13907 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A26925E9493200FEA3AD /* AudioPlayerService.swift */; };
+		AEC0172E25ED207800D13907 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A26925E9493200FEA3AD /* AudioPlayerService.swift */; };
+		AEC0173425ED207B00D13907 /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */; };
+		AEC0173525ED207B00D13907 /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */; };
+		AEC0173B25ED207C00D13907 /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */; };
 		AED17E4625ECA1AA00E41464 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED17E4525ECA1AA00E41464 /* StatisticsView.swift */; };
 		EF1B0F4925E552460001F01D /* Control_ItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B0F4825E552460001F01D /* Control_ItApp.swift */; };
 		EF1B0F4D25E552460001F01D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F4C25E552460001F01D /* Assets.xcassets */; };
@@ -144,8 +150,8 @@
 		EF1B0F8A25E552480001F01D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF1B0F8B25E552480001F01D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		EF3FCD7D25E68D0F0050DA98 /* Storage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Storage.xcdatamodel; sourceTree = "<group>"; };
-		EF40AEA225E7E77000D0F038 /* MoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoodList.swift; path = ../MoodList.swift; sourceTree = "<group>"; };
-		EF40AECC25E9350000D0F038 /* RegisterMood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterMood.swift; path = ../RegisterMood.swift; sourceTree = "<group>"; };
+		EF40AEA225E7E77000D0F038 /* MoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodList.swift; sourceTree = "<group>"; };
+		EF40AECC25E9350000D0F038 /* RegisterMood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMood.swift; sourceTree = "<group>"; };
 		EF84186C25E6922E00451368 /* CDHabitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHabitRepository.swift; sourceTree = "<group>"; };
 		EF84188C25E6989300451368 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF84189525E6990700451368 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
@@ -183,6 +189,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AEC0172325ED1FDE00D13907 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AEC0174725ED20AB00D13907 /* MoodList */,
+				AEC0172625ED205000D13907 /* Statistics */,
+				AEC0172425ED1FFC00D13907 /* Record */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		AEC0172425ED1FFC00D13907 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				353DBFE625E7DC650022088D /* RecordingView.swift */,
+				353DBFED25E7FC8E0022088D /* RecordingViewModel.swift */,
+				353DBFF425E7FEB60022088D /* RecordButton.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		AEC0172625ED205000D13907 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				AED17E4525ECA1AA00E41464 /* StatisticsView.swift */,
+				AEA42BDE25EAF3DB00D348E2 /* StatisticsViewModel.swift */,
+				AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		AEC0174125ED208100D13907 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */,
+				3542A26925E9493200FEA3AD /* AudioPlayerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AEC0174725ED20AB00D13907 /* MoodList */ = {
+			isa = PBXGroup;
+			children = (
+				EF40AECC25E9350000D0F038 /* RegisterMood.swift */,
+				EF40AEA225E7E77000D0F038 /* MoodList.swift */,
+			);
+			path = MoodList;
+			sourceTree = "<group>";
+		};
 		EF1B0F3C25E552450001F01D = {
 			isa = PBXGroup;
 			children = (
@@ -259,10 +313,9 @@
 		EF1B0F7A25E552480001F01D /* Control It WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AEC0172325ED1FDE00D13907 /* Scenes */,
 				EF1B0F7B25E552480001F01D /* Control_ItApp.swift */,
 				EF1B0F7D25E552480001F01D /* ContentView.swift */,
-				EF40AECC25E9350000D0F038 /* RegisterMood.swift */,
-				EF40AEA225E7E77000D0F038 /* MoodList.swift */,
 				EF1B0F7F25E552480001F01D /* NotificationController.swift */,
 				EF1B0F8125E552480001F01D /* NotificationView.swift */,
 				EF1B0F8325E552480001F01D /* ComplicationController.swift */,
@@ -270,14 +323,6 @@
 				EF1B0F8A25E552480001F01D /* Info.plist */,
 				EF1B0F8B25E552480001F01D /* PushNotificationPayload.apns */,
 				EF1B0F8725E552480001F01D /* Preview Content */,
-				353DBFE625E7DC650022088D /* RecordingView.swift */,
-				353DBFED25E7FC8E0022088D /* RecordingViewModel.swift */,
-				353DBFF425E7FEB60022088D /* RecordButton.swift */,
-				AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */,
-				3542A26925E9493200FEA3AD /* AudioPlayerService.swift */,
-				3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */,
-				AEA42BDE25EAF3DB00D348E2 /* StatisticsViewModel.swift */,
-				AED17E4525ECA1AA00E41464 /* StatisticsView.swift */,
 			);
 			path = "Control It WatchKit Extension";
 			sourceTree = "<group>";
@@ -310,6 +355,7 @@
 		EF84187625E694F700451368 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				AEC0174125ED208100D13907 /* Services */,
 				EF84187725E6950100451368 /* Model */,
 			);
 			path = Domain;
@@ -518,7 +564,9 @@
 				353DC00825E814A40022088D /* Recording.swift in Sources */,
 				EF84189625E6990700451368 /* Habit.swift in Sources */,
 				EF3FCD7E25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
+				AEC0172E25ED207800D13907 /* AudioPlayerService.swift in Sources */,
 				EF84188D25E6989300451368 /* ContentView.swift in Sources */,
+				AEC0173425ED207B00D13907 /* AudioRecorderService.swift in Sources */,
 				EF84186D25E6922E00451368 /* CDHabitRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,7 +579,9 @@
 				353DC00E25E814A50022088D /* Recording.swift in Sources */,
 				EF84189725E6990700451368 /* Habit.swift in Sources */,
 				EF3FCD7F25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
+				AEC0172D25ED207700D13907 /* AudioPlayerService.swift in Sources */,
 				EF84188E25E6989300451368 /* ContentView.swift in Sources */,
+				AEC0173525ED207B00D13907 /* AudioRecorderService.swift in Sources */,
 				EF84186E25E6922E00451368 /* CDHabitRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,7 +594,9 @@
 				353DC01425E814A50022088D /* Recording.swift in Sources */,
 				EF84189825E6990700451368 /* Habit.swift in Sources */,
 				EF3FCD8025E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
+				AEC0172725ED207600D13907 /* AudioPlayerService.swift in Sources */,
 				EF84188F25E6989300451368 /* ContentView.swift in Sources */,
+				AEC0173B25ED207C00D13907 /* AudioRecorderService.swift in Sources */,
 				EF84186F25E6922E00451368 /* CDHabitRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

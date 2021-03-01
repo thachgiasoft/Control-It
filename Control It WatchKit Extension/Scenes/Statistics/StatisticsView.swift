@@ -13,10 +13,7 @@ struct StatisticsView: View {
     
     var body: some View {
         HistoryBarChart(yLabels: viewModel.yLabels, xLabels: viewModel.xLabels, barHeights: viewModel.barHeights).onAppear {
-            for habit in viewModel.habits {
-                let components = Calendar.current.dateComponents([.weekday], from: habit.date)
-                print(components)
-            }
+            viewModel.loadAllHabits()
         }
     }
 }
