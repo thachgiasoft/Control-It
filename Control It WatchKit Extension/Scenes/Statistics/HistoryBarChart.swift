@@ -36,7 +36,7 @@ struct HistoryBarChart : View  {
                         VStack(spacing:0) {
                             ForEach(0..<yLabels.count - 1) { index in
                                 ZStack(alignment: Alignment.top, content: {
-                                    RoundedRectangle(cornerRadius: 10).foregroundColor(.black)
+                                    RoundedRectangle(cornerRadius: 3).foregroundColor(.black)
                                     Text("\(yLabels[index])").padding(-4)
                                 }).frame(height: lineHeight * 5).padding(.leading)
                             }
@@ -52,7 +52,7 @@ struct HistoryBarChart : View  {
                                         if barHeights[index] != maxHeight {
                                             Spacer().padding(0)
                                         }
-                                        RoundedRectangle(cornerRadius: 10)
+                                        RoundedRectangle(cornerRadius: 3.5)
                                             .fill(Color.purple)
                                             .frame(width: barWidth, height: barHeights[index] * lineHeight).padding(0)
                                         Text(xLabels[index]).frame(height: 20)
