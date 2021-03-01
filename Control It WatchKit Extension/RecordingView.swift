@@ -24,7 +24,9 @@ struct RecordingView: View {
                     HStack {
                         Spacer()
                         Button(action: {
-                            model.recordButtonTapped()
+                            withAnimation {
+                                model.recordButtonTapped()
+                            }
                         }, label: {
                             Image(model.recording ? "Stop Icon" : "Record Icon")
                         })
@@ -53,7 +55,12 @@ struct RecordingView: View {
                     })
                 }
                 .onDelete(perform: { indexSet in
-                    print("Delete item")
+                    if let index = indexSet.first {
+                        let item = self.model.recordings[index]
+                        withAnimation {
+                            self.model.deleteRecording(item)
+                        }
+                    }
                 })
             }
         }

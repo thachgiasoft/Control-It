@@ -76,6 +76,16 @@ class AudioRecorderService: ObservableObject {
         return recordings
     }
     
+    func deleteRecordingAtUrl(_ url: URL) -> Error? {
+        do {
+           try FileManager.default.removeItem(at: url)
+        } catch {
+            return error
+        }
+
+        return nil
+    }
+    
     private func getCreationDate(for file: URL) -> Date {
         if let attributes = try? FileManager.default.attributesOfItem(atPath: file.path) as [FileAttributeKey: Any],
             let creationDate = attributes[FileAttributeKey.creationDate] as? Date {

@@ -56,6 +56,21 @@ class RecordingViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
         }
     }
     
+    func deleteRecording(_ item: Recording){
+        if let deleteItemError =
+            audioRecorderService.deleteRecordingAtUrl(item.fileURL) {
+            print(deleteItemError.localizedDescription)
+        } else {
+            let findIndex = self.recordings.firstIndex(of: item)
+            
+            guard let elementId = findIndex else {
+                return
+            }
+            
+            let _ = self.recordings.remove(at: elementId)
+        }
+    }
+    
     func listAllRecordings(){
         recordings = audioRecorderService.fetchRecordings(lastRecordings: recordings)
     }
