@@ -25,7 +25,7 @@ struct HistoryBarChart : View  {
     
     var body : some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10).foregroundColor(.black)
+            RoundedRectangle(cornerRadius: 10).foregroundColor(.init("DarkGrayColor"))
             GeometryReader { firstReader in
                 let fullHeight = firstReader.size.height
                 let fullWidth = firstReader.size.width
@@ -36,7 +36,7 @@ struct HistoryBarChart : View  {
                         VStack(spacing:0) {
                             ForEach(0..<yLabels.count - 1) { index in
                                 ZStack(alignment: Alignment.top, content: {
-                                    RoundedRectangle(cornerRadius: 3).foregroundColor(.black)
+                                    RoundedRectangle(cornerRadius: 3).foregroundColor(.init("DarkGrayColor"))
                                     Text("\(yLabels[index])").padding(-4)
                                 }).frame(height: lineHeight * 5).padding(.leading)
                             }
@@ -53,7 +53,7 @@ struct HistoryBarChart : View  {
                                             Spacer().padding(0)
                                         }
                                         RoundedRectangle(cornerRadius: 3.5)
-                                            .fill(Color.purple)
+                                            .fill(Color.init("Beige"))
                                             .frame(width: barWidth, height: barHeights[index] * lineHeight).padding(0)
                                         Text(xLabels[index]).frame(height: 20)
                                     }
