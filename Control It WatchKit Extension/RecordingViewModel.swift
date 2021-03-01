@@ -51,8 +51,8 @@ class RecordingViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
                 print(error)
             }
         } else {
-            // Parar de tocar o áudio
-            print("Stop audio")
+            audioPlayerService.stopPlayback()
+            isAudioPlaying = false
         }
     }
     
@@ -65,5 +65,4 @@ class RecordingViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
             isAudioPlaying = false
         }
     }
-    
 }

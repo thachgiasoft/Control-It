@@ -24,4 +24,8 @@ class AudioPlayerService: NSObject, ObservableObject {
             return .failure(error)
         }
     }
+    
+    func stopPlayback(){
+        audioPlayer.stop()
+    }
 }
