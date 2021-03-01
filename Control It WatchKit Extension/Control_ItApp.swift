@@ -13,7 +13,11 @@ struct Control_ItApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                RecordingView()
+                TabView {
+                    MoodList()
+                    RecordingView()
+                    StatisticsView(viewModel: .init(repository: repository))
+                }.tabViewStyle(PageTabViewStyle())
             }
         }
 

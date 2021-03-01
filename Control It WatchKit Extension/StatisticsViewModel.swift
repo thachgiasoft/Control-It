@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI // to importando só por conta do CGFloat, vou ver se mudo isso
 
 class StatisticsViewModel : ObservableObject {
     
@@ -27,7 +28,7 @@ class StatisticsViewModel : ObservableObject {
     }
     
     private func getCurrentWeek(habits newHabits : [Habit]) -> [Habit] {
-        newHabits.filter { (habit) -> Bool in
+        return newHabits.filter { (habit) -> Bool in
             Calendar.current.isDayInCurrentWeek(date: habit.date)!
         }
     }
@@ -42,12 +43,20 @@ extension StatisticsViewModel {
         Calendar.current.veryShortWeekdaySymbols
     }
     
-    var barHeights : [Double] {
+    var barHeights : [CGFloat] {
+        var barHeights : [CGFloat] = [0,0,0,0,0,0,0]
+        if habits.isEmpty {
+            return barHeights
+        }
+        
         let calendar = Calendar.current
-        var barHeights : [Double] = [0,0,0,0,0,0,0]
         var newHabits = habits
         var currentDate = newHabits.removeFirst().date
-        var count : Double = 1
+        
+        let auxIndex = calendar.getWeekDayIndexOf(date: currentDate)
+        barHeights[auxIndex] = 1
+        
+        var count : CGFloat = 1
         
         for habit in habits {
             if calendar.isDate(habit.date, inSameDayAs: currentDate) {
@@ -68,12 +77,13 @@ extension Calendar {
     func isDayInCurrentWeek(date: Date) -> Bool? {
         let currentComponents = Calendar.current.dateComponents([.weekOfYear], from: Date())
         let dateComponents = Calendar.current.dateComponents([.weekOfYear], from: date)
+
         guard let currentWeekOfYear = currentComponents.weekOfYear, let dateWeekOfYear = dateComponents.weekOfYear else { return nil }
         return currentWeekOfYear == dateWeekOfYear
     }
     
     func getWeekDayIndexOf(date : Date) -> Int {
-        Calendar.current.dateComponents([.weekday], from: date).weekday!
+        Calendar.current.dateComponents([.weekday], from: date).weekday! - 1
     }
 }
 

@@ -19,7 +19,8 @@ struct HistoryBarChart : View  {
         self.yLabels = yLabels.reversed()
         self.xLabels = xLabels
         self.barHeights = barHeights
-        self.maxHeight = CGFloat(barHeights.max() ?? 0)
+        //self.maxHeight = CGFloat(barHeights.max() ?? 0)
+        self.maxHeight = 20
     }
     
     var body : some View {
@@ -29,6 +30,7 @@ struct HistoryBarChart : View  {
                 let fullHeight = firstReader.size.height
                 let fullWidth = firstReader.size.width
                 let lineHeight = (fullHeight - 20) / maxHeight
+                
                 VStack {
                     HStack {
                         VStack(spacing:0) {
@@ -67,6 +69,6 @@ struct HistoryBarChart : View  {
 
 struct HistoryBarChart_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryBarChart(yLabels: [0,5,10,15,20], xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [5,10,10,15,20,19,1])
+        HistoryBarChart(yLabels: [0,5,10,15,20], xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [1,0,0,0,0,20,0])
     }
 }
