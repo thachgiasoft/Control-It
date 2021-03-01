@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-let arrayTest: [Int] = [1, 2, 3, 4, 5]
-
 struct RecordingView: View {
     @ObservedObject var model: RecordingViewModel
     

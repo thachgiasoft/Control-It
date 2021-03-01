@@ -11,10 +11,3 @@ struct Recording: Hashable {
     let fileURL: URL
     let createdAt: Date
 }
-
-let fakeRecords: [Recording] = [
-    .init(fileURL: URL.init(fileURLWithPath: ".../"), createdAt: Date.distantFuture),
-    .init(fileURL: URL.init(fileURLWithPath: ".../"), createdAt: Date.distantFuture),
-    .init(fileURL: URL.init(fileURLWithPath: ".../"), createdAt: Date.distantFuture),
-    .init(fileURL: URL.init(fileURLWithPath: ".../"), createdAt: Date.distantFuture),
-]
