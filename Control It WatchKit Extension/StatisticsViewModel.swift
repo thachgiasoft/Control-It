@@ -52,23 +52,24 @@ extension StatisticsViewModel {
         let calendar = Calendar.current
         var newHabits = habits
         var currentDate = newHabits.removeFirst().date
-        
-        let auxIndex = calendar.getWeekDayIndexOf(date: currentDate)
-        barHeights[auxIndex] = 1
-        
+
         var count : CGFloat = 1
         
-        for habit in habits {
+        for habit in newHabits {
             if calendar.isDate(habit.date, inSameDayAs: currentDate) {
+            //if calendar.isDate(habit.date, onTheSameWeekDayOf: currentDate) {
                 count += 1
             } else {
                 let index = calendar.getWeekDayIndexOf(date: currentDate)
-                barHeights[index] = count
+                barHeights[index] += count
                 currentDate = habit.date
                 count = 1
             }
         }
-
+        
+        let index = calendar.getWeekDayIndexOf(date: currentDate)
+        barHeights[index] += count
+    
         return barHeights
     }
 }
@@ -84,6 +85,13 @@ extension Calendar {
     
     func getWeekDayIndexOf(date : Date) -> Int {
         Calendar.current.dateComponents([.weekday], from: date).weekday! - 1
+    }
+    
+    func isDate(_ date : Date, onTheSameWeekDayOf secondDate : Date) -> Bool {
+        let firstComponents = Calendar.current.dateComponents([.weekday], from: date)
+        let secondComponents = Calendar.current.dateComponents([.weekday], from: secondDate)
+
+        return firstComponents.weekday == secondComponents.weekday
     }
 }
 
