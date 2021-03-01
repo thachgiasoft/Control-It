@@ -26,6 +26,7 @@ struct MoodListCell: View {
     }
 }
 
+
 struct MoodList: View {
     
     let moodList = Mood.allCases
@@ -33,13 +34,20 @@ struct MoodList: View {
     var body: some View {
         List {
             ForEach(moodList, id: \.rawValue) { mood in
-                MoodListCell(name: mood.rawValue, imageMood: mood.rawValue)
+               
+                NavigationLink(destination: RegisterMood() ) {
+                    MoodListCell(name: mood.rawValue, imageMood: mood.rawValue)
+                }
+               //     ItemRow(item: item)
+                    // existing contents…
+               // }
             }
         }
         //.clipShape(Circle())
         //.navigationTitle("Mood")
     }
 }
+
 
 struct MoodList_Previews: PreviewProvider {
     static var previews: some View {
