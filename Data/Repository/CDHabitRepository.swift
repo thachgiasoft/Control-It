@@ -73,11 +73,5 @@ class CDHabitRepository : HabitRepository {
         } catch {
             return.failure(error)
         }
-    
     }
-}
-
-protocol HabitRepository {
-    func saveHabit(_ habit : Habit) -> Result<Habit,Error>
-    func getAllHabit() -> Result<[Habit],Error>
 }
