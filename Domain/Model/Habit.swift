@@ -18,10 +18,10 @@ enum Mood : String, CaseIterable {
 }
 
 struct Habit {
+    var id : String?
     var annotation : String?
     var audio : String?
     var date : Date
-    //var gesture : String?
     var mood : Mood
     
     init(annotation : String, date : Date, mood : Mood) {
@@ -37,6 +37,14 @@ struct Habit {
     }
     
     init(audio : String?, date : Date, mood : Mood, annotation: String?) {
+        self.audio = audio
+        self.date = date
+        self.mood = mood
+        self.annotation = annotation
+    }
+    
+    init(id: String, audio : String?, date : Date, mood : Mood, annotation: String?) {
+        self.id = id
         self.audio = audio
         self.date = date
         self.mood = mood

@@ -19,11 +19,13 @@ class StatisticsViewModel : ObservableObject {
     }
     
     func loadAllHabits() {
-        switch repository.getAllHabit() {
+        repository.getAllHabit { (result) in
+            switch result {
             case .success(let newHabits):
-                self.habits = getCurrentWeek(habits: newHabits)
+                self.habits = newHabits
             case .failure(let error):
                 print(error)
+            }
         }
     }
     

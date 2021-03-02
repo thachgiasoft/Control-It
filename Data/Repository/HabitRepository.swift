@@ -8,6 +8,6 @@
 import Foundation
 
 protocol HabitRepository {
-    func saveHabit(_ habit : Habit) -> Result<Habit,Error>
-    func getAllHabit() -> Result<[Habit],Error>
+    func saveHabit(_ habit : Habit, completionHandler: @escaping (Result<Habit, Error>) -> ())
+    func getAllHabit(completionHandler: @escaping (Result<[Habit], Error>) -> ())
 }
