@@ -29,6 +29,7 @@
 		353DC01425E814A50022088D /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353DBFFB25E814610022088D /* Recording.swift */; };
 		3542A26A25E9493200FEA3AD /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A26925E9493200FEA3AD /* AudioPlayerService.swift */; };
 		3542A27125E9493C00FEA3AD /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */; };
+		357C3ACF25EF2D29008102C0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357C3ACE25EF2D29008102C0 /* CloudKit.framework */; };
 		358EAF8025ED2775009C50BD /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358EAF7F25ED2775009C50BD /* CustomAlert.swift */; };
 		AEA42BDF25EAF3DB00D348E2 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA42BDE25EAF3DB00D348E2 /* StatisticsViewModel.swift */; };
 		AEBF616025E93A4D007E83A4 /* HistoryBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */; };
@@ -148,6 +149,8 @@
 		353DBFFB25E814610022088D /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		3542A26925E9493200FEA3AD /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
 		3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderService.swift; sourceTree = "<group>"; };
+		357C3AC825EF2D21008102C0 /* Control It.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Control It.entitlements"; sourceTree = "<group>"; };
+		357C3ACE25EF2D29008102C0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		358EAF7F25ED2775009C50BD /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		AEA42BDE25EAF3DB00D348E2 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBarChart.swift; sourceTree = "<group>"; };
@@ -190,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				357C3ACF25EF2D29008102C0 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +225,7 @@
 		352ED61F25EE6EB800FABBE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				357C3ACE25EF2D29008102C0 /* CloudKit.framework */,
 				352ED62025EE6EB800FABBE2 /* CloudKit.framework */,
 			);
 			name = Frameworks;
@@ -313,6 +318,7 @@
 		EF1B0F4725E552460001F01D /* Control It */ = {
 			isa = PBXGroup;
 			children = (
+				357C3AC825EF2D21008102C0 /* Control It.entitlements */,
 				EF1B0F4825E552460001F01D /* Control_ItApp.swift */,
 				EF1B0F4C25E552460001F01D /* Assets.xcassets */,
 				EF1B0F5125E552460001F01D /* Info.plist */,
@@ -933,9 +939,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Control It/Control It.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Control It/Preview Content\"";
-				DEVELOPMENT_TEAM = Y22Z44SKH8;
+				DEVELOPMENT_TEAM = SCF6DTLWM7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Control It/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
@@ -956,9 +963,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Control It/Control It.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Control It/Preview Content\"";
-				DEVELOPMENT_TEAM = Y22Z44SKH8;
+				DEVELOPMENT_TEAM = SCF6DTLWM7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Control It/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;

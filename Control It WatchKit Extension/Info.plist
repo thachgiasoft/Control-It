@@ -32,9 +32,13 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
 	</dict>
-	<key>WKRunsIndependentlyOfCompanionApp</key>
-	<true/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Precisamos de acesso ao seu microfone para registrar como você se sente</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+	<key>WKRunsIndependentlyOfCompanionApp</key>
+	<true/>
 </dict>
 </plist>
