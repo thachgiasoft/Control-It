@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StatisticsView: View {
     
-    var viewModel : StatisticsViewModel
+    @ObservedObject var viewModel : StatisticsViewModel 
     
     var body: some View {
         HistoryBarChart(yLabels: viewModel.yLabels, xLabels: viewModel.xLabels, barHeights: viewModel.barHeights).onAppear {

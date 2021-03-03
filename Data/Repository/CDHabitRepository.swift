@@ -66,9 +66,13 @@ class CDHabitRepository : HabitRepository {
               return habit
                 
             }
-            completionHandler(.success(habits))
+            DispatchQueue.main.async {
+                completionHandler(.success(habits))
+            }
         } catch {
-            completionHandler(.failure(error))
+            DispatchQueue.main.async {
+                completionHandler(.failure(error))
+            }
         }
     }
 }

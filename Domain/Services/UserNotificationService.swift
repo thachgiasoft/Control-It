@@ -49,8 +49,8 @@ class UserNotificationService {
         let category = UNNotificationCategory(
             identifier: "myCategory",
             actions: [
-                .init(identifier: "op1", title: "Opcao 1", options: .foreground),
-                .init(identifier: "op2", title: "Opcao 2", options: .destructive)
+                .init(identifier: "Registrar", title: "Registrar", options: .foreground),
+                //.init(identifier: "op2", title: "Opcao 2", options: .destructive)
             ],
             intentIdentifiers: [],
             options: []
@@ -59,8 +59,8 @@ class UserNotificationService {
         notificationCenter.setNotificationCategories([category])
         
         let content = UNMutableNotificationContent()
-        content.title = "Foi porra"
-        content.subtitle = "Tomar no cu"
+        content.title = "Controll It"
+        content.subtitle = "Mania"
         content.sound = UNNotificationSound.default
         content.categoryIdentifier = "myCategory"
         

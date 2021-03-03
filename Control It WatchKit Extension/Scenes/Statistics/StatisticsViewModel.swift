@@ -11,6 +11,9 @@ import SwiftUI // to importando só por conta do CGFloat, vou ver se mudo isso
 class StatisticsViewModel : ObservableObject {
     
     @Published var habits : [Habit] = []
+    @Published var yLabels : [Int] = [0,5,10,15,20] // dps posso até fazer um cálculo pra saber esses valores, mas por enquanto vai isso msm
+    @Published var xLabels : [String] = Calendar.current.veryShortWeekdaySymbols
+    @Published var barHeights : [CGFloat] = [0,0,0,0,0,0,0]
     var repository : HabitRepository
     
     init(repository : HabitRepository) {
@@ -23,6 +26,7 @@ class StatisticsViewModel : ObservableObject {
             switch result {
             case .success(let newHabits):
                 self.habits = self.getCurrentWeek(habits: newHabits)
+                self.barHeights = self.computeBarHeights()
             case .failure(let error):
                 print(error)
             }
@@ -34,18 +38,8 @@ class StatisticsViewModel : ObservableObject {
             Calendar.current.isDayInCurrentWeek(date: habit.date)!
         }
     }
-}
-
-extension StatisticsViewModel {
-    var yLabels : [Int] {
-        [0,5,10,15,20] // dps posso até fazer um cálculo pra saber esses valores, mas por enquanto vai isso msm
-    }
     
-    var xLabels : [String] {
-        Calendar.current.veryShortWeekdaySymbols
-    }
-    
-    var barHeights : [CGFloat] {
+    private func computeBarHeights() -> [CGFloat] {
         var barHeights : [CGFloat] = [0,0,0,0,0,0,0]
         if habits.isEmpty {
             return barHeights
