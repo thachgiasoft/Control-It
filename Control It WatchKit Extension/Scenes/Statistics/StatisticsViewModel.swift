@@ -22,7 +22,7 @@ class StatisticsViewModel : ObservableObject {
         repository.getAllHabit { (result) in
             switch result {
             case .success(let newHabits):
-                self.habits = newHabits
+                self.habits = self.getCurrentWeek(habits: newHabits)
             case .failure(let error):
                 print(error)
             }
@@ -50,7 +50,6 @@ extension StatisticsViewModel {
         if habits.isEmpty {
             return barHeights
         }
-        
         let calendar = Calendar.current
         var newHabits = habits
         var currentDate = newHabits.removeFirst().date
@@ -71,7 +70,7 @@ extension StatisticsViewModel {
         
         let index = calendar.getWeekDayIndexOf(date: currentDate)
         barHeights[index] += count
-    
+        
         return barHeights
     }
 }

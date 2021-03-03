@@ -13,6 +13,7 @@ struct Control_ItApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
+                //TestView()
                 TabView {
                     MoodList()
                     RecordingView()
