@@ -36,6 +36,7 @@ struct RecordingView: View {
                         Spacer()
                         Text("Conte como está se sentindo e o que houve.")
                             .multilineTextAlignment(.center)
+                            .font(.system(.caption, design: .rounded))
                             .foregroundColor(.white)
                         Spacer()
                     }
@@ -45,7 +46,7 @@ struct RecordingView: View {
                         model.audioItemTapped(record)
                     }, label: {
                         Text("Gravação")
-                            .font(.caption)
+                            .font(.system(.caption, design: .rounded))
                             .bold()
                         Text(record.fileURL.absoluteString)
                             .font(.caption2)
