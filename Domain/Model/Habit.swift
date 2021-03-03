@@ -17,7 +17,7 @@ enum Mood : String, CaseIterable {
     //case nervous
 }
 
-struct Habit {
+struct Habit: Hashable {
     var id : String?
     var annotation : String?
     var audio : String?

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350BA4FF25EFC35E00889B8C /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350BA4FE25EFC35E00889B8C /* HabitListView.swift */; };
 		352ED60B25EE68A000FABBE2 /* CKHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352ED60A25EE68A000FABBE2 /* CKHabitRepository.swift */; };
 		352ED60C25EE68A000FABBE2 /* CKHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352ED60A25EE68A000FABBE2 /* CKHabitRepository.swift */; };
 		352ED60D25EE68A000FABBE2 /* CKHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352ED60A25EE68A000FABBE2 /* CKHabitRepository.swift */; };
@@ -139,6 +140,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		350BA4FE25EFC35E00889B8C /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
 		352ED60A25EE68A000FABBE2 /* CKHabitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKHabitRepository.swift; sourceTree = "<group>"; };
 		352ED61425EE68B700FABBE2 /* HabitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRepository.swift; sourceTree = "<group>"; };
 		352ED61E25EE6E8800FABBE2 /* Control It WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Control It WatchKit Extension.entitlements"; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 				EF1B0F5125E552460001F01D /* Info.plist */,
 				EF1B0F4E25E552460001F01D /* Preview Content */,
 				EF84188C25E6989300451368 /* ContentView.swift */,
+				350BA4FE25EFC35E00889B8C /* HabitListView.swift */,
 			);
 			path = "Control It";
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				350BA4FF25EFC35E00889B8C /* HabitListView.swift in Sources */,
 				EF1B0F4925E552460001F01D /* Control_ItApp.swift in Sources */,
 				AEC0174E25ED3D2D00D13907 /* UserNotificationService.swift in Sources */,
 				353DC00825E814A40022088D /* Recording.swift in Sources */,
