@@ -45,6 +45,7 @@
 		AEC0175725ED3DFE00D13907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F8525E552480001F01D /* Assets.xcassets */; };
 		AEC0175D25ED3DFF00D13907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F8525E552480001F01D /* Assets.xcassets */; };
 		AEC0176325ED3DFF00D13907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F8525E552480001F01D /* Assets.xcassets */; };
+		AEC219AD25EEF6490046DF59 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC219AC25EEF6490046DF59 /* TestView.swift */; };
 		AED17E4625ECA1AA00E41464 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED17E4525ECA1AA00E41464 /* StatisticsView.swift */; };
 		EF1B0F4925E552460001F01D /* Control_ItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B0F4825E552460001F01D /* Control_ItApp.swift */; };
 		EF1B0F4D25E552460001F01D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F4C25E552460001F01D /* Assets.xcassets */; };
@@ -152,6 +153,7 @@
 		AEA42BDE25EAF3DB00D348E2 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBarChart.swift; sourceTree = "<group>"; };
 		AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationService.swift; sourceTree = "<group>"; };
+		AEC219AC25EEF6490046DF59 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		AED17E4525ECA1AA00E41464 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		EF1B0F4525E552460001F01D /* Control It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Control It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1B0F4825E552460001F01D /* Control_ItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control_ItApp.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		AEC0172325ED1FDE00D13907 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				AEC219AB25EEF6100046DF59 /* Notification */,
 				AEC0174725ED20AB00D13907 /* MoodList */,
 				AEC0172625ED205000D13907 /* Statistics */,
 				AEC0172425ED1FFC00D13907 /* Record */,
@@ -281,6 +284,17 @@
 				EF40AEA225E7E77000D0F038 /* MoodList.swift */,
 			);
 			path = MoodList;
+			sourceTree = "<group>";
+		};
+		AEC219AB25EEF6100046DF59 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				EF1B0F8125E552480001F01D /* NotificationView.swift */,
+				EF1B0F7F25E552480001F01D /* NotificationController.swift */,
+				EF1B0F8B25E552480001F01D /* PushNotificationPayload.apns */,
+				AEC219AC25EEF6490046DF59 /* TestView.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		EF1B0F3C25E552450001F01D = {
@@ -365,12 +379,9 @@
 				AEC0172325ED1FDE00D13907 /* Scenes */,
 				EF1B0F7B25E552480001F01D /* Control_ItApp.swift */,
 				EF1B0F7D25E552480001F01D /* ContentView.swift */,
-				EF1B0F7F25E552480001F01D /* NotificationController.swift */,
-				EF1B0F8125E552480001F01D /* NotificationView.swift */,
 				EF1B0F8325E552480001F01D /* ComplicationController.swift */,
 				EF1B0F8525E552480001F01D /* Assets.xcassets */,
 				EF1B0F8A25E552480001F01D /* Info.plist */,
-				EF1B0F8B25E552480001F01D /* PushNotificationPayload.apns */,
 				EF1B0F8725E552480001F01D /* Preview Content */,
 			);
 			path = "Control It WatchKit Extension";
@@ -673,6 +684,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1B0F8025E552480001F01D /* NotificationController.swift in Sources */,
+				AEC219AD25EEF6490046DF59 /* TestView.swift in Sources */,
 				352ED61825EE68B700FABBE2 /* HabitRepository.swift in Sources */,
 				EF40AEA325E7E77000D0F038 /* MoodList.swift in Sources */,
 				EF3FCD8125E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,

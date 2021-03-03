@@ -16,7 +16,7 @@ class UserNotificationService {
         self.notificationCenter = notificationCenter
     }
     
-    func setUserNotification(weekDays : [Int], hour : Int,minute : Int) {
+    func setUserNotificationOn(weekDays : [Int], hour : Int,minute : Int) {
         let content = UNMutableNotificationContent()
         content.title = ""
         content.body = ""
@@ -28,11 +28,11 @@ class UserNotificationService {
             dateComponents.weekday = weekDay
             dateComponents.hour = hour
             dateComponents.minute = minute
-
+            
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
 
             let id = UUID().uuidString
-
+            
             let request = UNNotificationRequest(identifier: id,
                          content: content, trigger: trigger)
              
@@ -42,6 +42,34 @@ class UserNotificationService {
                 }
             }
         }
+    }
+    
+    func setUserNotificationIn(minutes : Int) {
+
+        let category = UNNotificationCategory(
+            identifier: "myCategory",
+            actions: [
+                .init(identifier: "op1", title: "Opcao 1", options: .foreground),
+                .init(identifier: "op2", title: "Opcao 2", options: .destructive)
+            ],
+            intentIdentifiers: [],
+            options: []
+        )
+        
+        notificationCenter.setNotificationCategories([category])
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Foi porra"
+        content.subtitle = "Tomar no cu"
+        content.sound = UNNotificationSound.default
+        content.categoryIdentifier = "myCategory"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(60 * minutes), repeats: true)
+
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        print(request)
+        
+        notificationCenter.add(request)
     }
     
     func getNotificationsDaysHourMinute(completion: @escaping ([Int],Int,Int) -> ()) {
@@ -63,9 +91,13 @@ class UserNotificationService {
         })
     }
     
-    private func getPendingNotifications(completion: @escaping ([UNNotificationRequest]) -> ()) {
+    func getPendingNotifications(completion: @escaping ([String]) -> ()) {
         notificationCenter.getPendingNotificationRequests(completionHandler: { notifications in
-            completion(notifications)
+            var notificationsDescriptions : [String] = []
+            for notification in notifications {
+                notificationsDescriptions.append(notification.trigger!.description)
+            }
+            completion(notificationsDescriptions)
         })
     }
     
