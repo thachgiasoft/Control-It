@@ -27,6 +27,7 @@ struct MoodListCell: View {
 
 struct MoodList: View {
     let moodList = Mood.allCases
+    @State var isShowingMoodRegisteredPanel: Bool = false
     var habitRepository: HabitRepository
     
     init(habitRepository: HabitRepository = CDHabitRepository()) {
@@ -34,23 +35,43 @@ struct MoodList: View {
     }
     
     var body: some View {
-        List {
-            ForEach(moodList, id: \.rawValue) { mood in
-                Button(action: {
-                    let habit = Habit(annotation: "", date: Date(), mood: mood)
-                    self.habitRepository.saveHabit(habit) { result in
-                        switch result {
-                        case .success(_):
-                            print("\n\nSUCESSO SALVANDO HABITO\n\n")
-                        case .failure(let error):
-                            print("\n\nERRO SALVANDO HABITO\n\n \(error)")
+        ZStack {
+            List {
+                ForEach(moodList, id: \.rawValue) { mood in
+                    Button(action: {
+                        let habit = Habit(annotation: "", date: Date(), mood: mood)
+                        self.habitRepository.saveHabit(habit) { result in
+                            switch result {
+                            case .success(_):
+                                print("\n\nSUCESSO SALVANDO HABITO\n\n")
+                                withAnimation {
+                                    self.isShowingMoodRegisteredPanel = true
+                                }
+                            case .failure(let error):
+                                print("\n\nERRO SALVANDO HABITO\n\n \(error)")
+                            }
                         }
-                    }
-                }, label: {
-                    MoodListCell(name: mood.rawValue, imageMood: mood.rawValue)
-                        .padding(5)
-                })
+                    }, label: {
+                        MoodListCell(name: mood.rawValue, imageMood: mood.rawValue)
+                            .padding(5)
+                    })
+                }
+            }.isHidden(isShowingMoodRegisteredPanel)
+            
+            if isShowingMoodRegisteredPanel {
+                Image("checkRegister")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 110, maxHeight: 115)
+                    .onAppear(perform: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            withAnimation {
+                                self.isShowingMoodRegisteredPanel = false
+                            }
+                        }
+                    })
             }
+            
         }
     }
 }
