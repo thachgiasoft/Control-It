@@ -32,6 +32,8 @@
 		3542A26A25E9493200FEA3AD /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A26925E9493200FEA3AD /* AudioPlayerService.swift */; };
 		3542A27125E9493C00FEA3AD /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */; };
 		357C3ACF25EF2D29008102C0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357C3ACE25EF2D29008102C0 /* CloudKit.framework */; };
+		3589C2E625F07DE900AAD834 /* RecordsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589C2E525F07DE900AAD834 /* RecordsListView.swift */; };
+		3589C2ED25F0851100AAD834 /* RecordsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589C2EC25F0851100AAD834 /* RecordsListViewModel.swift */; };
 		358EAF8025ED2775009C50BD /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358EAF7F25ED2775009C50BD /* CustomAlert.swift */; };
 		AEA42BDF25EAF3DB00D348E2 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA42BDE25EAF3DB00D348E2 /* StatisticsViewModel.swift */; };
 		AEBF616025E93A4D007E83A4 /* HistoryBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */; };
@@ -157,6 +159,8 @@
 		3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderService.swift; sourceTree = "<group>"; };
 		357C3AC825EF2D21008102C0 /* Control It.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Control It.entitlements"; sourceTree = "<group>"; };
 		357C3ACE25EF2D29008102C0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		3589C2E525F07DE900AAD834 /* RecordsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListView.swift; sourceTree = "<group>"; };
+		3589C2EC25F0851100AAD834 /* RecordsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListViewModel.swift; sourceTree = "<group>"; };
 		358EAF7F25ED2775009C50BD /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		AEA42BDE25EAF3DB00D348E2 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBarChart.swift; sourceTree = "<group>"; };
@@ -239,6 +243,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3589C2E425F07DD200AAD834 /* RecordsList */ = {
+			isa = PBXGroup;
+			children = (
+				3589C2E525F07DE900AAD834 /* RecordsListView.swift */,
+				3589C2EC25F0851100AAD834 /* RecordsListViewModel.swift */,
+			);
+			path = RecordsList;
+			sourceTree = "<group>";
+		};
 		358EAF7E25ED2765009C50BD /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +267,7 @@
 				AEC0174725ED20AB00D13907 /* MoodList */,
 				AEC0172625ED205000D13907 /* Statistics */,
 				AEC0172425ED1FFC00D13907 /* Record */,
+				3589C2E425F07DD200AAD834 /* RecordsList */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -710,6 +724,8 @@
 				353DBFEE25E7FC8E0022088D /* RecordingViewModel.swift in Sources */,
 				EF1B0F7E25E552480001F01D /* ContentView.swift in Sources */,
 				3542A26A25E9493200FEA3AD /* AudioPlayerService.swift in Sources */,
+				3589C2ED25F0851100AAD834 /* RecordsListViewModel.swift in Sources */,
+				3589C2E625F07DE900AAD834 /* RecordsListView.swift in Sources */,
 				EF1B0F8425E552480001F01D /* ComplicationController.swift in Sources */,
 				352ED62625EE6F4F00FABBE2 /* configs.swift in Sources */,
 				AED17E4625ECA1AA00E41464 /* StatisticsView.swift in Sources */,

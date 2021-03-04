@@ -8,59 +8,39 @@
 import SwiftUI
 
 struct RecordingView: View {
-    @ObservedObject var model: RecordingViewModel
+    @ObservedObject private var model: RecordingViewModel
     
     init(model: RecordingViewModel = .init()) {
         self.model = model
-        model.listAllRecordings()
     }
     
     var body: some View {
-        List {
-            Section(
-                header:
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            withAnimation {
-                                model.recordButtonTapped()
-                            }
-                        }, label: {
-                            Image(model.recording ? "Stop Icon" : "Record Icon")
-                        })
-                        .buttonStyle(PlainButtonStyle())
-                        Spacer()
-                    },
-                footer:
-                    HStack {
-                        Spacer()
-                        Text("Conte como está se sentindo e o que houve.")
-                            .multilineTextAlignment(.center)
-                            .font(.system(.caption, design: .rounded))
-                            .foregroundColor(.white)
-                        Spacer()
-                    }
-            ) {
-                ForEach(Array(model.recordings.enumerated()), id: \.element) { _, record in
+        GeometryReader { content in
+            ScrollView {
+                HStack {
                     Button(action: {
-                        model.audioItemTapped(record)
-                    }, label: {
-                        Text("Gravação")
-                            .font(.system(.caption, design: .rounded))
-                            .bold()
-                        Text(record.fileURL.absoluteString)
-                            .font(.caption2)
-                            .lineLimit(1)
-                    })
-                }
-                .onDelete(perform: { indexSet in
-                    if let index = indexSet.first {
-                        let item = self.model.recordings[index]
                         withAnimation {
-                            self.model.deleteRecording(item)
+                            model.recordButtonTapped()
                         }
-                    }
-                })
+                    }, label: {
+                        Image(model.recording ? "Stop Icon" : "Record Icon")
+                    })
+                    .buttonStyle(PlainButtonStyle())
+                }
+                .frame(width: content.frame(in: .local).maxX, alignment: .center)
+                
+                Text("Conte como está se sentindo e o que houve.")
+                    .multilineTextAlignment(.center)
+                    .font(.system(.body, design: .rounded))
+                    .foregroundColor(.white)
+                    .padding(.vertical)
+                
+                NavigationLink(destination: RecordsListView()) {
+                    Text("Gravações")
+                        .font(.system(.body, design: .rounded))
+                        .bold()
+                }
+                .padding(.horizontal)
             }
         }
     }
@@ -68,6 +48,8 @@ struct RecordingView: View {
 
 struct RecordingView_Previews: PreviewProvider {
     static var previews: some View {
-        RecordingView(model: .init())
+        NavigationView {
+            RecordingView(model: .init())
+        }
     }
 }

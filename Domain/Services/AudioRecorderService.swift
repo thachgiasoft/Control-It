@@ -55,7 +55,7 @@ class AudioRecorderService: ObservableObject {
         }
     }
     
-    func stopRecording(existentRecords: [Recording]){
+    func stopRecording(){
         audioRecorder.stop()        
     }
     
