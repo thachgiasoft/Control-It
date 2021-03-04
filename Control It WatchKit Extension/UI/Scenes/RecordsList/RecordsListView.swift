@@ -26,13 +26,13 @@ struct RecordsListView: View {
                                     model.shouldShowDeletePanel = false
                                 }
                             }, label: {
-                                Text("Cancelar")
+                                Text(Translation.Buttons.cancel)
                             })
                             .buttonStyle(PlainButtonStyle())
                             Spacer()
                         }
                         Spacer()
-                        Text("A gravação será apagada permanentemente.")
+                        Text(Translation.Texts.deletionWarning)
                             .bold()
                             .multilineTextAlignment(.center)
                             .font(.system(.body, design: .rounded))
@@ -44,7 +44,7 @@ struct RecordsListView: View {
                                 model.shouldShowDeletePanel = false
                             }
                         }, label: {
-                            Text("Apagar")
+                            Text(Translation.Buttons.delete)
                                 .bold()
                                 .font(.system(.body, design: .rounded))
                                 .foregroundColor(.red)
@@ -60,7 +60,7 @@ struct RecordsListView: View {
                                 Button(action: {
                                     model.audioItemTapped(record)
                                 }, label: {
-                                    Text("Gravação")
+                                    Text(Translation.Texts.recording)
                                         .font(.system(.caption, design: .rounded))
                                         .bold()
                                     Text(model.getLocalizedDate(record.createdAt))
@@ -78,7 +78,7 @@ struct RecordsListView: View {
                             })
                         }
                     } else {
-                        Text("Parece que você não tem nenhuma gravação")
+                        Text(Translation.Texts.noRecordingsAvailable)
                             .multilineTextAlignment(.center)
                             .font(.system(.body, design: .rounded))
                             .foregroundColor(.gray)

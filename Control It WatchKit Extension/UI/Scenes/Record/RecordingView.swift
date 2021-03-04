@@ -24,22 +24,25 @@ struct RecordingView: View {
                         }
                     }, label: {
                         Image(model.recording ? "Stop Icon" : "Record Icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(maxWidth: 80)
                     })
                     .buttonStyle(PlainButtonStyle())
                 }
                 .frame(width: content.frame(in: .local).maxX, alignment: .center)
                 
-                Text("Conte como está se sentindo e o que houve.")
+                Text(Translation.Texts.askAboutUserFeeling)
                     .multilineTextAlignment(.center)
                     .font(.system(.body, design: .rounded))
                     .foregroundColor(.white)
-                    .padding(.vertical)
                 
                 NavigationLink(destination: RecordsListView()) {
-                    Text("Gravações")
+                    Text(Translation.Links.recordings)
                         .font(.system(.body, design: .rounded))
                         .bold()
                 }
+                .frame(maxHeight: 50)
                 .padding(.horizontal)
             }
         }

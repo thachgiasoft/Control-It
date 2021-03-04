@@ -11,8 +11,8 @@ struct TestView: View {
     let notification = UserNotificationService()
     var body: some View {
         VStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            Button("taporra") {
+            Text(Translation.Texts.markedHabitWarning)
+            Button(Translation.Buttons.recordMood) {
                 notification.setUserNotificationIn(minutes: 1)
                 notification.getPendingNotifications { (requests) in
                     print(requests)
@@ -31,5 +31,5 @@ struct TestView: View {
 struct TestView_Previews: PreviewProvider {
     static var previews: some View {
         TestView()
-    } // perai
+    }
 }

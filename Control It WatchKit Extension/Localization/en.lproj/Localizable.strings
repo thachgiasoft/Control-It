@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  Control It
+
+  Created by Leonardo Viana on 04/03/21.
+  
+*/
+
+"How are you feeling" = "Record how you are feeling now";
+"Recordings" = "Recordings";
+"Recording" = "Recording";
+"No recordings" = "It looks like there aren't any recordings";
+"Delete" = "Delete";
+"Cancel" = "Cancel";
+"Permanently deletion of recording" = "This recording will be permanently deleted.";
+
+"happy" = "Happy";
+"sad" = "Sad";
+"tired" = "Tired";
+"angry" = "Angry";
+"anxious" = "Anxious";
+"bored" = "Bored";
+
+"Marked Habit" = "You registered a habit";
+"Record mood" = "Record mood";

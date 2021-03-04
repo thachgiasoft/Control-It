@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NotificationView: View {
     var body: some View {
-        Text("Você marcou uma mania!")
+        Text(Translation.Texts.markedHabitWarning)
     }
 }
 
