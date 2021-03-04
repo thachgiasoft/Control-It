@@ -20,23 +20,46 @@ struct AnnotationMoods: View {
                     }
                     // imagens c nome
                     ScrollView(.horizontal) {
-                        HStack {
+                        HStack(spacing: 0) {
                             ForEach(Mood.allCases, id: \.rawValue) { mood in
-                                VStack{
+                                VStack {
                                     Image(mood.rawValue)
-                                    Text(mood.rawValue)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .padding(.horizontal)
+                                    Text(mood.rawValue).padding(.bottom)
                                     
-                                }
-                                
+                                }.frame(width: UIScreen.main.bounds.width / 5)
+           
                             }
-                        }
+                        }.padding(.horizontal)// WOEGBQUYOWEGQWUIEYGQIWYUEGQWYEUQ MT BOM, AINDA BEM QUE EU NÃO SOU TU INGRA
                     }
                     Spacer()
                     
                     VStack{
                         HStack{
-                            
+                            Text("Annotations")
+                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                .padding()
+                            Spacer()
                         }
+                        Spacer()
+                        ZStack(alignment: .top){
+                            
+                            HStack{
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                                TextFieldAnnotation()
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                                
+                            }
+                        }
+                        Spacer()
+                        Spacer()
+                        Spacer()
                     }
                         
                 }
@@ -48,6 +71,24 @@ struct AnnotationMoods: View {
             .navigationBarTitle("Registrar", displayMode: .inline)
         
             
+    }
+}
+struct TextFieldAnnotation: View {
+    @State private var name: String = ""
+
+    var body: some View {
+        GeometryReader { sizeReader in
+            ZStack {
+                RoundedRectangle(cornerRadius: 30).foregroundColor(.init(.gray))
+                VStack {
+                    TextField("Enter your name", text: $name)
+                        .frame(width: sizeReader.size.width, height: sizeReader.size.height, alignment: .top)
+                    
+                }
+                
+            }
+        }
+    
     }
 }
 
