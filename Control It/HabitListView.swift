@@ -72,38 +72,31 @@ struct HabitListView: View {
     var body: some View {
         ScrollView {
             ForEach(Array(model.loadedHabits.enumerated()),id: \.element) { _, item in
-                HabitListItem(
-                    itemText: item.annotation ?? "",
-                    moodImageName: item.mood.rawValue,
-                    day: model.getLocalizedDateInComponents(item.date)[0],
-                    month: model.getLocalizedDateInComponents(item.date)[1],
-                    time: model.getLocalizedDateInComponents(item.date)[2]
+                NavigationLink(destination: AnnotationMoods()) {
+                    HabitListItem(
+                        itemText: item.annotation ?? "",
+                        moodImageName: item.mood.rawValue,
+                        day: model.getLocalizedDateInComponents(item.date)[0],
+                        month: model.getLocalizedDateInComponents(item.date)[1],
+                        time: model.getLocalizedDateInComponents(item.date)[2]
                     )
                     .padding(.bottom, 5)
-            ForEach(Array(fakeRecordings.enumerated()),id: \.element) { _, item in
-                NavigationLink(destination: AnnotationMoods()) {
-                    
-                    RecordingListItem(itemText: item.annotation ?? "", moodImageName: item.mood.rawValue)
-                        .padding(.bottom, 5)
-                   
                 }
-             
             }
-            .padding()
+            .navigationTitle(Text("Registros"))
+            .navigationBarItems(trailing: Button(action: {
+            }, label: {
+                Image(systemName: "square.and.pencil")
+                    .foregroundColor(Color(red: 0.94, green: 0.39, blue: 0.18, opacity: 1))
+            }))
         }
-        .navigationTitle(Text("Registros"))
-        .navigationBarItems(trailing: Button(action: {
-        }, label: {
-            Image(systemName: "square.and.pencil")
-                .foregroundColor(Color(red: 0.94, green: 0.39, blue: 0.18, opacity: 1))
-        }))
     }
-}
-
-struct HabitListView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            HabitListView()
+    
+    struct HabitListView_Previews: PreviewProvider {
+        static var previews: some View {
+            NavigationView {
+                HabitListView()
+            }
         }
     }
 }
