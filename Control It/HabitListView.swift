@@ -26,6 +26,7 @@ struct HabitListItem: View {
     var body: some View {
         VStack {
             HStack {
+                
                 HStack(alignment: .center) {
                     Text(day)
                         .font(.system(.largeTitle, design: .rounded))
@@ -79,6 +80,14 @@ struct HabitListView: View {
                     time: model.getLocalizedDateInComponents(item.date)[2]
                     )
                     .padding(.bottom, 5)
+            ForEach(Array(fakeRecordings.enumerated()),id: \.element) { _, item in
+                NavigationLink(destination: AnnotationMoods()) {
+                    
+                    RecordingListItem(itemText: item.annotation ?? "", moodImageName: item.mood.rawValue)
+                        .padding(.bottom, 5)
+                   
+                }
+             
             }
             .padding()
         }

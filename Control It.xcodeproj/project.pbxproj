@@ -71,6 +71,7 @@
 		EF3FCD8125E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF3FCD7C25E68D0F0050DA98 /* Storage.xcdatamodeld */; };
 		EF40AEA325E7E77000D0F038 /* MoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF40AEA225E7E77000D0F038 /* MoodList.swift */; };
 		EF40AECD25E9350000D0F038 /* RegisterMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF40AECC25E9350000D0F038 /* RegisterMood.swift */; };
+		EF68E61F25F0545D00A53FCB /* AnnotationMoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF68E61E25F0545D00A53FCB /* AnnotationMoods.swift */; };
 		EF84186D25E6922E00451368 /* CDHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84186C25E6922E00451368 /* CDHabitRepository.swift */; };
 		EF84186E25E6922E00451368 /* CDHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84186C25E6922E00451368 /* CDHabitRepository.swift */; };
 		EF84186F25E6922E00451368 /* CDHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84186C25E6922E00451368 /* CDHabitRepository.swift */; };
@@ -189,6 +190,7 @@
 		EF3FCD7D25E68D0F0050DA98 /* Storage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Storage.xcdatamodel; sourceTree = "<group>"; };
 		EF40AEA225E7E77000D0F038 /* MoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodList.swift; sourceTree = "<group>"; };
 		EF40AECC25E9350000D0F038 /* RegisterMood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMood.swift; sourceTree = "<group>"; };
+		EF68E61E25F0545D00A53FCB /* AnnotationMoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationMoods.swift; sourceTree = "<group>"; };
 		EF84186C25E6922E00451368 /* CDHabitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHabitRepository.swift; sourceTree = "<group>"; };
 		EF84188C25E6989300451368 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF84189525E6990700451368 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				EF1B0F5125E552460001F01D /* Info.plist */,
 				EF1B0F4E25E552460001F01D /* Preview Content */,
 				EF84188C25E6989300451368 /* ContentView.swift */,
+				EF68E61E25F0545D00A53FCB /* AnnotationMoods.swift */,
 				350BA4FE25EFC35E00889B8C /* HabitListView.swift */,
 				350BA50F25EFD98900889B8C /* HabitListViewModel.swift */,
 			);
@@ -650,6 +653,7 @@
 				AEC0173425ED207B00D13907 /* AudioRecorderService.swift in Sources */,
 				352ED62325EE6F4F00FABBE2 /* configs.swift in Sources */,
 				350BA51025EFD98900889B8C /* HabitListViewModel.swift in Sources */,
+				EF68E61F25F0545D00A53FCB /* AnnotationMoods.swift in Sources */,
 				352ED60B25EE68A000FABBE2 /* CKHabitRepository.swift in Sources */,
 				EF84186D25E6922E00451368 /* CDHabitRepository.swift in Sources */,
 			);
