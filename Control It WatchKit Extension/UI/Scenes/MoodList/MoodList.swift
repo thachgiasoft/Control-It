@@ -9,17 +9,15 @@ import SwiftUI
 
 struct MoodListCell: View {
     var name : String
-    var imageMood : String
     
     var body: some View {
         HStack {
-            Image(imageMood)
+            Image(name)
                 .resizable()
                 .offset(x: -6)
                 .frame(width: 40, height: 40)
                 .padding(.leading)
-            Spacer()
-            Text(name.capitalized)
+            Text(Translation.Moods.feeling(name).capitalized)
             Spacer()
         }
     }
@@ -43,16 +41,15 @@ struct MoodList: View {
                         self.habitRepository.saveHabit(habit) { result in
                             switch result {
                             case .success(_):
-                                print("\n\nSUCESSO SALVANDO HABITO\n\n")
                                 withAnimation {
                                     self.isShowingMoodRegisteredPanel = true
                                 }
                             case .failure(let error):
-                                print("\n\nERRO SALVANDO HABITO\n\n \(error)")
+                                debugPrint(error)
                             }
                         }
                     }, label: {
-                        MoodListCell(name: mood.rawValue, imageMood: mood.rawValue)
+                        MoodListCell(name: mood.rawValue)
                             .padding(5)
                     })
                 }
