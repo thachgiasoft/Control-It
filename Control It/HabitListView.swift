@@ -16,21 +16,24 @@ let fakeRecordings: [Habit] = [
     .init(annotation: "Vivamus mauris diam, mattis eu sodales pulvinar, cursus ut lorem.", date: Date(), mood: .tired)
 ]
 
-struct RecordingListItem: View {
+struct HabitListItem: View {
     var itemText: String
     var moodImageName: String
+    var day: String
+    var month: String
+    var time: String
     
     var body: some View {
         VStack {
             HStack {
                 HStack(alignment: .center) {
-                    Text("19")
+                    Text(day)
                         .font(.system(.largeTitle, design: .rounded))
                         .fontWeight(.medium)
                     VStack {
-                        Text("FEV")
+                        Text(month)
                             .font(.system(.body, design: .rounded))
-                        Text("10:00")
+                        Text(time)
                             .font(.system(.footnote, design: .rounded))
                     }
                 }
@@ -57,11 +60,24 @@ struct RecordingListItem: View {
     }
 }
 
-struct RecordingListView: View {
+struct HabitListView: View {
+    @ObservedObject private var model: HabitListViewModel
+    
+    init(model: HabitListViewModel = .init()) {
+        self.model = model
+        model.getAllHabitsInCloud()
+    }
+    
     var body: some View {
         ScrollView {
-            ForEach(Array(fakeRecordings.enumerated()),id: \.element) { _, item in
-                RecordingListItem(itemText: item.annotation ?? "", moodImageName: item.mood.rawValue)
+            ForEach(Array(model.loadedHabits.enumerated()),id: \.element) { _, item in
+                HabitListItem(
+                    itemText: item.annotation ?? "",
+                    moodImageName: item.mood.rawValue,
+                    day: model.getLocalizedDateInComponents(item.date)[0],
+                    month: model.getLocalizedDateInComponents(item.date)[1],
+                    time: model.getLocalizedDateInComponents(item.date)[2]
+                    )
                     .padding(.bottom, 5)
             }
             .padding()
@@ -75,10 +91,10 @@ struct RecordingListView: View {
     }
 }
 
-struct RecordingListView_Previews: PreviewProvider {
+struct HabitListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            RecordingListView()
+            HabitListView()
         }
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		350BA4FF25EFC35E00889B8C /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350BA4FE25EFC35E00889B8C /* HabitListView.swift */; };
+		350BA51025EFD98900889B8C /* HabitListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350BA50F25EFD98900889B8C /* HabitListViewModel.swift */; };
 		352ED60B25EE68A000FABBE2 /* CKHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352ED60A25EE68A000FABBE2 /* CKHabitRepository.swift */; };
 		352ED60C25EE68A000FABBE2 /* CKHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352ED60A25EE68A000FABBE2 /* CKHabitRepository.swift */; };
 		352ED60D25EE68A000FABBE2 /* CKHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352ED60A25EE68A000FABBE2 /* CKHabitRepository.swift */; };
@@ -141,6 +142,7 @@
 
 /* Begin PBXFileReference section */
 		350BA4FE25EFC35E00889B8C /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
+		350BA50F25EFD98900889B8C /* HabitListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListViewModel.swift; sourceTree = "<group>"; };
 		352ED60A25EE68A000FABBE2 /* CKHabitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKHabitRepository.swift; sourceTree = "<group>"; };
 		352ED61425EE68B700FABBE2 /* HabitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRepository.swift; sourceTree = "<group>"; };
 		352ED61E25EE6E8800FABBE2 /* Control It WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Control It WatchKit Extension.entitlements"; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				EF1B0F4E25E552460001F01D /* Preview Content */,
 				EF84188C25E6989300451368 /* ContentView.swift */,
 				350BA4FE25EFC35E00889B8C /* HabitListView.swift */,
+				350BA50F25EFD98900889B8C /* HabitListViewModel.swift */,
 			);
 			path = "Control It";
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				EF84188D25E6989300451368 /* ContentView.swift in Sources */,
 				AEC0173425ED207B00D13907 /* AudioRecorderService.swift in Sources */,
 				352ED62325EE6F4F00FABBE2 /* configs.swift in Sources */,
+				350BA51025EFD98900889B8C /* HabitListViewModel.swift in Sources */,
 				352ED60B25EE68A000FABBE2 /* CKHabitRepository.swift in Sources */,
 				EF84186D25E6922E00451368 /* CDHabitRepository.swift in Sources */,
 			);
@@ -873,7 +877,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ingratope.Control-It.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.curb.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -898,7 +902,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ingratope.Control-It.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.curb.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -916,10 +920,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y22Z44SKH8;
+				DEVELOPMENT_TEAM = SCF6DTLWM7;
 				IBSC_MODULE = Control_It_WatchKit_Extension;
 				INFOPLIST_FILE = "Control It WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "ingratope.Control-It.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.curb.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -936,10 +940,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y22Z44SKH8;
+				DEVELOPMENT_TEAM = SCF6DTLWM7;
 				IBSC_MODULE = Control_It_WatchKit_Extension;
 				INFOPLIST_FILE = "Control It WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "ingratope.Control-It.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.curb.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -966,7 +970,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ingratope.Control-It";
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.curb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -990,7 +994,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ingratope.Control-It";
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.curb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;

@@ -16,12 +16,12 @@ class CKHabitRepository: HabitRepository{
         database = container.privateCloudDatabase
     }
     func saveHabit(_ habit: Habit, completionHandler: @escaping (Result<Habit, Error>) -> ()) {
-        let habitRecord = CKRecord(recordType: "Habit")
+        let habitRecord = CKRecord(recordType: "CD_CDHabit")
         
-        habitRecord["annotation"] = habit.annotation
-        habitRecord["audio"] = habit.audio
-        habitRecord["mood"] = habit.mood.rawValue
-        habitRecord["date"] = habit.date
+        habitRecord["CD_annotation"] = habit.annotation
+        habitRecord["CD_audio"] = habit.audio
+        habitRecord["CD_mood"] = habit.mood.rawValue
+        habitRecord["CD_date"] = habit.date
         
         database.save(habitRecord) { (record, error) in
             guard let savedRecord = record, error == nil else {
@@ -38,17 +38,17 @@ class CKHabitRepository: HabitRepository{
     
     func getAllHabit(completionHandler: @escaping (Result<[Habit], Error>) -> ()) {
         let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "Habit", predicate: predicate)
+        let query = CKQuery(recordType: "CD_CDHabit", predicate: predicate)
         let operation = CKQueryOperation(query: query)
         
         var habits: [Habit] = []
         
         operation.recordFetchedBlock = { record in
             let habit = Habit(id: record.recordID.recordName,
-                               audio: record["audio"],
-                               date: record["date"] as! Date,
-                               mood: Mood(rawValue: record["mood"] as! String) ?? .happy,
-                               annotation: record["annotation"])
+                               audio: record["CD_audio"],
+                               date: record["CD_date"] as! Date,
+                               mood: Mood(rawValue: record["CD_mood"] as! String) ?? .happy,
+                               annotation: record["CD_annotation"])
             
             habits.append(habit)
         }
@@ -60,7 +60,7 @@ class CKHabitRepository: HabitRepository{
                 completionHandler(.failure(error!))
             }
         }
-
+        database.add(operation)
     }
     
 }
