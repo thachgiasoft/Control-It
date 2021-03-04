@@ -15,8 +15,8 @@ struct Control_ItApp: App {
             NavigationView {
                 //TestView()
                 TabView {
-                    MoodList()
                     RecordingView()
+                    MoodList()
                     StatisticsView(viewModel: .init(repository: repository))
                 }.tabViewStyle(PageTabViewStyle())
             }
