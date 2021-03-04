@@ -23,6 +23,7 @@ struct RecordingListItem: View {
     var body: some View {
         VStack {
             HStack {
+                
                 HStack(alignment: .center) {
                     Text("19")
                         .font(.system(.largeTitle, design: .rounded))
@@ -61,8 +62,13 @@ struct RecordingListView: View {
     var body: some View {
         ScrollView {
             ForEach(Array(fakeRecordings.enumerated()),id: \.element) { _, item in
-                RecordingListItem(itemText: item.annotation ?? "", moodImageName: item.mood.rawValue)
-                    .padding(.bottom, 5)
+                NavigationLink(destination: AnnotationMoods()) {
+                    
+                    RecordingListItem(itemText: item.annotation ?? "", moodImageName: item.mood.rawValue)
+                        .padding(.bottom, 5)
+                   
+                }
+             
             }
             .padding()
         }
