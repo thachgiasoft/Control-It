@@ -13,19 +13,21 @@ struct HistoryBarChart : View  {
     var barHeights : [CGFloat]!
     var maxHeight : CGFloat!
     var squareSize : CGFloat!
+    var backgroundColor : Color
     
-    init(yLabels : [Int], xLabels : [String], barHeights : [CGFloat]) {
+    init(yLabels : [Int], xLabels : [String], barHeights : [CGFloat], backgroundColor: Color) {
         self.numbersOfBars = xLabels.count
         self.yLabels = yLabels.reversed()
         self.xLabels = xLabels
         self.barHeights = barHeights
         //self.maxHeight = CGFloat(barHeights.max() ?? 0)
         self.maxHeight = 20
+        self.backgroundColor = backgroundColor
     }
     
     var body : some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10).foregroundColor(.init("DarkGrayColor"))
+            RoundedRectangle(cornerRadius: 10).foregroundColor(backgroundColor)
             GeometryReader { firstReader in
                 let fullHeight = firstReader.size.height
                 let fullWidth = firstReader.size.width
@@ -36,12 +38,12 @@ struct HistoryBarChart : View  {
                         VStack(spacing:0) {
                             ForEach(0..<yLabels.count - 1) { index in
                                 ZStack(alignment: Alignment.top, content: {
-                                    RoundedRectangle(cornerRadius: 3).foregroundColor(.init("DarkGrayColor"))
+                                    RoundedRectangle(cornerRadius: 3).foregroundColor(backgroundColor)
                                     Text("\(yLabels[index])").padding(-4)
-                                }).frame(height: lineHeight * 5).padding(.leading)
+                                }).frame(height: lineHeight * 5)
                             }
-                            Text("0").frame(height: 20).padding(.leading)
-                        }.frame(width: fullWidth * 0.15, height: fullHeight)
+                            Text("0").frame(height: 20)
+                        }.frame(width: fullWidth * 0.10, height: fullHeight)
                         GeometryReader { secondReader in
                             let spacingBetweenBars : CGFloat = 8
                             let barWidth = (secondReader.size.width / CGFloat(numbersOfBars)) - spacingBetweenBars
@@ -59,7 +61,7 @@ struct HistoryBarChart : View  {
                                     }
                                 }
                             }
-                        }.frame(width: fullWidth * 0.85, height: fullHeight)
+                        }.frame(width: fullWidth * 0.90, height: fullHeight)
                     }.frame(width: fullWidth, height: fullHeight)
                 }
             }.padding()
@@ -69,6 +71,6 @@ struct HistoryBarChart : View  {
 
 struct HistoryBarChart_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryBarChart(yLabels: [0,5,10,15,20], xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [1,0,0,0,0,20,0])
+        HistoryBarChart(yLabels: [0,5,10,15,20], xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [1,0,0,0,0,20,0],backgroundColor: .init("DarkGrayColor"))
     }
 }
