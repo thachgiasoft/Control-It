@@ -16,30 +16,38 @@ struct RecordsListView: View {
     }
     
     var body: some View {
-        List {
-            ForEach(Array(model.recordings.enumerated()), id: \.element) { _, record in
-                Button(action: {
-                    model.audioItemTapped(record)
-                }, label: {
-                    Text("Gravação")
-                        .font(.system(.caption, design: .rounded))
-                        .bold()
-                    Text(model.getLocalizedDate(record.createdAt))
-                        .font(.caption2)
-                        .lineLimit(1)
-                })
-            }
-            .onDelete(perform: { indexSet in
-                if let index = indexSet.first {
-                    let item = self.model.recordings[index]
-                    withAnimation {
-                        self.model.deleteRecording(item)
+        VStack {
+            if model.recordings.count > 0 {
+                List {
+                    ForEach(Array(model.recordings.enumerated()), id: \.element) { _, record in
+                        Button(action: {
+                            model.audioItemTapped(record)
+                        }, label: {
+                            Text("Gravação")
+                                .font(.system(.caption, design: .rounded))
+                                .bold()
+                            Text(model.getLocalizedDate(record.createdAt))
+                                .font(.caption2)
+                                .lineLimit(1)
+                        })
                     }
+                    .onDelete(perform: { indexSet in
+                        if let index = indexSet.first {
+                            let item = self.model.recordings[index]
+                            withAnimation {
+                                self.model.deleteRecording(item)
+                            }
+                        }
+                    })
                 }
-            })
+            } else {
+                Text("Parece que você não tem nenhuma gravação")
+                    .multilineTextAlignment(.center)
+                    .font(.system(.body, design: .rounded))
+                    .foregroundColor(.gray)
+            }
         }
     }
-    
 }
 
 struct RecordsListView_Previews: PreviewProvider {
