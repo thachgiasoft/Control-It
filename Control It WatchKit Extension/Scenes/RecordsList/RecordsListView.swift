@@ -16,35 +16,74 @@ struct RecordsListView: View {
     }
     
     var body: some View {
-        VStack {
-            if model.recordings.count > 0 {
-                List {
-                    ForEach(Array(model.recordings.enumerated()), id: \.element) { _, record in
-                        Button(action: {
-                            model.audioItemTapped(record)
-                        }, label: {
-                            Text("Gravação")
-                                .font(.system(.caption, design: .rounded))
-                                .bold()
-                            Text(model.getLocalizedDate(record.createdAt))
-                                .font(.caption2)
-                                .lineLimit(1)
-                        })
-                    }
-                    .onDelete(perform: { indexSet in
-                        if let index = indexSet.first {
-                            let item = self.model.recordings[index]
-                            withAnimation {
-                                self.model.deleteRecording(item)
-                            }
+        ZStack {
+            if model.shouldShowDeletePanel {
+                GeometryReader { _ in
+                    VStack {
+                        HStack {
+                            Button(action: {
+                                withAnimation {
+                                    model.shouldShowDeletePanel = false
+                                }
+                            }, label: {
+                                Text("Cancelar")
+                            })
+                            .buttonStyle(PlainButtonStyle())
+                            Spacer()
                         }
-                    })
+                        Spacer()
+                        Text("A gravação será apagada permanentemente.")
+                            .bold()
+                            .multilineTextAlignment(.center)
+                            .font(.system(.body, design: .rounded))
+                            .foregroundColor(.white)
+                        Spacer()
+                        Button(action: {
+                            model.deleteRecording()
+                            withAnimation {
+                                model.shouldShowDeletePanel = false
+                            }
+                        }, label: {
+                            Text("Apagar")
+                                .bold()
+                                .font(.system(.body, design: .rounded))
+                                .foregroundColor(.red)
+                        })
+                        .padding(.horizontal)
+                    }
                 }
             } else {
-                Text("Parece que você não tem nenhuma gravação")
-                    .multilineTextAlignment(.center)
-                    .font(.system(.body, design: .rounded))
-                    .foregroundColor(.gray)
+                VStack {
+                    if model.recordings.count > 0 {
+                        List {
+                            ForEach(Array(model.recordings.enumerated()), id: \.element) { _, record in
+                                Button(action: {
+                                    model.audioItemTapped(record)
+                                }, label: {
+                                    Text("Gravação")
+                                        .font(.system(.caption, design: .rounded))
+                                        .bold()
+                                    Text(model.getLocalizedDate(record.createdAt))
+                                        .font(.caption2)
+                                        .lineLimit(1)
+                                })
+                            }
+                            .onDelete(perform: { indexSet in
+                                if let index = indexSet.first {
+                                    let item = self.model.recordings[index]
+                                    withAnimation {
+                                        self.model.showDeletePanelWithRecording(item)
+                                    }
+                                }
+                            })
+                        }
+                    } else {
+                        Text("Parece que você não tem nenhuma gravação")
+                            .multilineTextAlignment(.center)
+                            .font(.system(.body, design: .rounded))
+                            .foregroundColor(.gray)
+                    }
+                }
             }
         }
     }

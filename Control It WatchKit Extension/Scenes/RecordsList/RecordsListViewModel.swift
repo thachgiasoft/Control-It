@@ -11,7 +11,9 @@ import Combine
 
 final class RecordsListViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
     @Published var isAudioPlaying: Bool = false
+    @Published var shouldShowDeletePanel: Bool = false
     @Published var recordings: [Recording] = [Recording]()
+    var recordingToDelete: Recording? = nil
 
     var audioRecorderService: AudioRecorderService
     var audioPlayerService: AudioPlayerService
@@ -39,7 +41,11 @@ final class RecordsListViewModel: NSObject, ObservableObject, AVAudioPlayerDeleg
         }
     }
     
-    func deleteRecording(_ item: Recording){
+    func deleteRecording(){
+        guard let item = recordingToDelete else {
+            return
+        }
+        
         if let deleteItemError =
             audioRecorderService.deleteRecordingAtUrl(item.fileURL) {
             print(deleteItemError.localizedDescription)
@@ -51,6 +57,7 @@ final class RecordsListViewModel: NSObject, ObservableObject, AVAudioPlayerDeleg
             }
             
             let _ = self.recordings.remove(at: elementId)
+            recordingToDelete = nil
         }
     }
     
@@ -62,6 +69,11 @@ final class RecordsListViewModel: NSObject, ObservableObject, AVAudioPlayerDeleg
         if flag {
             isAudioPlaying = false
         }
+    }
+    
+    func showDeletePanelWithRecording(_ item: Recording){
+        shouldShowDeletePanel = true
+        recordingToDelete = item
     }
     
     func getLocalizedDate(_ date: Date) -> String {
