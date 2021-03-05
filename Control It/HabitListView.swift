@@ -71,7 +71,7 @@ struct HabitListView: View {
     
     var body: some View {
         ScrollView {
-            ForEach(Array(fakeRecordings.enumerated()),id: \.element) { _, item in
+            ForEach(Array(model.loadedHabits.enumerated()),id: \.element) { _, item in
                 NavigationLink(destination: AnnotationMoods()) {
                     HabitListItem(
                         itemText: item.annotation ?? "",
