@@ -84,6 +84,7 @@
 		EF40AEA325E7E77000D0F038 /* MoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF40AEA225E7E77000D0F038 /* MoodList.swift */; };
 		EF40AECD25E9350000D0F038 /* RegisterMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF40AECC25E9350000D0F038 /* RegisterMood.swift */; };
 		EF68E61F25F0545D00A53FCB /* AnnotationMoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF68E61E25F0545D00A53FCB /* AnnotationMoods.swift */; };
+		EF7454E625F26BCB0083707D /* ExtensionsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7454E525F26BCB0083707D /* ExtensionsSwiftUIView.swift */; };
 		EF84186D25E6922E00451368 /* CDHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84186C25E6922E00451368 /* CDHabitRepository.swift */; };
 		EF84186E25E6922E00451368 /* CDHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84186C25E6922E00451368 /* CDHabitRepository.swift */; };
 		EF84186F25E6922E00451368 /* CDHabitRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84186C25E6922E00451368 /* CDHabitRepository.swift */; };
@@ -214,6 +215,7 @@
 		EF40AEA225E7E77000D0F038 /* MoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodList.swift; sourceTree = "<group>"; };
 		EF40AECC25E9350000D0F038 /* RegisterMood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterMood.swift; sourceTree = "<group>"; };
 		EF68E61E25F0545D00A53FCB /* AnnotationMoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationMoods.swift; sourceTree = "<group>"; };
+		EF7454E525F26BCB0083707D /* ExtensionsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsSwiftUIView.swift; sourceTree = "<group>"; };
 		EF84186C25E6922E00451368 /* CDHabitRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHabitRepository.swift; sourceTree = "<group>"; };
 		EF84188C25E6989300451368 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF84189525E6990700451368 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 		EF1B0F4725E552460001F01D /* Control It */ = {
 			isa = PBXGroup;
 			children = (
+				EF7454E425F26BB40083707D /* Extensions */,
 				357C3AC825EF2D21008102C0 /* Control It.entitlements */,
 				EF1B0F4825E552460001F01D /* Control_ItApp.swift */,
 				EF1B0F4C25E552460001F01D /* Assets.xcassets */,
@@ -492,6 +495,14 @@
 				AEAB5D3C25F1DAE200D97446 /* UserConfigurationRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		EF7454E425F26BB40083707D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF7454E525F26BCB0083707D /* ExtensionsSwiftUIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		EF84187625E694F700451368 /* Domain */ = {
@@ -710,6 +721,7 @@
 			files = (
 				350BA4FF25EFC35E00889B8C /* HabitListView.swift in Sources */,
 				EF1B0F4925E552460001F01D /* Control_ItApp.swift in Sources */,
+				EF7454E625F26BCB0083707D /* ExtensionsSwiftUIView.swift in Sources */,
 				AEAB5D2F25F1D68100D97446 /* ConfigurationsView.swift in Sources */,
 				AEAB5D3625F1DA7F00D97446 /* ConfigurationViewModel.swift in Sources */,
 				AEC0174E25ED3D2D00D13907 /* UserNotificationService.swift in Sources */,
