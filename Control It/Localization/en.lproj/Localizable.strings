@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Control It
+
+  Created by Leonardo Viana on 05/03/21.
+  
+*/
+
+"Records" = "Records";
+"Record" = "New annotation";
+"Statistics" = "Statistics";
+"Settings" = "Settings";
+"Review" = "Review";
+
+"Mood" = "Humor";
+"Anotações" = "Annotations";
+"Repeats per day" = "Repeats per day";
+"Frequent feelings" = "Frequent feelings";
