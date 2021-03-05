@@ -43,6 +43,9 @@
 		AE5BBC2125F1992B00FF37C7 /* HistoryBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */; };
 		AE5BBC2725F1992C00FF37C7 /* HistoryBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */; };
 		AEA42BDF25EAF3DB00D348E2 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA42BDE25EAF3DB00D348E2 /* StatisticsViewModel.swift */; };
+		AEAB5D2F25F1D68100D97446 /* ConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAB5D2E25F1D68100D97446 /* ConfigurationsView.swift */; };
+		AEAB5D3625F1DA7F00D97446 /* ConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAB5D3525F1DA7F00D97446 /* ConfigurationViewModel.swift */; };
+		AEAB5D3D25F1DAE200D97446 /* UserConfigurationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAB5D3C25F1DAE200D97446 /* UserConfigurationRepository.swift */; };
 		AEBF616025E93A4D007E83A4 /* HistoryBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */; };
 		AEC0172725ED207600D13907 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A26925E9493200FEA3AD /* AudioPlayerService.swift */; };
 		AEC0172D25ED207700D13907 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A26925E9493200FEA3AD /* AudioPlayerService.swift */; };
@@ -176,6 +179,9 @@
 		AE5BBC0D25F1966400FF37C7 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		AE5BBC1425F198AE00FF37C7 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		AEA42BDE25EAF3DB00D348E2 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
+		AEAB5D2E25F1D68100D97446 /* ConfigurationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationsView.swift; sourceTree = "<group>"; };
+		AEAB5D3525F1DA7F00D97446 /* ConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewModel.swift; sourceTree = "<group>"; };
+		AEAB5D3C25F1DAE200D97446 /* UserConfigurationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigurationRepository.swift; sourceTree = "<group>"; };
 		AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBarChart.swift; sourceTree = "<group>"; };
 		AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationService.swift; sourceTree = "<group>"; };
 		AEC219AC25EEF6490046DF59 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -401,6 +407,8 @@
 				350BA50F25EFD98900889B8C /* HabitListViewModel.swift */,
 				AE5BBC0D25F1966400FF37C7 /* StatisticsViewModel.swift */,
 				AE5BBC1425F198AE00FF37C7 /* StatisticsView.swift */,
+				AEAB5D2E25F1D68100D97446 /* ConfigurationsView.swift */,
+				AEAB5D3525F1DA7F00D97446 /* ConfigurationViewModel.swift */,
 			);
 			path = "Control It";
 			sourceTree = "<group>";
@@ -481,6 +489,7 @@
 				352ED61425EE68B700FABBE2 /* HabitRepository.swift */,
 				EF84186C25E6922E00451368 /* CDHabitRepository.swift */,
 				352ED60A25EE68A000FABBE2 /* CKHabitRepository.swift */,
+				AEAB5D3C25F1DAE200D97446 /* UserConfigurationRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -701,12 +710,15 @@
 			files = (
 				350BA4FF25EFC35E00889B8C /* HabitListView.swift in Sources */,
 				EF1B0F4925E552460001F01D /* Control_ItApp.swift in Sources */,
+				AEAB5D2F25F1D68100D97446 /* ConfigurationsView.swift in Sources */,
+				AEAB5D3625F1DA7F00D97446 /* ConfigurationViewModel.swift in Sources */,
 				AEC0174E25ED3D2D00D13907 /* UserNotificationService.swift in Sources */,
 				353DC00825E814A40022088D /* Recording.swift in Sources */,
 				EF84189625E6990700451368 /* Habit.swift in Sources */,
 				352ED61525EE68B700FABBE2 /* HabitRepository.swift in Sources */,
 				EF3FCD7E25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
 				AEC0172E25ED207800D13907 /* AudioPlayerService.swift in Sources */,
+				AEAB5D3D25F1DAE200D97446 /* UserConfigurationRepository.swift in Sources */,
 				EF84188D25E6989300451368 /* ContentView.swift in Sources */,
 				AEC0173425ED207B00D13907 /* AudioRecorderService.swift in Sources */,
 				352ED62325EE6F4F00FABBE2 /* configs.swift in Sources */,

@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct AnnotationMoods: View {
+    @State var text = ""
+    
+    init() {
+        UITextView.appearance().backgroundColor = .clear // precisa fazer essa porra pra poder trocar a cor do text editor, pqp
+    }
+    
     var body: some View {
         //NavigationView {
             VStack{
                 VStack{
                     HStack {
                         Text("Humor")
-                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
+                            .bold()
                             .padding()
                         Spacer()
                     }
@@ -27,68 +34,57 @@ struct AnnotationMoods: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .padding(.horizontal)
-                                    Text(mood.rawValue).padding(.bottom)
+                                    Text(mood.rawValue.capitalized).padding(.bottom)
                                     
                                 }.frame(width: UIScreen.main.bounds.width / 5)
            
                             }
-                        }.padding(.horizontal)// WOEGBQUYOWEGQWUIEYGQIWYUEGQWYEUQ MT BOM, AINDA BEM QUE EU NÃO SOU TU INGRA
+                        }.padding(.horizontal)
                     }
                     Spacer()
                     
-                    VStack{
-                        HStack{
+                    VStack {
+                        HStack {
                             Text("Annotations")
-                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                                .padding()
+                                .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
+                                .bold()
+                                .padding(.horizontal)
                             Spacer()
                         }
-                        Spacer()
-                        ZStack(alignment: .top){
-                            
-                            HStack{
+                        ZStack(alignment: .top) {
+                            HStack {
                                 Spacer()
                                 Spacer()
                                 Spacer()
                                 TextFieldAnnotation()
+                                    //.padding(.top)
                                 Spacer()
                                 Spacer()
                                 Spacer()
-                                
                             }
                         }
                         Spacer()
                         Spacer()
                         Spacer()
                     }
-                        
                 }
-                
             }
-            
-          
-            
             .navigationBarTitle("Registrar", displayMode: .inline)
-        
-            
     }
 }
 struct TextFieldAnnotation: View {
     @State private var name: String = ""
 
     var body: some View {
-        GeometryReader { sizeReader in
-            ZStack {
-                RoundedRectangle(cornerRadius: 30).foregroundColor(.init(.gray))
-                VStack {
-                    TextField("Enter your name", text: $name)
-                        .frame(width: sizeReader.size.width, height: sizeReader.size.height, alignment: .top)
+        ZStack {
+            RoundedRectangle(cornerRadius: 30)
+                .foregroundColor(Color(.init("CardsBackColor")))
+            VStack {
+                TextEditor(text: $name)
+                    .background(Color(.init("CardsBackColor")))
                     
-                }
-                
-            }
+            }.padding()
         }
-    
     }
 }
 

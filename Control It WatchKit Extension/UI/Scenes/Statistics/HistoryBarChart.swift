@@ -31,7 +31,7 @@ struct HistoryBarChart : View  {
             GeometryReader { firstReader in
                 let fullHeight = firstReader.size.height
                 let fullWidth = firstReader.size.width
-                let lineHeight = (fullHeight - 20) / maxHeight
+                let lineHeight = (fullHeight - 20 - 8) / maxHeight
                 
                 VStack {
                     HStack {
@@ -39,10 +39,12 @@ struct HistoryBarChart : View  {
                             ForEach(0..<yLabels.count - 1) { index in
                                 ZStack(alignment: Alignment.top, content: {
                                     RoundedRectangle(cornerRadius: 3).foregroundColor(backgroundColor)
-                                    Text("\(yLabels[index])").padding(-4)
+                                    Text("\(yLabels[index])").font(.body)
+                                        .fontWeight(.semibold).padding(-4)
                                 }).frame(height: lineHeight * 5)
                             }
-                            Text("0").frame(height: 20)
+                            Text("0").font(.body)
+                                .fontWeight(.semibold).frame(height: 20)
                         }.frame(width: fullWidth * 0.10, height: fullHeight)
                         GeometryReader { secondReader in
                             let spacingBetweenBars : CGFloat = 8
@@ -50,14 +52,15 @@ struct HistoryBarChart : View  {
                             
                             HStack(spacing:spacingBetweenBars) {
                                 ForEach(0..<numbersOfBars) { index in
-                                    VStack(spacing: 0) {
+                                    VStack(alignment: .center,spacing: 0) {
                                         if barHeights[index] != maxHeight {
                                             Spacer().padding(0)
                                         }
                                         RoundedRectangle(cornerRadius: 3.5)
                                             .fill(Color.init("Beige"))
                                             .frame(width: barWidth, height: barHeights[index] * lineHeight).padding(0)
-                                        Text(xLabels[index]).frame(height: 20)
+                                        Text(xLabels[index]).font(.body)
+                                            .fontWeight(.semibold).frame(height: 20).padding(.top,8)
                                     }
                                 }
                             }

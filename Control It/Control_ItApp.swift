@@ -13,7 +13,23 @@ struct Control_ItApp: App {
     
     var body: some Scene {
         WindowGroup {
-            StatisticsView(viewModel: .init(repository: repository))
+            TabView {
+                NavigationView {
+                    HabitListView(model: .init(habitRepository: repository))
+                }.tabItem {
+                    Label("Registros", systemImage: "list.dash")
+                }
+                NavigationView {
+                    StatisticsView(viewModel: .init(repository: repository))
+                }.tabItem {
+                    Label("Estatísticas", systemImage: "chart.bar")
+                }
+                NavigationView {
+                    ConfigurationsView(viewModel: .init())
+                }.tabItem {
+                    Label("Configurações", systemImage: "list.dash")
+                }
+            }
         }
     }
 }

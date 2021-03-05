@@ -26,7 +26,7 @@ struct HabitListItem: View {
     var body: some View {
         VStack {
             HStack {
-                
+
                 HStack(alignment: .center) {
                     Text(day)
                         .font(.system(.largeTitle, design: .rounded))
@@ -83,13 +83,13 @@ struct HabitListView: View {
                     .padding(.bottom, 5)
                 }
             }
-            .navigationTitle(Text("Registros"))
-            .navigationBarItems(trailing: Button(action: {
-            }, label: {
-                Image(systemName: "square.and.pencil")
-                    .foregroundColor(Color(red: 0.94, green: 0.39, blue: 0.18, opacity: 1))
-            }))
-        }
+            
+        }.navigationTitle(Text("Registros"))
+        .navigationBarItems(trailing: Button(action: {
+        }, label: {
+            Image(systemName: "square.and.pencil")
+                .foregroundColor(Color(red: 0.94, green: 0.39, blue: 0.18, opacity: 1))
+        }))
     }
     
     struct HabitListView_Previews: PreviewProvider {

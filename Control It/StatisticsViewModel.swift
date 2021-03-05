@@ -14,7 +14,7 @@ class StatisticsViewModel : ObservableObject { // tentei fazer essa view model h
     @Published var yLabels : [Int] = [0,5,10,15,20] // dps posso até fazer um cálculo pra saber esses valores, mas por enquanto vai isso msm
     @Published var xLabels : [String] = Calendar.current.shortWeekdaySymbols
     @Published var barHeights : [CGFloat] = [0,0,0,0,0,0,0]
-    @Published var moodsDict : [Mood : Int] = [.angry:2,.sad:2,.bored:3,.happy:6,.tired:3, .anxious:5]
+    @Published var moodsDict : [Mood : Int] = [.angry:0,.sad:0,.bored:0,.happy:0,.tired:0, .anxious:0]
     
     var repository : HabitRepository
 
@@ -87,7 +87,7 @@ class StatisticsViewModel : ObservableObject { // tentei fazer essa view model h
     }
 }
 
-extension Calendar { // quero fazer um arquivo swift só com as extensions, pra botar o target dela
+extension Calendar { // quero fazer um arquivo swift só com as extensions, pra botar o target no app todo
     func isDayInCurrentWeek(date: Date) -> Bool? {
         let currentComponents = Calendar.current.dateComponents([.weekOfYear], from: Date())
         let dateComponents = Calendar.current.dateComponents([.weekOfYear], from: date)

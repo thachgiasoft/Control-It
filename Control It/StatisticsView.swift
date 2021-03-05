@@ -12,23 +12,25 @@ struct StatisticsView: View {
     
     var body: some View {
         GeometryReader { sizeReader in
-            VStack {
+            VStack{
                 ZStack {
                     RoundedRectangle(cornerRadius: 10).foregroundColor(.init("CardsBackColor"))
                     VStack(alignment: .leading, spacing: 0) {
                         HStack {
                             VStack(alignment: .leading, spacing: 0) {
                                 Text("Repetições por dia")
-                                    
+                                    .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
+                                    .bold()
+
                                 Text("01-07 de Fev")
-                            }.padding()
-                            
-                            Spacer()
-                        }
-                        
+                                    .font(.system(.body, design: .rounded))
+                                    .fontWeight(.regular)
+                            }.padding(.leading)
+                        Spacer()
+                        }.padding(.top)
                         HStack(alignment: .top, spacing: 0) {
                             HistoryBarChart(yLabels: viewModel.yLabels, xLabels: viewModel.xLabels, barHeights: viewModel.barHeights,backgroundColor: .init("CardsBackColor"))
-                                .frame(maxHeight: sizeReader.size.height / 2)
+                                //.frame(height: sizeReader.size.height / 2)
                             //Spacer()
                         }
                     }
@@ -39,11 +41,13 @@ struct StatisticsView: View {
                     VStack {
                         HStack {
                             Text("Humores Frequentes:")
-                                .padding()
+                                .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
+                                .bold()
+                                .padding(.leading)
                             Spacer()
                         }
                         LazyVGrid(columns: [.init(.flexible()),.init(.flexible()),.init(.flexible()),.init(.flexible())],
-                                  spacing:10
+                                  spacing:5
                         ) {
                             ForEach(viewModel.moodsDict.map({ (key: Mood, value: Int) -> Mood in
                                 return key
@@ -55,12 +59,15 @@ struct StatisticsView: View {
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .padding(.top)
-                                        Text("\(viewModel.moodsDict[mood]!)").padding(.bottom)
+                                        Text("\(viewModel.moodsDict[mood]!)")
+                                            .font(.system(.body, design: .rounded))
+                                            .bold()
+                                            .padding(.bottom)
                                     }.padding(.horizontal)
                                 }
                             }
                         }.padding(.horizontal)
-                    }
+                    }.padding(.vertical)
                 }
             }.onAppear {
                 viewModel.loadAllHabits()
