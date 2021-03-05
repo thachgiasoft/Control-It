@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AnnotationMoods: View {
     @State var text = ""
+    @State var hideMood: Bool = false
     
     init() {
         UITextView.appearance().backgroundColor = .clear // precisa fazer essa porra pra poder trocar a cor do text editor, pqp
@@ -19,12 +20,14 @@ struct AnnotationMoods: View {
             VStack{
                 VStack{
                     HStack {
+                        
                         Text("Humor")
                             .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
                             .bold()
                             .padding()
                         Spacer()
-                    }
+                        
+                    }.isHidden(hideMood, remove: hideMood)
                     // imagens c nome
                     ScrollView(.horizontal) {
                         HStack(spacing: 0) {
@@ -40,7 +43,7 @@ struct AnnotationMoods: View {
            
                             }
                         }.padding(.horizontal)
-                    }
+                    }.isHidden(hideMood, remove: hideMood)
                     Spacer()
                     
                     VStack {
@@ -56,8 +59,11 @@ struct AnnotationMoods: View {
                                 Spacer()
                                 Spacer()
                                 Spacer()
-                                TextFieldAnnotation()
-                                    //.padding(.top)
+                                TextFieldAnnotation().onTapGesture {
+                                    withAnimation {
+                                        hideMood.toggle()
+                                    }
+                                }
                                 Spacer()
                                 Spacer()
                                 Spacer()
