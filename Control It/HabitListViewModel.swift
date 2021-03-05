@@ -22,7 +22,7 @@ class HabitListViewModel: ObservableObject {
     @Published var loadedHabits: [Habit] = []
     var habitRepository: HabitRepository
     
-    init(habitRepository: HabitRepository = CKHabitRepository()) {
+    init(habitRepository: HabitRepository = CDHabitRepository()) {
         self.habitRepository = habitRepository
     }
     

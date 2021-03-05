@@ -58,6 +58,7 @@ class CDHabitRepository : HabitRepository {
         let context = container.viewContext
         
         let fetchRequest = NSFetchRequest<CDHabit>(entityName: "CDHabit")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         
         do {
             let cdHabits = try context.fetch(fetchRequest)
