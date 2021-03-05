@@ -80,7 +80,7 @@ struct HabitListView: View {
                         month: model.getLocalizedDateInComponents(item.date)[1],
                         time: model.getLocalizedDateInComponents(item.date)[2]
                     )
-                    .padding(.bottom, 5)
+                    .padding(.horizontal, 20)
                 }
             }
             
