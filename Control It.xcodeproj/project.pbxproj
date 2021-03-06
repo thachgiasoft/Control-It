@@ -31,11 +31,17 @@
 		353DC01425E814A50022088D /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353DBFFB25E814610022088D /* Recording.swift */; };
 		3542A26A25E9493200FEA3AD /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A26925E9493200FEA3AD /* AudioPlayerService.swift */; };
 		3542A27125E9493C00FEA3AD /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */; };
+		356B830D25F325BC00AEE7B7 /* MoodSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B830C25F325BC00AEE7B7 /* MoodSheetViewModel.swift */; };
 		357C3ACF25EF2D29008102C0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357C3ACE25EF2D29008102C0 /* CloudKit.framework */; };
+		3585085725F3048900C3FEB6 /* MockAudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3585085625F3048900C3FEB6 /* MockAudioRecorderService.swift */; };
+		3585085825F3048900C3FEB6 /* MockAudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3585085625F3048900C3FEB6 /* MockAudioRecorderService.swift */; };
+		3585085925F3048900C3FEB6 /* MockAudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3585085625F3048900C3FEB6 /* MockAudioRecorderService.swift */; };
+		3585085A25F3048900C3FEB6 /* MockAudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3585085625F3048900C3FEB6 /* MockAudioRecorderService.swift */; };
 		3589C2E625F07DE900AAD834 /* RecordsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589C2E525F07DE900AAD834 /* RecordsListView.swift */; };
 		3589C2ED25F0851100AAD834 /* RecordsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589C2EC25F0851100AAD834 /* RecordsListViewModel.swift */; };
 		35AC8B9225F265410013B78E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35AC8B9425F265410013B78E /* Localizable.strings */; };
 		35AC8B9D25F265740013B78E /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC8B9C25F265740013B78E /* Translation.swift */; };
+		35D9B43425F30B8800EC36DD /* MoodSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D9B43325F30B8800EC36DD /* MoodSheetView.swift */; };
 		35E317E625F10E69006B633D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35E317E825F10E69006B633D /* Localizable.strings */; };
 		35E317FC25F130D6006B633D /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E317FB25F130D6006B633D /* Translation.swift */; };
 		35E3181325F13D63006B633D /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3181225F13D63006B633D /* View.swift */; };
@@ -170,14 +176,17 @@
 		353DBFFB25E814610022088D /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		3542A26925E9493200FEA3AD /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
 		3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderService.swift; sourceTree = "<group>"; };
+		356B830C25F325BC00AEE7B7 /* MoodSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSheetViewModel.swift; sourceTree = "<group>"; };
 		357C3AC825EF2D21008102C0 /* Control It.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Control It.entitlements"; sourceTree = "<group>"; };
 		357C3ACE25EF2D29008102C0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		3585085625F3048900C3FEB6 /* MockAudioRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAudioRecorderService.swift; sourceTree = "<group>"; };
 		3589C2E525F07DE900AAD834 /* RecordsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListView.swift; sourceTree = "<group>"; };
 		3589C2EC25F0851100AAD834 /* RecordsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListViewModel.swift; sourceTree = "<group>"; };
 		35AC8B9325F265410013B78E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		35AC8B9A25F265500013B78E /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		35AC8B9B25F265510013B78E /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		35AC8B9C25F265740013B78E /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
+		35D9B43325F30B8800EC36DD /* MoodSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSheetView.swift; sourceTree = "<group>"; };
 		35E317E725F10E69006B633D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		35E317EE25F10ED8006B633D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		35E317F425F10EEC006B633D /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -270,6 +279,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3585086525F30A1700C3FEB6 /* MoodSheet */ = {
+			isa = PBXGroup;
+			children = (
+				35D9B43325F30B8800EC36DD /* MoodSheetView.swift */,
+				356B830C25F325BC00AEE7B7 /* MoodSheetViewModel.swift */,
+			);
+			path = MoodSheet;
+			sourceTree = "<group>";
+		};
 		3589C2E425F07DD200AAD834 /* RecordsList */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +343,7 @@
 		AEC0172325ED1FDE00D13907 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3585086525F30A1700C3FEB6 /* MoodSheet */,
 				AEC219AB25EEF6100046DF59 /* Notification */,
 				AEC0174725ED20AB00D13907 /* MoodList */,
 				AEC0172625ED205000D13907 /* Statistics */,
@@ -356,6 +375,7 @@
 		AEC0174125ED208100D13907 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3585085625F3048900C3FEB6 /* MockAudioRecorderService.swift */,
 				3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */,
 				3542A26925E9493200FEA3AD /* AudioPlayerService.swift */,
 				AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */,
@@ -748,6 +768,7 @@
 				352ED61525EE68B700FABBE2 /* HabitRepository.swift in Sources */,
 				EF3FCD7E25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
 				AEC0172E25ED207800D13907 /* AudioPlayerService.swift in Sources */,
+				3585085725F3048900C3FEB6 /* MockAudioRecorderService.swift in Sources */,
 				AEAB5D3D25F1DAE200D97446 /* UserConfigurationRepository.swift in Sources */,
 				EF84188D25E6989300451368 /* ContentView.swift in Sources */,
 				AEC0173425ED207B00D13907 /* AudioRecorderService.swift in Sources */,
@@ -774,6 +795,7 @@
 				EF3FCD7F25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
 				AEC0172D25ED207700D13907 /* AudioPlayerService.swift in Sources */,
 				EF84188E25E6989300451368 /* ContentView.swift in Sources */,
+				3585085825F3048900C3FEB6 /* MockAudioRecorderService.swift in Sources */,
 				AEC0173525ED207B00D13907 /* AudioRecorderService.swift in Sources */,
 				AE5BBC2125F1992B00FF37C7 /* HistoryBarChart.swift in Sources */,
 				352ED62425EE6F4F00FABBE2 /* configs.swift in Sources */,
@@ -794,6 +816,7 @@
 				EF3FCD8025E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
 				AEC0172725ED207600D13907 /* AudioPlayerService.swift in Sources */,
 				EF84188F25E6989300451368 /* ContentView.swift in Sources */,
+				3585085925F3048900C3FEB6 /* MockAudioRecorderService.swift in Sources */,
 				AEC0173B25ED207C00D13907 /* AudioRecorderService.swift in Sources */,
 				AE5BBC2725F1992C00FF37C7 /* HistoryBarChart.swift in Sources */,
 				352ED62525EE6F4F00FABBE2 /* configs.swift in Sources */,
@@ -820,6 +843,7 @@
 				35E317FC25F130D6006B633D /* Translation.swift in Sources */,
 				35E3181325F13D63006B633D /* View.swift in Sources */,
 				EF1B0F8425E552480001F01D /* ComplicationController.swift in Sources */,
+				35D9B43425F30B8800EC36DD /* MoodSheetView.swift in Sources */,
 				352ED62625EE6F4F00FABBE2 /* configs.swift in Sources */,
 				AED17E4625ECA1AA00E41464 /* StatisticsView.swift in Sources */,
 				EF1B0F7C25E552480001F01D /* Control_ItApp.swift in Sources */,
@@ -827,12 +851,14 @@
 				353DBFF525E7FEB60022088D /* RecordButton.swift in Sources */,
 				353DBFFC25E814610022088D /* Recording.swift in Sources */,
 				AEA42BDF25EAF3DB00D348E2 /* StatisticsViewModel.swift in Sources */,
+				3585085A25F3048900C3FEB6 /* MockAudioRecorderService.swift in Sources */,
 				353DBFE725E7DC650022088D /* RecordingView.swift in Sources */,
 				AEC0175125ED3D2D00D13907 /* UserNotificationService.swift in Sources */,
 				EF84187025E6922E00451368 /* CDHabitRepository.swift in Sources */,
 				EF84189925E6990700451368 /* Habit.swift in Sources */,
 				3542A27125E9493C00FEA3AD /* AudioRecorderService.swift in Sources */,
 				EF1B0F8225E552480001F01D /* NotificationView.swift in Sources */,
+				356B830D25F325BC00AEE7B7 /* MoodSheetViewModel.swift in Sources */,
 				352ED60E25EE68A000FABBE2 /* CKHabitRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

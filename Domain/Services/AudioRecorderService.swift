@@ -8,6 +8,13 @@
 import Foundation
 import AVFoundation
 
+protocol AudioRecorder {
+    func startRecording() -> Result<AVAudioRecorder, Error>
+    func stopRecording()
+    func fetchRecordings(lastRecordings: [Recording]) -> [Recording]
+    func deleteRecordingAtUrl(_ url: URL) -> Error?
+}
+
 extension Date {
     func toString( dateFormat format  : String ) -> String
     {
@@ -17,7 +24,7 @@ extension Date {
     }
 }
 
-class AudioRecorderService: ObservableObject {
+class AudioRecorderService: AudioRecorder, ObservableObject {
     var audioRecorder: AVAudioRecorder
     
     init(audioRecorder: AVAudioRecorder = .init()) {

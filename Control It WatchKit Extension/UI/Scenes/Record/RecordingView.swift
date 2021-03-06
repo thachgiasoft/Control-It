@@ -16,7 +16,7 @@ struct RecordingView: View {
     
     var body: some View {
         GeometryReader { content in
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 HStack {
                     Button(action: {
                         withAnimation {
@@ -45,6 +45,17 @@ struct RecordingView: View {
                 .frame(maxHeight: 50)
                 .padding(.horizontal)
             }
+            .alert(isPresented: $model.shouldShowAlertOfError) {
+                Alert(title: Text(model.localizedErrorMessage ?? ""))
+            }
+            .sheet(isPresented: $model.shouldShowModalOfMood, content: {
+                MoodSheetView(completion: {
+                    mood in
+                    model.storeNewRecordWithMood(mood)
+                    model.dismissModal()
+                })
+            })
+            
         }
     }
 }

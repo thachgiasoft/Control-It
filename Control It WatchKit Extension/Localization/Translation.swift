@@ -14,12 +14,14 @@ class Translation {
         static let recording = NSLocalizedString("Recording", comment: "")
         static let askAboutUserFeeling = NSLocalizedString("How are you feeling", comment: "")
         static let markedHabitWarning = NSLocalizedString("Marked Habit", comment: "")
+        static let recordMood = NSLocalizedString("Record mood with audio", comment: "")
     }
     
     class Buttons {
         static let delete = NSLocalizedString("Delete", comment: "")
         static let cancel = NSLocalizedString("Cancel", comment: "")
         static let recordMood = NSLocalizedString("Record Mood", comment: "")
+        static let close = NSLocalizedString("Close", comment: "")
     }
     
     class Links {
