@@ -17,10 +17,9 @@ struct AnnotationMoods: View {
     
     var body: some View {
         //NavigationView {
-            VStack{
-                VStack{
+            VStack {
+                VStack {
                     HStack {
-                        
                         Text("Humor")
                             .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
                             .bold()
@@ -45,7 +44,7 @@ struct AnnotationMoods: View {
                         }.padding(.horizontal)
                     }.isHidden(hideMood, remove: hideMood)
                     Spacer()
-                    
+                
                     VStack {
                         HStack {
                             Text("Annotations")
@@ -79,7 +78,7 @@ struct AnnotationMoods: View {
     }
 }
 struct TextFieldAnnotation: View {
-    @State private var name: String = ""
+    @State private var name: String = "dasdad"
 
     var body: some View {
         ZStack {
@@ -88,6 +87,7 @@ struct TextFieldAnnotation: View {
             VStack {
                 TextEditor(text: $name)
                     .background(Color(.init("CardsBackColor")))
+                    .foregroundColor(.init("subtitleColor"))
                     
             }.padding()
         }

@@ -14,17 +14,16 @@ struct StatisticsView: View {
         GeometryReader { sizeReader in
             VStack{
                 ZStack {
-                    RoundedRectangle(cornerRadius: 10).foregroundColor(.init("CardsBackColor"))
+                    RoundedRectangle(cornerRadius: 22).foregroundColor(.init("CardsBackColor"))
                     VStack(alignment: .leading, spacing: 0) {
                         HStack {
                             VStack(alignment: .leading, spacing: 0) {
                                 Text("Repetições por dia")
-                                    .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
+                                    .font(.system(size: 22, weight: .bold, design: .rounded))
                                     .bold()
                                     .foregroundColor(.init("titleColor"))
                                 Text("01-07 de Fev")
-                                    .font(.system(.body, design: .rounded))
-                                    .fontWeight(.regular)
+                                    .font(.system(size: 14, weight: .regular, design: .rounded))
                                     .foregroundColor(.init("subtitleColor"))
                             }.padding(.leading)
                         Spacer()
@@ -38,7 +37,7 @@ struct StatisticsView: View {
                 }
                 
                 ZStack(alignment: .top) {
-                    RoundedRectangle(cornerRadius: 10).foregroundColor(.init("CardsBackColor"))
+                    RoundedRectangle(cornerRadius: 22).foregroundColor(.init("CardsBackColor"))
                     VStack {
                         HStack {
                             Text("Humores Frequentes:")
@@ -55,7 +54,7 @@ struct StatisticsView: View {
                                 return key
                             }), id: \.rawValue) { mood in
                                 ZStack {
-                                    RoundedRectangle(cornerRadius: 10)
+                                    RoundedRectangle(cornerRadius: 14)
                                         .foregroundColor(.init("moodsGridCellColor"))
                                     VStack {
                                         Image(mood.rawValue)

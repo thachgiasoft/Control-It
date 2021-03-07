@@ -27,7 +27,8 @@ struct HistoryBarChart : View  {
     
     var body : some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10).foregroundColor(backgroundColor)
+            RoundedRectangle(cornerRadius: 22)
+                .foregroundColor(backgroundColor)
             GeometryReader { firstReader in
                 let fullHeight = firstReader.size.height
                 let fullWidth = firstReader.size.width

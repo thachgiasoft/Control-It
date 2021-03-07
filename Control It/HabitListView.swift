@@ -26,7 +26,6 @@ struct HabitListItem: View {
     var body: some View {
         VStack {
             HStack {
-
                 HStack(alignment: .center) {
                     Text(day)
                         .font(.system(.largeTitle, design: .rounded))
@@ -72,7 +71,7 @@ struct HabitListView: View {
     var body: some View {
         ScrollView {
             ForEach(Array(model.loadedHabits.enumerated()),id: \.element) { _, item in
-                NavigationLink(destination: AnnotationMoods()) {
+                NavigationLink(destination: HabitDetailView(habit: item)) {
                     HabitListItem(
                         itemText: item.annotation ?? "",
                         moodImageName: item.mood.rawValue,
@@ -85,11 +84,12 @@ struct HabitListView: View {
             }
             
         }.navigationTitle(Text("Registros"))
-        .navigationBarItems(trailing: Button(action: {
-        }, label: {
-            Image(systemName: "square.and.pencil")
-                .foregroundColor(Color(red: 0.94, green: 0.39, blue: 0.18, opacity: 1))
-        }))
+        .navigationBarItems(trailing: NavigationLink(
+                                destination: AnnotationMoods(),
+                                label: {
+                                    Image(systemName: "square.and.pencil")
+                                        .foregroundColor(Color(red: 0.94, green: 0.39, blue: 0.18, opacity: 1))
+                                }))
     }
     
     struct HabitListView_Previews: PreviewProvider {

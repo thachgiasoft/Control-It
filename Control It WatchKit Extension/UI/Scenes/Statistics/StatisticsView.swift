@@ -12,8 +12,12 @@ struct StatisticsView: View {
     @ObservedObject var viewModel : StatisticsViewModel
     
     var body: some View {
-        HistoryBarChart(yLabels: viewModel.yLabels, xLabels: viewModel.xLabels, barHeights: viewModel.barHeights,backgroundColor: .init("DarkGrayColor")).onAppear {
-            viewModel.loadAllHabits()
+        ZStack {
+            RoundedRectangle(cornerRadius: 12)
+                .foregroundColor(.init("DarkGrayColor"))
+            HistoryBarChart(yLabels: viewModel.yLabels, xLabels: viewModel.xLabels, barHeights: viewModel.barHeights,backgroundColor: .init("DarkGrayColor")).onAppear {
+                viewModel.loadAllHabits()
+            }
         }
     }
 }
