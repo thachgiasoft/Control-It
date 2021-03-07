@@ -41,6 +41,7 @@
 		3589C2ED25F0851100AAD834 /* RecordsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589C2EC25F0851100AAD834 /* RecordsListViewModel.swift */; };
 		35AC8B9225F265410013B78E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35AC8B9425F265410013B78E /* Localizable.strings */; };
 		35AC8B9D25F265740013B78E /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC8B9C25F265740013B78E /* Translation.swift */; };
+		35BDBE8525F52A4500332C33 /* HabitListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BDBE8425F52A4500332C33 /* HabitListItem.swift */; };
 		35D9B43425F30B8800EC36DD /* MoodSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D9B43325F30B8800EC36DD /* MoodSheetView.swift */; };
 		35E317E625F10E69006B633D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35E317E825F10E69006B633D /* Localizable.strings */; };
 		35E317FC25F130D6006B633D /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E317FB25F130D6006B633D /* Translation.swift */; };
@@ -188,6 +189,7 @@
 		35AC8B9A25F265500013B78E /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		35AC8B9B25F265510013B78E /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		35AC8B9C25F265740013B78E /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
+		35BDBE8425F52A4500332C33 /* HabitListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListItem.swift; sourceTree = "<group>"; };
 		35D9B43325F30B8800EC36DD /* MoodSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSheetView.swift; sourceTree = "<group>"; };
 		35E317E725F10E69006B633D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		35E317EE25F10ED8006B633D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -318,6 +320,14 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		35BDBE8325F52A3300332C33 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				35BDBE8425F52A4500332C33 /* HabitListItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		35E317FA25F1309B006B633D /* Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +357,7 @@
 		AEBDB7B925F4A9AB000DC5C6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				35BDBE8325F52A3300332C33 /* Components */,
 				AEBDB7BA25F4A9C5000DC5C6 /* Scenes */,
 			);
 			path = UI;
@@ -836,6 +847,7 @@
 				EF84188D25E6989300451368 /* ContentView.swift in Sources */,
 				AEC0173425ED207B00D13907 /* AudioRecorderService.swift in Sources */,
 				352ED62325EE6F4F00FABBE2 /* configs.swift in Sources */,
+				35BDBE8525F52A4500332C33 /* HabitListItem.swift in Sources */,
 				AE5BBC0E25F1966400FF37C7 /* StatisticsViewModel.swift in Sources */,
 				350BA51025EFD98900889B8C /* HabitListViewModel.swift in Sources */,
 				AE5BBC1525F198AE00FF37C7 /* StatisticsView.swift in Sources */,

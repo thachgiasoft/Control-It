@@ -17,17 +17,17 @@ struct Control_ItApp: App {
                 NavigationView {
                     HabitListView(model: .init(habitRepository: repository))
                 }.tabItem {
-                    Label("Registros", systemImage: "list.dash")
+                    Label(Translation.ViewTitles.records, systemImage: "list.dash")
                 }
                 NavigationView {
                     StatisticsView(viewModel: .init(repository: repository))
                 }.tabItem {
-                    Label("Estatísticas", systemImage: "chart.bar")
+                    Label(Translation.ViewTitles.statistics, systemImage: "chart.bar")
                 }
                 NavigationView {
                     ConfigurationsView(viewModel: .init())
                 }.tabItem {
-                    Label("Configurações", systemImage: "list.dash")
+                    Label(Translation.ViewTitles.settings, systemImage: "list.dash")
                 }
             }
         }

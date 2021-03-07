@@ -17,78 +17,85 @@ struct AnnotationMoods: View {
     
     var body: some View {
         //NavigationView {
+        VStack {
             VStack {
+                HStack {
+                    Text(Translation.TextTitles.mood)
+                        .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
+                        .bold()
+                        .padding()
+                    Spacer()
+                    
+                }.isHidden(hideMood, remove: hideMood)
+                // imagens c nome
+                ScrollView(.horizontal) {
+                    HStack(spacing: 0) {
+                        ForEach(Mood.allCases, id: \.rawValue) { mood in
+                            VStack {
+                                Image(mood.rawValue)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding(.horizontal)
+                                Text(Translation.Moods.feeling(mood.rawValue).capitalized).padding(.bottom)
+                                
+                            }.frame(width: UIScreen.main.bounds.width / 5)
+                            
+                        }
+                    }.padding(.horizontal)
+                }.isHidden(hideMood, remove: hideMood)
+                Spacer()
+                
                 VStack {
                     HStack {
-                        Text("Humor")
+                        Text(Translation.TextTitles.mood)
                             .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
                             .bold()
-                            .padding()
-                        Spacer()
-                        
-                    }.isHidden(hideMood, remove: hideMood)
-                    // imagens c nome
-                    ScrollView(.horizontal) {
-                        HStack(spacing: 0) {
-                            ForEach(Mood.allCases, id: \.rawValue) { mood in
-                                VStack {
-                                    Image(mood.rawValue)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .padding(.horizontal)
-                                    Text(mood.rawValue.capitalized).padding(.bottom)
-                                    
-                                }.frame(width: UIScreen.main.bounds.width / 5)
-           
-                            }
-                        }.padding(.horizontal)
-                    }.isHidden(hideMood, remove: hideMood)
-                    Spacer()
-                
-                    VStack {
-                        HStack {
-                            Text("Annotations")
-                                .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
-                                .bold()
-                                .padding(.horizontal)
-                            Spacer()
-                        }
-                        ZStack(alignment: .top) {
-                            HStack {
-                                Spacer()
-                                Spacer()
-                                Spacer()
-                                TextFieldAnnotation().onTapGesture {
-                                    withAnimation {
-                                        hideMood.toggle()
-                                    }
-                                }
-                                Spacer()
-                                Spacer()
-                                Spacer()
-                            }
-                        }
-                        Spacer()
-                        Spacer()
+                            .padding(.horizontal)
                         Spacer()
                     }
+                    ZStack(alignment: .top) {
+                        HStack {
+                            Spacer()
+                            Spacer()
+                            Spacer()
+                            TextFieldAnnotation().onTapGesture {
+                                withAnimation {
+                                    hideMood.toggle()
+                                }
+                            }
+                            Spacer()
+                            Spacer()
+                            Spacer()
+                        }
+                    }
+                    Spacer()
+                    Spacer()
+                    Spacer()
                 }
             }
-            .navigationBarTitle("Registrar", displayMode: .inline)
+        }
+        .navigationBarTitle(Translation.ViewTitles.record, displayMode: .inline)
     }
 }
 struct TextFieldAnnotation: View {
-    @State private var name: String = "dasdad"
-
+    @State private var text: String = Translation.Placeholders.typeHere
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 30)
                 .foregroundColor(Color(.init("CardsBackColor")))
             VStack {
-                TextEditor(text: $name)
-                    .background(Color(.init("CardsBackColor")))
-                    .foregroundColor(.init("subtitleColor"))
-                    
+                ZStack(alignment: .topLeading) {
+                    TextEditor(text: $text)
+                        .font(.system(.body, design: .rounded))
+                        .background(Color(.init("CardsBackColor")))
+                        .foregroundColor(.init("subtitleColor"))
+                        .onTapGesture {
+                            if self.text == Translation.Placeholders.typeHere {
+                                self.text = ""
+                            }
+                        }
+                }
             }.padding()
         }
     }

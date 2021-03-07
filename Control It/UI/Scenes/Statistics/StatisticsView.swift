@@ -18,7 +18,7 @@ struct StatisticsView: View {
                     VStack(alignment: .leading, spacing: 0) {
                         HStack {
                             VStack(alignment: .leading, spacing: 0) {
-                                Text("Repetições por dia")
+                                Text(Translation.TextTitles.repeatsPerDay)
                                     .font(.system(size: 22, weight: .bold, design: .rounded))
                                     .bold()
                                     .foregroundColor(.init("titleColor"))
@@ -40,7 +40,7 @@ struct StatisticsView: View {
                     RoundedRectangle(cornerRadius: 22).foregroundColor(.init("CardsBackColor"))
                     VStack {
                         HStack {
-                            Text("Humores Frequentes:")
+                            Text(Translation.TextTitles.frequentFeelings)
                                 .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
                                 .bold()
                                 .foregroundColor(.init("titleColor"))
@@ -75,7 +75,7 @@ struct StatisticsView: View {
             }.onAppear {
                 viewModel.loadAllHabits()
             }.padding(10)
-            .navigationTitle("Estatísticas")
+            .navigationTitle(Translation.ViewTitles.statistics)
         }
     }
 }

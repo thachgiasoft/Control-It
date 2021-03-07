@@ -46,7 +46,7 @@ struct HabitDetailView: View {
                     
             }.padding()
         }.padding()
-        .navigationBarTitle("Registro", displayMode: .inline)
+        .navigationBarTitle(Translation.ViewTitles.review, displayMode: .inline)
     }
 }
 

@@ -6,13 +6,26 @@
   
 */
 
+/* Navigation Titles */
 "Records" = "Records";
 "Record" = "New annotation";
 "Statistics" = "Statistics";
 "Settings" = "Settings";
 "Review" = "Review";
 
-"Mood" = "Humor";
-"Anotações" = "Annotations";
+/* Titles */
+"Mood" = "Mood";
+"Annotations" = "Annotations";
 "Repeats per day" = "Repeats per day";
 "Frequent feelings" = "Frequent feelings";
+
+/* Moods */
+"happy" = "Happy";
+"sad" = "Sad";
+"tired" = "Tired";
+"angry" = "Angry";
+"anxious" = "Anxious";
+"bored" = "Bored";
+
+/* Placeholders */
+"Type here" = "Type here...";

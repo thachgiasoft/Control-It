@@ -15,4 +15,21 @@ public class Translation {
         static let settings = NSLocalizedString("Settings", comment: "")
         static let review = NSLocalizedString("Review", comment: "")
     }
+    
+    public class TextTitles {
+        static let mood = NSLocalizedString("Mood", comment: "")
+        static let annotations = NSLocalizedString("Annotations", comment: "")
+        static let repeatsPerDay = NSLocalizedString("Repeats per day", comment: "")
+        static let frequentFeelings = NSLocalizedString("Frequent feelings", comment: "")
+    }
+    
+    public class Moods {
+        static func feeling(_ value: String) -> String{
+            return NSLocalizedString(value, comment: "")
+        }
+    }
+    
+    public class Placeholders {
+        static let typeHere = NSLocalizedString("Type here", comment: "")
+    }
 }

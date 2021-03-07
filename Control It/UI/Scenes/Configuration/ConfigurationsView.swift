@@ -27,7 +27,7 @@ struct ConfigurationsView: View {
                 }.disabled(viewModel.bidings.secondOption.wrappedValue || viewModel.bidings.firstOption.wrappedValue)
             }
         }
-        .navigationBarTitle("Settings")
+        .navigationBarTitle(Translation.ViewTitles.settings)
     }
 }
 
