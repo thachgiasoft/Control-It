@@ -55,6 +55,7 @@
 		AEAB5D3625F1DA7F00D97446 /* ConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAB5D3525F1DA7F00D97446 /* ConfigurationViewModel.swift */; };
 		AEAB5D3D25F1DAE200D97446 /* UserConfigurationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAB5D3C25F1DAE200D97446 /* UserConfigurationRepository.swift */; };
 		AEBDB7AE25F4A2F6000DC5C6 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBDB7AD25F4A2F6000DC5C6 /* HabitDetailView.swift */; };
+		AEBDB7C625F4ADAE000DC5C6 /* HabitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBDB7C525F4ADAE000DC5C6 /* HabitDetailViewModel.swift */; };
 		AEBF616025E93A4D007E83A4 /* HistoryBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */; };
 		AEC0172725ED207600D13907 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A26925E9493200FEA3AD /* AudioPlayerService.swift */; };
 		AEC0172D25ED207700D13907 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A26925E9493200FEA3AD /* AudioPlayerService.swift */; };
@@ -200,6 +201,7 @@
 		AEAB5D3525F1DA7F00D97446 /* ConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewModel.swift; sourceTree = "<group>"; };
 		AEAB5D3C25F1DAE200D97446 /* UserConfigurationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigurationRepository.swift; sourceTree = "<group>"; };
 		AEBDB7AD25F4A2F6000DC5C6 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
+		AEBDB7C525F4ADAE000DC5C6 /* HabitDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewModel.swift; sourceTree = "<group>"; };
 		AEBF615F25E93A4D007E83A4 /* HistoryBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBarChart.swift; sourceTree = "<group>"; };
 		AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationService.swift; sourceTree = "<group>"; };
 		AEC219AC25EEF6490046DF59 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -342,6 +344,70 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		AEBDB7B925F4A9AB000DC5C6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AEBDB7BA25F4A9C5000DC5C6 /* Scenes */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AEBDB7BA25F4A9C5000DC5C6 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AEBDB7BF25F4AA34000DC5C6 /* HabitDetail */,
+				AEBDB7BE25F4AA16000DC5C6 /* RegisterHabit */,
+				AEBDB7BD25F4AA02000DC5C6 /* Configuration */,
+				AEBDB7BC25F4A9EE000DC5C6 /* Statistics */,
+				AEBDB7BB25F4A9CD000DC5C6 /* HabitList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		AEBDB7BB25F4A9CD000DC5C6 /* HabitList */ = {
+			isa = PBXGroup;
+			children = (
+				350BA4FE25EFC35E00889B8C /* HabitListView.swift */,
+				350BA50F25EFD98900889B8C /* HabitListViewModel.swift */,
+			);
+			path = HabitList;
+			sourceTree = "<group>";
+		};
+		AEBDB7BC25F4A9EE000DC5C6 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				AE5BBC0D25F1966400FF37C7 /* StatisticsViewModel.swift */,
+				AE5BBC1425F198AE00FF37C7 /* StatisticsView.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		AEBDB7BD25F4AA02000DC5C6 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				AEAB5D3525F1DA7F00D97446 /* ConfigurationViewModel.swift */,
+				AEAB5D2E25F1D68100D97446 /* ConfigurationsView.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		AEBDB7BE25F4AA16000DC5C6 /* RegisterHabit */ = {
+			isa = PBXGroup;
+			children = (
+				EF68E61E25F0545D00A53FCB /* AnnotationMoods.swift */,
+			);
+			path = RegisterHabit;
+			sourceTree = "<group>";
+		};
+		AEBDB7BF25F4AA34000DC5C6 /* HabitDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AEBDB7AD25F4A2F6000DC5C6 /* HabitDetailView.swift */,
+				AEBDB7C525F4ADAE000DC5C6 /* HabitDetailViewModel.swift */,
+			);
+			path = HabitDetail;
+			sourceTree = "<group>";
+		};
 		AEC0172325ED1FDE00D13907 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +501,7 @@
 		EF1B0F4725E552460001F01D /* Control It */ = {
 			isa = PBXGroup;
 			children = (
+				AEBDB7B925F4A9AB000DC5C6 /* UI */,
 				EF7454E425F26BB40083707D /* Extensions */,
 				35AC8BA325F265850013B78E /* Localization */,
 				357C3AC825EF2D21008102C0 /* Control It.entitlements */,
@@ -443,14 +510,6 @@
 				EF1B0F5125E552460001F01D /* Info.plist */,
 				EF1B0F4E25E552460001F01D /* Preview Content */,
 				EF84188C25E6989300451368 /* ContentView.swift */,
-				EF68E61E25F0545D00A53FCB /* AnnotationMoods.swift */,
-				350BA4FE25EFC35E00889B8C /* HabitListView.swift */,
-				350BA50F25EFD98900889B8C /* HabitListViewModel.swift */,
-				AE5BBC0D25F1966400FF37C7 /* StatisticsViewModel.swift */,
-				AE5BBC1425F198AE00FF37C7 /* StatisticsView.swift */,
-				AEAB5D2E25F1D68100D97446 /* ConfigurationsView.swift */,
-				AEAB5D3525F1DA7F00D97446 /* ConfigurationViewModel.swift */,
-				AEBDB7AD25F4A2F6000DC5C6 /* HabitDetailView.swift */,
 			);
 			path = "Control It";
 			sourceTree = "<group>";
@@ -767,6 +826,7 @@
 				AEAB5D3625F1DA7F00D97446 /* ConfigurationViewModel.swift in Sources */,
 				AEC0174E25ED3D2D00D13907 /* UserNotificationService.swift in Sources */,
 				353DC00825E814A40022088D /* Recording.swift in Sources */,
+				AEBDB7C625F4ADAE000DC5C6 /* HabitDetailViewModel.swift in Sources */,
 				EF84189625E6990700451368 /* Habit.swift in Sources */,
 				352ED61525EE68B700FABBE2 /* HabitRepository.swift in Sources */,
 				EF3FCD7E25E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,

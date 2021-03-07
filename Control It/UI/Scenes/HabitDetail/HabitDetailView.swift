@@ -9,12 +9,12 @@ import SwiftUI
 
 struct HabitDetailView: View {
     
-    @State var text = "qweuoygwqeuoyqgweiquetfvqwteyqfweytqefwqueytfvqhgvwd yasdvausjhdavusbdaoludb qwiuquwieh8qwueiqegoqwiueqweqweqweqweqww"
-    var habit : Habit
+    var viewModel : HabitDetailViewModel
     
     init(habit : Habit) {
-        self.habit = habit
-        self.text = habit.annotation!
+        //self.text = newHabit.annotation!
+        self.viewModel = .init(habit: habit)
+        UITextView.appearance().backgroundColor = .clear
     }
     
     var body: some View {
@@ -24,23 +24,23 @@ struct HabitDetailView: View {
             VStack {
                 HStack {
                     HStack(alignment: .center) {
-                        Text("17")
+                        Text(viewModel.habit.day)
                             .font(.system(.largeTitle, design: .rounded))
                             .fontWeight(.medium)
                         VStack {
-                            Text("Jan")
+                            Text(viewModel.habit.month)
                                 .font(.system(.body, design: .rounded))
-                            Text("1009")
+                            Text(viewModel.habit.time)
                                 .font(.system(.footnote, design: .rounded))
                         }
                     }
                     Spacer()
-                    Image(habit.mood.rawValue)
+                    Image(viewModel.habit.mood.rawValue)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(maxWidth: 45, maxHeight: 45)
                 }.padding()
-                TextEditor(text: $text)
+                TextEditor(text: viewModel.bindings.text)
                     .background(Color(.init("CardsBackColor")))
                     .foregroundColor(.init("subtitleColor"))
                     

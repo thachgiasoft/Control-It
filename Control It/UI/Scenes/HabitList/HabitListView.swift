@@ -83,13 +83,16 @@ struct HabitListView: View {
                 }
             }
             
-        }.navigationTitle(Text("Registros"))
-        .navigationBarItems(trailing: NavigationLink(
-                                destination: AnnotationMoods(),
-                                label: {
-                                    Image(systemName: "square.and.pencil")
-                                        .foregroundColor(Color(red: 0.94, green: 0.39, blue: 0.18, opacity: 1))
-                                }))
+        }
+        .navigationTitle(Text("Registros"))
+        .navigationBarItems(
+            trailing: NavigationLink(
+            destination: AnnotationMoods(),
+            label: {
+                Image(systemName: "square.and.pencil")
+                    .foregroundColor(Color(red: 0.94, green: 0.39, blue: 0.18, opacity:1))
+            })
+        )
     }
     
     struct HabitListView_Previews: PreviewProvider {

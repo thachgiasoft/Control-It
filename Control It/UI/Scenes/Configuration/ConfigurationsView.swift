@@ -8,33 +8,23 @@
 import SwiftUI
 
 struct ConfigurationsView: View {
-    @State var firstOption: Bool = false
-    @State var secondOption: Bool = false
-    @State var thirdOption: Bool = false
     
     var viewModel : ConfigurationViewModel
 
     var body: some View {
         Form {
             Section(header: Text("Set Notification Time")) {
-                Toggle(isOn: viewModel.firstOption) {
+                Toggle(isOn: viewModel.bidings.firstOption) {
                     Text("Every 15 minutes")
-                }.onTapGesture {
-                    if viewModel.secondOption.wrappedValue {
-                        viewModel.secondOption.wrappedValue = false
-                    }
-                    if viewModel.thirdOption.wrappedValue {
-                        viewModel.thirdOption.wrappedValue = false
-                    }
-                }
+                }.disabled(viewModel.bidings.secondOption.wrappedValue || viewModel.bidings.thirdOption.wrappedValue)
                 
-                Toggle(isOn: viewModel.secondOption) {
+                Toggle(isOn: viewModel.bidings.secondOption) {
                     Text("Every 30 minutes")
-                }
+                }.disabled(viewModel.bidings.firstOption.wrappedValue || viewModel.bidings.thirdOption.wrappedValue)
                 
-                Toggle(isOn: viewModel.thirdOption) {
+                Toggle(isOn: viewModel.bidings.thirdOption) {
                     Text("Every hour")
-                }
+                }.disabled(viewModel.bidings.secondOption.wrappedValue || viewModel.bidings.firstOption.wrappedValue)
             }
         }
         .navigationBarTitle("Settings")

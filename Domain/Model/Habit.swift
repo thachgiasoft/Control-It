@@ -51,4 +51,25 @@ struct Habit: Hashable {
         self.annotation = annotation
     }
 }
- 
+
+extension Habit {
+    var day : String {
+        date.getLocalizedDateInComponents()[0]
+    }
+    
+    var month : String {
+        date.getLocalizedDateInComponents()[1]
+    }
+    
+    var time : String {
+        date.getLocalizedDateInComponents()[2]
+    }
+}
+
+extension Date {
+    func getLocalizedDateInComponents() -> [String] {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM HH:mm"
+        return formatter.string(from: self).localizedUppercase.split{ $0 == " " }.map(String.init)
+    }
+}
