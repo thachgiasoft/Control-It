@@ -38,13 +38,18 @@ struct HistoryBarChart : View  {
                         VStack(spacing:0) {
                             ForEach(0..<yLabels.count - 1) { index in
                                 ZStack(alignment: Alignment.top, content: {
-                                    RoundedRectangle(cornerRadius: 3).foregroundColor(backgroundColor)
+                                    RoundedRectangle(cornerRadius: 3)
+                                        .foregroundColor(backgroundColor)
                                     Text("\(yLabels[index])").font(.body)
-                                        .fontWeight(.semibold).padding(-4)
+                                        .fontWeight(.semibold)
+                                        .padding(-4)
+                                        .foregroundColor(.init("titleColor"))
                                 }).frame(height: lineHeight * 5)
                             }
                             Text("0").font(.body)
-                                .fontWeight(.semibold).frame(height: 20)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.init("titleColor"))
+                                .frame(height: 20)
                         }.frame(width: fullWidth * 0.10, height: fullHeight)
                         GeometryReader { secondReader in
                             let spacingBetweenBars : CGFloat = 8
@@ -60,7 +65,10 @@ struct HistoryBarChart : View  {
                                             .fill(Color.init("Beige"))
                                             .frame(width: barWidth, height: barHeights[index] * lineHeight).padding(0)
                                         Text(xLabels[index]).font(.body)
-                                            .fontWeight(.semibold).frame(height: 20).padding(.top,8)
+                                            .fontWeight(.semibold)
+                                            .foregroundColor(.init("titleColor"))
+                                            .frame(height: 20)
+                                            .padding(.top,8)
                                     }
                                 }
                             }

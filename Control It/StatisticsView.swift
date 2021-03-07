@@ -21,10 +21,11 @@ struct StatisticsView: View {
                                 Text("Repetições por dia")
                                     .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
                                     .bold()
-
+                                    .foregroundColor(.init("titleColor"))
                                 Text("01-07 de Fev")
                                     .font(.system(.body, design: .rounded))
                                     .fontWeight(.regular)
+                                    .foregroundColor(.init("subtitleColor"))
                             }.padding(.leading)
                         Spacer()
                         }.padding(.top)
@@ -43,6 +44,7 @@ struct StatisticsView: View {
                             Text("Humores Frequentes:")
                                 .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
                                 .bold()
+                                .foregroundColor(.init("titleColor"))
                                 .padding(.leading)
                             Spacer()
                         }
@@ -53,7 +55,8 @@ struct StatisticsView: View {
                                 return key
                             }), id: \.rawValue) { mood in
                                 ZStack {
-                                    RoundedRectangle(cornerRadius: 10).foregroundColor(.white)
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .foregroundColor(.init("moodsGridCellColor"))
                                     VStack {
                                         Image(mood.rawValue)
                                             .resizable()
@@ -62,6 +65,7 @@ struct StatisticsView: View {
                                         Text("\(viewModel.moodsDict[mood]!)")
                                             .font(.system(.body, design: .rounded))
                                             .bold()
+                                            .foregroundColor(.init("titleColor"))
                                             .padding(.bottom)
                                     }.padding(.horizontal)
                                 }
