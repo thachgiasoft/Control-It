@@ -18,6 +18,7 @@
 "Anotações" = "Notas";
 "Repeats per day" = "Se repite al día";
 "Frequent feelings" = "Sentimientos frecuentes";
+"Notifications time" = "Establecer hora de notificación";
 
 /* Moods */
 "happy" = "Contento";
@@ -29,3 +30,8 @@
 
 /* Placeholders */
 "Type here" = "Escribe aquí...";
+
+/* Toggle */
+"Every 15 minutes" = "Cada 15 minutos";
+"Every 30 minutes" = "Cada 30 minutos";
+"Every hour" = "Cada hora";

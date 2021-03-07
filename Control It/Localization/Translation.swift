@@ -21,6 +21,7 @@ public class Translation {
         static let annotations = NSLocalizedString("Annotations", comment: "")
         static let repeatsPerDay = NSLocalizedString("Repeats per day", comment: "")
         static let frequentFeelings = NSLocalizedString("Frequent feelings", comment: "")
+        static let notificationTime = NSLocalizedString("Notifications time", comment: "")
     }
     
     public class Moods {
@@ -31,5 +32,11 @@ public class Translation {
     
     public class Placeholders {
         static let typeHere = NSLocalizedString("Type here", comment: "")
+    }
+    
+    public class ToggleTexts {
+        static let every15minutes = NSLocalizedString("Every 15 minutes", comment: "")
+        static let every30minutes = NSLocalizedString("Every 30 minutes", comment: "")
+        static let everyHour = NSLocalizedString("Every hour", comment: "")
     }
 }
