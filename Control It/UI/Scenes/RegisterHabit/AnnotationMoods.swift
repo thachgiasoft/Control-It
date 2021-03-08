@@ -51,7 +51,7 @@ struct MoodCollection : View {
 }
 
 struct AnnotationMoods: View {
-    @State var text = ""
+    @State var text = Translation.Placeholders.typeHere
     @State var hideMood: Bool = false
     @State var selectedMood = Mood.angry // dps eu tento ver como passar isso pra view model pq tá foda
     
@@ -78,11 +78,8 @@ struct AnnotationMoods: View {
                 // imagens c nome
                 
                 GeometryReader { secondReader in
-                    
                     MoodCollection(selectedMood: $selectedMood)
                     .isHidden(hideMood, remove: hideMood)
-                
-                    
                 }.frame(height: firstReader.size.height * 0.13)
                 Spacer()
                 
@@ -99,9 +96,12 @@ struct AnnotationMoods: View {
                             Spacer()
                             Spacer()
                             Spacer()
-                            TextFieldAnnotation(text: viewModel.bindings.text).onTapGesture {
-                                withAnimation {
-                                    hideMood.toggle()
+                            HStack {
+                                TextFieldAnnotation(text: $text)
+                                    .onTapGesture {
+                                        withAnimation {
+                                            hideMood.toggle()
+                                        }
                                 }
                             }
                             Spacer()
@@ -114,10 +114,15 @@ struct AnnotationMoods: View {
                     Spacer()
                 }
             }
+            .onTapGesture {
+                withAnimation {
+                    hideMood.toggle()
+                }
+        }
         }
         .navigationBarTitle(Translation.ViewTitles.record, displayMode: .inline)
         .navigationBarItems(trailing: Button(action: {
-            let habit = Habit(annotation: viewModel.habit.annotation!, date: Date(), mood: selectedMood)
+            let habit = Habit(annotation: text, date: Date(), mood: selectedMood)
             
             viewModel.saveHabit(habit)
         }, label: {
