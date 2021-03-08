@@ -32,14 +32,14 @@ struct HistoryBarChart : View  {
             GeometryReader { firstReader in
                 let fullHeight = firstReader.size.height
                 let fullWidth = firstReader.size.width
-                let lineHeight = (fullHeight - 20 - 8) / maxHeight
+                let lineHeight = (fullHeight - 20 - 4) / maxHeight
                 
                 VStack {
                     HStack {
                         VStack(spacing:0) {
-                            ForEach(0..<yLabels.count - 1) { index in
+                            ForEach(0..<yLabels.count ) { index in
                                 ZStack(alignment: Alignment.top, content: {
-                                    RoundedRectangle(cornerRadius: 3)
+                                    RoundedRectangle(cornerRadius: 5)
                                         .foregroundColor(backgroundColor)
                                     Text("\(yLabels[index])").font(.body)
                                         .fontWeight(.semibold)
@@ -47,10 +47,7 @@ struct HistoryBarChart : View  {
                                         .foregroundColor(.init("titleColor"))
                                 }).frame(height: lineHeight * 5)
                             }
-                            Text("0").font(.body)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.init("titleColor"))
-                                .frame(height: 20)
+                            
                         }.frame(width: fullWidth * 0.10, height: fullHeight)
                         GeometryReader { secondReader in
                             let spacingBetweenBars : CGFloat = 8
@@ -62,14 +59,14 @@ struct HistoryBarChart : View  {
                                         if barHeights[index] != maxHeight {
                                             Spacer().padding(0)
                                         }
-                                        RoundedRectangle(cornerRadius: 3.5)
+                                        RoundedRectangle(cornerRadius: 5)
                                             .fill(Color.init("Beige"))
                                             .frame(width: barWidth, height: barHeights[index] * lineHeight).padding(0)
                                         Text(xLabels[index]).font(.body)
                                             .fontWeight(.semibold)
                                             .foregroundColor(.init("titleColor"))
                                             .frame(height: 20)
-                                            .padding(.top,8)
+                                            .padding(.top,4)
                                     }
                                 }
                             }
@@ -83,6 +80,6 @@ struct HistoryBarChart : View  {
 
 struct HistoryBarChart_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryBarChart(yLabels: [0,5,10,15,20], xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [1,0,0,0,0,20,0],backgroundColor: .init("DarkGrayColor"))
+        HistoryBarChart(yLabels: [0,5,10,15,20], xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [5,1,0,0,20,0],backgroundColor: .init("DarkGrayColor"))
     }
 }

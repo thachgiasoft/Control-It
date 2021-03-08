@@ -7,16 +7,64 @@
 
 import SwiftUI
 
+struct MoodCell : View {
+    @Binding var selectedMood : Mood
+    var mood : Mood
+    
+    var body : some View {
+        ZStack {
+            if  selectedMood == mood {
+                RoundedRectangle(cornerRadius: 25)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    .padding(.bottom,8)
+            }
+            VStack {
+                Image(mood.rawValue)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.horizontal)
+                Text(Translation.Moods.feeling(mood.rawValue).capitalized).padding(.bottom)
+                
+            }
+        }.onTapGesture {
+            selectedMood = mood
+        }
+    }
+}
+
+struct MoodCollection : View {
+    @Binding var selectedMood : Mood
+    
+    var body : some View {
+        GeometryReader { reader in
+            ScrollView(.horizontal) {
+                HStack(spacing: 0) {
+                    ForEach(Mood.allCases, id: \.rawValue) { mood in
+                        MoodCell(selectedMood: $selectedMood, mood: mood)
+                            .frame(width: reader.size.width / 5)
+                    }
+                    
+                }.padding(.horizontal)
+            }
+        }
+    }
+}
+
 struct AnnotationMoods: View {
     @State var text = ""
     @State var hideMood: Bool = false
+    @State var selectedMood = Mood.angry // dps eu tento ver como passar isso pra view model pq tá foda
     
-    init() {
+    var viewModel : RegisterHabitViewModel
+    
+    init(viewModel : RegisterHabitViewModel = .init(repository: CDHabitRepository())) {
         UITextView.appearance().backgroundColor = .clear // precisa fazer essa porra pra poder trocar a cor do text editor, pqp
+        self.viewModel = viewModel
     }
     
     var body: some View {
         //NavigationView {
+        GeometryReader { firstReader in
         VStack {
             VStack {
                 HStack {
@@ -28,21 +76,14 @@ struct AnnotationMoods: View {
                     
                 }.isHidden(hideMood, remove: hideMood)
                 // imagens c nome
-                ScrollView(.horizontal) {
-                    HStack(spacing: 0) {
-                        ForEach(Mood.allCases, id: \.rawValue) { mood in
-                            VStack {
-                                Image(mood.rawValue)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .padding(.horizontal)
-                                Text(Translation.Moods.feeling(mood.rawValue).capitalized).padding(.bottom)
-                                
-                            }.frame(width: UIScreen.main.bounds.width / 5)
-                            
-                        }
-                    }.padding(.horizontal)
-                }.isHidden(hideMood, remove: hideMood)
+                
+                GeometryReader { secondReader in
+                    
+                    MoodCollection(selectedMood: $selectedMood)
+                    .isHidden(hideMood, remove: hideMood)
+                
+                    
+                }.frame(height: firstReader.size.height * 0.13)
                 Spacer()
                 
                 VStack {
@@ -58,7 +99,7 @@ struct AnnotationMoods: View {
                             Spacer()
                             Spacer()
                             Spacer()
-                            TextFieldAnnotation().onTapGesture {
+                            TextFieldAnnotation(text: viewModel.bindings.text).onTapGesture {
                                 withAnimation {
                                     hideMood.toggle()
                                 }
@@ -75,11 +116,19 @@ struct AnnotationMoods: View {
             }
         }
         .navigationBarTitle(Translation.ViewTitles.record, displayMode: .inline)
+        .navigationBarItems(trailing: Button(action: {
+            let habit = Habit(annotation: viewModel.habit.annotation!, date: Date(), mood: selectedMood)
+            
+            viewModel.saveHabit(habit)
+        }, label: {
+            Text("Save")
+        }))
+        }
     }
 }
 struct TextFieldAnnotation: View {
-    @State private var text: String = Translation.Placeholders.typeHere
-    
+    //@State private var text: String = Translation.Placeholders.typeHere
+    @Binding var text : String
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 30)
