@@ -12,11 +12,16 @@ struct MoodCell : View {
     var mood : Mood
     
     var body : some View {
+        
         ZStack {
             if  selectedMood == mood {
-                RoundedRectangle(cornerRadius: 25)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                    .padding(.bottom,8)
+                ZStack {
+                    
+                    RoundedRectangle(cornerRadius: 25)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        .padding(.init(top: -5, leading: 0.0, bottom: 0.0, trailing: 0.0))
+                }
+                
             }
             VStack {
                 Image(mood.rawValue)
@@ -80,7 +85,7 @@ struct AnnotationMoods: View {
                 GeometryReader { secondReader in
                     MoodCollection(selectedMood: $selectedMood)
                     .isHidden(hideMood, remove: hideMood)
-                }.frame(height: firstReader.size.height * 0.13)
+                }.frame(height: firstReader.size.height * 0.13).isHidden(hideMood, remove: hideMood)
                 Spacer()
                 
                 VStack {
@@ -97,16 +102,13 @@ struct AnnotationMoods: View {
                             Spacer()
                             Spacer()
                             HStack {
-                                TextFieldAnnotation(text: $text)
-                                    .onTapGesture {
-                                        withAnimation {
-                                            hideMood.toggle()
-                                        }
+                                TextFieldAnnotation(text: $text, hideMood:$hideMood)
                                 }
+                            Spacer()
+                            Spacer()
+                            Spacer()
                             }
-                            Spacer()
-                            Spacer()
-                            Spacer()
+                            
                         }
                     }
                     Spacer()
@@ -130,10 +132,12 @@ struct AnnotationMoods: View {
         }))
         }
     }
-}
+
 struct TextFieldAnnotation: View {
     //@State private var text: String = Translation.Placeholders.typeHere
     @Binding var text : String
+    @Binding var hideMood: Bool
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 30)
@@ -143,8 +147,13 @@ struct TextFieldAnnotation: View {
                     TextEditor(text: $text)
                         .font(.system(.body, design: .rounded))
                         .background(Color(.init("CardsBackColor")))
+                        
                         .foregroundColor(.init("subtitleColor"))
                         .onTapGesture {
+                            withAnimation {
+                                hideMood.toggle()
+                                
+                            }
                             if self.text == Translation.Placeholders.typeHere {
                                 self.text = ""
                             }
