@@ -12,7 +12,7 @@ struct HabitListView: View {
     
     init(model: HabitListViewModel = .init()) {
         self.model = model
-        model.getAllHabitsInCloud()
+        //model.getAllHabitsInCloud()
     }
     
     var body: some View {
@@ -39,6 +39,9 @@ struct HabitListView: View {
                     .foregroundColor(Color(red: 0.94, green: 0.39, blue: 0.18, opacity:1))
             })
         )
+        .onAppear {
+            model.getAllHabitsInCloud()
+        }
     }
     
     struct HabitListView_Previews: PreviewProvider {

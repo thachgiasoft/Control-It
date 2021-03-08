@@ -47,6 +47,7 @@ struct HabitDetailView: View {
             }.padding()
         }.padding()
         .navigationBarTitle(Translation.ViewTitles.review, displayMode: .inline)
+        
     }
 }
 
