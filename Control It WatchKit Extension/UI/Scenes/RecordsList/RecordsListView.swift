@@ -18,7 +18,7 @@ struct RecordsListView: View {
     var body: some View {
         ZStack {
             if model.shouldShowDeletePanel {
-                GeometryReader { _ in
+                GeometryReader { content in
                     VStack {
                         HStack {
                             Button(action: {
@@ -31,12 +31,13 @@ struct RecordsListView: View {
                             .buttonStyle(PlainButtonStyle())
                             Spacer()
                         }
-                        Spacer()
+                        .ignoresSafeArea()
                         Text(Translation.Texts.deletionWarning)
                             .bold()
                             .multilineTextAlignment(.center)
                             .font(.system(.body, design: .rounded))
                             .foregroundColor(.white)
+                            .frame(width: content.size.width - 50)
                         Spacer()
                         Button(action: {
                             model.deleteRecording()
@@ -49,6 +50,12 @@ struct RecordsListView: View {
                                 .font(.system(.body, design: .rounded))
                                 .foregroundColor(.red)
                         })
+                        .buttonStyle(PlainButtonStyle())
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .frame(width: content.frame(in: .local).maxX, height: 40, alignment: .center)
+                                .foregroundColor(Color("watchButtonColor"))
+                        )
                         .padding(.horizontal)
                     }
                 }
@@ -91,6 +98,8 @@ struct RecordsListView: View {
 
 struct RecordsListView_Previews: PreviewProvider {
     static var previews: some View {
-        RecordsListView()
+        NavigationView {
+            RecordsListView()
+        }
     }
 }
