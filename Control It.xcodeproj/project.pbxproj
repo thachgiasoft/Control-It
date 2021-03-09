@@ -39,6 +39,8 @@
 		3585085A25F3048900C3FEB6 /* MockAudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3585085625F3048900C3FEB6 /* MockAudioRecorderService.swift */; };
 		3589C2E625F07DE900AAD834 /* RecordsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589C2E525F07DE900AAD834 /* RecordsListView.swift */; };
 		3589C2ED25F0851100AAD834 /* RecordsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589C2EC25F0851100AAD834 /* RecordsListViewModel.swift */; };
+		35A40D0825F7AAA200C66F28 /* CircularComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A40D0725F7AAA200C66F28 /* CircularComplicationView.swift */; };
+		35A40D1425F7BB4700C66F28 /* CircularComplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A40D1325F7BB4700C66F28 /* CircularComplicationViewModel.swift */; };
 		35AC8B9225F265410013B78E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35AC8B9425F265410013B78E /* Localizable.strings */; };
 		35AC8B9D25F265740013B78E /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC8B9C25F265740013B78E /* Translation.swift */; };
 		35BDBE8525F52A4500332C33 /* HabitListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BDBE8425F52A4500332C33 /* HabitListItem.swift */; };
@@ -186,6 +188,8 @@
 		3585085625F3048900C3FEB6 /* MockAudioRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAudioRecorderService.swift; sourceTree = "<group>"; };
 		3589C2E525F07DE900AAD834 /* RecordsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListView.swift; sourceTree = "<group>"; };
 		3589C2EC25F0851100AAD834 /* RecordsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListViewModel.swift; sourceTree = "<group>"; };
+		35A40D0725F7AAA200C66F28 /* CircularComplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularComplicationView.swift; sourceTree = "<group>"; };
+		35A40D1325F7BB4700C66F28 /* CircularComplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularComplicationViewModel.swift; sourceTree = "<group>"; };
 		35AC8B9325F265410013B78E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		35AC8B9A25F265500013B78E /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		35AC8B9B25F265510013B78E /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -313,6 +317,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		35A40D0625F7AA8600C66F28 /* CircularComplication */ = {
+			isa = PBXGroup;
+			children = (
+				35A40D0725F7AAA200C66F28 /* CircularComplicationView.swift */,
+				35A40D1325F7BB4700C66F28 /* CircularComplicationViewModel.swift */,
+			);
+			path = CircularComplication;
+			sourceTree = "<group>";
+		};
 		35AC8BA325F265850013B78E /* Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +438,7 @@
 		AEC0172325ED1FDE00D13907 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				35A40D0625F7AA8600C66F28 /* CircularComplication */,
 				3585086525F30A1700C3FEB6 /* MoodSheet */,
 				AEC219AB25EEF6100046DF59 /* Notification */,
 				AEC0174725ED20AB00D13907 /* MoodList */,
@@ -916,10 +930,12 @@
 				EF3FCD8125E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
 				EF40AECD25E9350000D0F038 /* RegisterMood.swift in Sources */,
 				353DBFEE25E7FC8E0022088D /* RecordingViewModel.swift in Sources */,
+				35A40D1425F7BB4700C66F28 /* CircularComplicationViewModel.swift in Sources */,
 				EF1B0F7E25E552480001F01D /* ContentView.swift in Sources */,
 				3542A26A25E9493200FEA3AD /* AudioPlayerService.swift in Sources */,
 				3589C2ED25F0851100AAD834 /* RecordsListViewModel.swift in Sources */,
 				3589C2E625F07DE900AAD834 /* RecordsListView.swift in Sources */,
+				35A40D0825F7AAA200C66F28 /* CircularComplicationView.swift in Sources */,
 				35E317FC25F130D6006B633D /* Translation.swift in Sources */,
 				35E3181325F13D63006B633D /* View.swift in Sources */,
 				EF1B0F8425E552480001F01D /* ComplicationController.swift in Sources */,

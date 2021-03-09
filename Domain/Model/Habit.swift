@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Mood : String, CaseIterable {
+enum Mood : String, CaseIterable {    
     case happy
     case sad
     case tired
