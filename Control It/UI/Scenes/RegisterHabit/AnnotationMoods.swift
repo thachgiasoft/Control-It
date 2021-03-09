@@ -48,6 +48,8 @@ struct MoodCollection : View {
 }
 
 struct AnnotationMoods: View {
+    @Environment(\.presentationMode) var presentation
+    
     @State var text = Translation.Placeholders.typeHere
     @State var hideMood: Bool = false
     @State var selectedMood = Mood.angry // dps eu tento ver como passar isso pra view model pq tá foda
@@ -118,8 +120,8 @@ struct AnnotationMoods: View {
         .navigationBarTitle(Translation.ViewTitles.record, displayMode: .inline)
         .navigationBarItems(trailing: Button(action: {
             let habit = Habit(annotation: text, date: Date(), mood: selectedMood)
-            
             viewModel.saveHabit(habit)
+            presentation.wrappedValue.dismiss()
         }, label: {
             Text("Save")
         }))

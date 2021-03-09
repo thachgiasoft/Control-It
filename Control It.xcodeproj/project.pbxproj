@@ -389,8 +389,8 @@
 		AEBDB7BC25F4A9EE000DC5C6 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
-				AE5BBC0D25F1966400FF37C7 /* StatisticsViewModel.swift */,
 				AE5BBC1425F198AE00FF37C7 /* StatisticsView.swift */,
+				AE5BBC0D25F1966400FF37C7 /* StatisticsViewModel.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";

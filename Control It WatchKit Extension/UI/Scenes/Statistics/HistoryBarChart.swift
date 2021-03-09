@@ -14,8 +14,9 @@ struct HistoryBarChart : View  {
     var maxHeight : CGFloat!
     var squareSize : CGFloat!
     var backgroundColor : Color
+    var labelColor : Color
     
-    init(yLabels : [Int], xLabels : [String], barHeights : [CGFloat], backgroundColor: Color) {
+    init(yLabels : [Int], xLabels : [String], barHeights : [CGFloat], backgroundColor: Color, labelColor: Color) {
         self.numbersOfBars = xLabels.count
         self.yLabels = yLabels.reversed()
         self.xLabels = xLabels
@@ -23,6 +24,7 @@ struct HistoryBarChart : View  {
         //self.maxHeight = CGFloat(barHeights.max() ?? 0)
         self.maxHeight = 20
         self.backgroundColor = backgroundColor
+        self.labelColor = labelColor
     }
     
     var body : some View {
@@ -44,7 +46,7 @@ struct HistoryBarChart : View  {
                                     Text("\(yLabels[index])").font(.body)
                                         .fontWeight(.semibold)
                                         .padding(-4)
-                                        .foregroundColor(.init("titleColor"))
+                                        .foregroundColor(labelColor)
                                 }).frame(height: lineHeight * 5)
                             }
                             
@@ -64,7 +66,7 @@ struct HistoryBarChart : View  {
                                             .frame(width: barWidth, height: barHeights[index] * lineHeight).padding(0)
                                         Text(xLabels[index]).font(.body)
                                             .fontWeight(.semibold)
-                                            .foregroundColor(.init("titleColor"))
+                                            .foregroundColor(labelColor)
                                             .frame(height: 20)
                                             .padding(.top,4)
                                     }
@@ -80,6 +82,6 @@ struct HistoryBarChart : View  {
 
 struct HistoryBarChart_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryBarChart(yLabels: [0,5,10,15,20], xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [5,1,0,0,20,0],backgroundColor: .init("DarkGrayColor"))
+        HistoryBarChart(yLabels: [0,5,10,15,20], xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [5,1,0,0,20,0],backgroundColor: .init("DarkGrayColor"), labelColor: .init("watchLabelColor"))
     }
 }

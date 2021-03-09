@@ -12,8 +12,8 @@ struct StatisticsView: View {
     
     var body: some View {
         GeometryReader { sizeReader in
-            VStack{
-                ZStack {
+            VStack { 
+                ZStack(alignment: .top) {
                     RoundedRectangle(cornerRadius: 22).foregroundColor(.init("CardsBackColor"))
                     VStack(alignment: .leading, spacing: 0) {
                         HStack {
@@ -22,19 +22,18 @@ struct StatisticsView: View {
                                     .font(.system(size: 22, weight: .bold, design: .rounded))
                                     .bold()
                                     .foregroundColor(.init("titleColor"))
-                                Text("01-07 de Fev")
+                                Text(viewModel.getWeekString())
                                     .font(.system(size: 14, weight: .regular, design: .rounded))
                                     .foregroundColor(.init("subtitleColor"))
                             }.padding(.leading)
-                        Spacer()
-                        }.padding(.top)
-                        HStack(alignment: .top, spacing: 0) {
-                            HistoryBarChart(yLabels: viewModel.yLabels, xLabels: viewModel.xLabels, barHeights: viewModel.barHeights,backgroundColor: .init("CardsBackColor"))
-                                //.frame(height: sizeReader.size.height / 2)
-                            //Spacer()
-                        }
+                            Spacer()
+                        }.padding(.vertical)
+                        
+                        HistoryBarChart(yLabels: viewModel.yLabels, xLabels: viewModel.xLabels, barHeights: viewModel.barHeights,backgroundColor: .init("CardsBackColor"), labelColor: .init("titleColor"))
+                            .layoutPriority(1)
+                        //Rectangle().background(Color(.blue))
                     }
-                }
+                }.layoutPriority(1)
                 
                 ZStack(alignment: .top) {
                     RoundedRectangle(cornerRadius: 22).foregroundColor(.init("CardsBackColor"))
@@ -50,9 +49,7 @@ struct StatisticsView: View {
                         LazyVGrid(columns: [.init(.flexible()),.init(.flexible()),.init(.flexible()),.init(.flexible())],
                                   spacing:5
                         ) {
-                            ForEach(viewModel.moodsDict.map({ (key: Mood, value: Int) -> Mood in
-                                return key
-                            }), id: \.rawValue) { mood in
+                            ForEach(Mood.allCases, id: \.rawValue) { mood in
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 14)
                                         .foregroundColor(.init("moodsGridCellColor"))

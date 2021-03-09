@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ConfigurationsView: View {
-    
     var viewModel : ConfigurationViewModel
     
     @State var firstOption : Bool

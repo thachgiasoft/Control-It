@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 class StatisticsViewModel : ObservableObject { // tentei fazer essa view model herdar da outra do watch, mas com o @Published isso não funciona, sad
-        
     @Published var habits : [Habit] = []
     @Published var yLabels : [Int] = [0,5,10,15,20] // dps posso até fazer um cálculo pra saber esses valores, mas por enquanto vai isso msm
     @Published var xLabels : [String] = Calendar.current.shortWeekdaySymbols
@@ -34,6 +33,20 @@ class StatisticsViewModel : ObservableObject { // tentei fazer essa view model h
                 print(error)
             }
         }
+    }
+    
+    func getWeekString(of day : Date = .init()) -> String {
+        let calendar = Calendar.current
+        let dayOfWeek = calendar.component(.weekday, from: day)
+        let weekdays = calendar.range(of: .weekday, in: .weekOfYear, for: day)!
+        let days = (weekdays.lowerBound ..< weekdays.upperBound)
+            .compactMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: day) }  // use `flatMap` in Xcode versions before 9.3
+            //.filter { !calendar.isDateInWeekend($0) }
+        let firstWeekDay = days.first!.getLocalizedDateInComponents()[0]
+        let lastWeekDay = days.last!.getLocalizedDateInComponents()[0]
+        let month = day.getLocalizedDateInComponents()[1].capitalized
+        
+        return "\(firstWeekDay)-\(lastWeekDay) of \(month)"
     }
 
     private func getCurrentWeek(habits newHabits : [Habit]) -> [Habit] {
