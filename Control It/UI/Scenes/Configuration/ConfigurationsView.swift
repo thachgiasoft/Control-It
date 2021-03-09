@@ -10,21 +10,54 @@ import SwiftUI
 struct ConfigurationsView: View {
     
     var viewModel : ConfigurationViewModel
+    
+    @State var firstOption : Bool
+    @State var secondOption : Bool
+    @State var thirdOption : Bool
+    
+    init(viewModel : ConfigurationViewModel) {
+        self.viewModel = viewModel
+        
+        _firstOption = State(initialValue: viewModel.isNotificationSetOn(time: .minute15))
+        _secondOption = State(initialValue: viewModel.isNotificationSetOn(time: .minute30))
+        _thirdOption = State(initialValue: viewModel.isNotificationSetOn(time: .hour1))
+    }
 
     var body: some View {
         Form {
             Section(header: Text(Translation.TextTitles.notificationTime)) {
-                Toggle(isOn: viewModel.bidings.firstOption) {
+                Toggle(isOn: $firstOption) {
                     Text(Translation.ToggleTexts.every15minutes)
-                }.disabled(viewModel.bidings.secondOption.wrappedValue || viewModel.bidings.thirdOption.wrappedValue)
+                }.disabled(secondOption || thirdOption)
+                .onChange(of: firstOption, perform: { value in
+                    if value {
+                        viewModel.prepareNotification(on: .minute15)
+                    } else {
+                        viewModel.removeAllPendingNotificationsFor(time: .minute15)
+                    }
+                })
                 
-                Toggle(isOn: viewModel.bidings.secondOption) {
+                Toggle(isOn: $secondOption) {
                     Text(Translation.ToggleTexts.every30minutes)
-                }.disabled(viewModel.bidings.firstOption.wrappedValue || viewModel.bidings.thirdOption.wrappedValue)
+                }.disabled(firstOption || thirdOption)
+                .onChange(of: secondOption, perform: { value in
+                    if value {
+                        viewModel.prepareNotification(on: .minute30)
+                    } else {
+                        viewModel.removeAllPendingNotificationsFor(time: .minute30)
+                    }
+                })
                 
-                Toggle(isOn: viewModel.bidings.thirdOption) {
+                Toggle(isOn: $thirdOption) {
                     Text(Translation.ToggleTexts.everyHour)
-                }.disabled(viewModel.bidings.secondOption.wrappedValue || viewModel.bidings.firstOption.wrappedValue)
+                }.disabled(secondOption || firstOption)
+                .onChange(of: thirdOption, perform: { value in
+                    if value {
+                        viewModel.prepareNotification(on: .hour1)
+                    } else {
+                        viewModel.removeAllPendingNotificationsFor(time: .hour1)
+                    }
+                })
             }
         }
         .navigationBarTitle(Translation.ViewTitles.settings)

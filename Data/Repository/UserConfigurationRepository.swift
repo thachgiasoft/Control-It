@@ -11,7 +11,7 @@ enum UserNotificationTimeKeys : String,CaseIterable {
     case minute15
     case minute30
     case hour1
-    case custom
+    //case custom
 }
 
 class UserConfigurationRepository {
@@ -31,6 +31,7 @@ class UserConfigurationRepository {
         for key in UserNotificationTimeKeys.allCases {
             saveNotification(value: false, for: key)
         }
+        defaultContainer.setValue(true, forKey: "firstTime")
     }
     
     func saveNotification(value : Bool, for key : UserNotificationTimeKeys) {

@@ -12,26 +12,18 @@ struct MoodCell : View {
     var mood : Mood
     
     var body : some View {
-        
-        ZStack {
-            if  selectedMood == mood {
-                ZStack {
-                    
-                    RoundedRectangle(cornerRadius: 25)
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                        .padding(.init(top: -5, leading: 0.0, bottom: 0.0, trailing: 0.0))
-                }
-                
-            }
-            VStack {
-                Image(mood.rawValue)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.horizontal)
-                Text(Translation.Moods.feeling(mood.rawValue).capitalized).padding(.bottom)
-                
-            }
-        }.onTapGesture {
+        VStack() {
+            Image(mood.rawValue)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                //.padding(.all,5)
+            Text(Translation.Moods.feeling(mood.rawValue).capitalized)
+                //.padding(.bottom,8)//
+            
+        }.background((selectedMood.rawValue == mood.rawValue) ? RoundedRectangle(cornerRadius: 13)
+            .foregroundColor(.blue) : RoundedRectangle(cornerRadius: 13)
+                        .foregroundColor(.red))
+        .onTapGesture {
             selectedMood = mood
         }
     }
@@ -42,14 +34,14 @@ struct MoodCollection : View {
     
     var body : some View {
         GeometryReader { reader in
-            ScrollView(.horizontal) {
+            ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 0) {
                     ForEach(Mood.allCases, id: \.rawValue) { mood in
                         MoodCell(selectedMood: $selectedMood, mood: mood)
                             .frame(width: reader.size.width / 5)
                     }
                     
-                }.padding(.horizontal)
+                }
             }
         }
     }
@@ -82,10 +74,11 @@ struct AnnotationMoods: View {
                 }.isHidden(hideMood, remove: hideMood)
                 // imagens c nome
                 
-                GeometryReader { secondReader in
-                    MoodCollection(selectedMood: $selectedMood)
+               
+                MoodCollection(selectedMood: $selectedMood)
                     .isHidden(hideMood, remove: hideMood)
-                }.frame(height: firstReader.size.height * 0.13).isHidden(hideMood, remove: hideMood)
+                    .frame(height: firstReader.size.height * 0.13)
+                    .isHidden(hideMood, remove: hideMood)
                 Spacer()
                 
                 VStack {

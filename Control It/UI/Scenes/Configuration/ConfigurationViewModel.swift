@@ -70,11 +70,35 @@ class ConfigurationViewModel : ObservableObject {
         self.userConfigurationsRepository = userConfigurationsRepository
     }
     
-    func setNotificationOn(time : Int) {
-        notificationService.setUserNotificationIn(minutes: time)
+    func prepareNotification(on time : UserNotificationTimeKeys) {
+        //removeAllPendingNotificationsFor(time: time)
+        var timeValue = 15
+        
+        switch time {
+            case .minute30:
+                timeValue = 30
+            case .hour1:
+                timeValue = 60
+            default:
+                timeValue = 15
+        }
+        
+        userConfigurationsRepository.saveNotification(value: true, for: time)
+        setNotificationOn(time: timeValue)
     }
     
-    func removeAllPendingNotifications() {
+    func isNotificationSetOn(time : UserNotificationTimeKeys) -> Bool {
+        let value = userConfigurationsRepository.getNotificationValue(for: time)
+        
+        return value
+    }
+    
+    func removeAllPendingNotificationsFor(time : UserNotificationTimeKeys) {
+        userConfigurationsRepository.saveNotification(value: false, for: time)
         notificationService.removeAllPendingNotifications()
+    }
+    
+    private func setNotificationOn(time : Int) {
+        notificationService.setUserNotificationIn(minutes: time)
     }
 }

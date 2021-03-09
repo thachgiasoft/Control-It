@@ -398,8 +398,8 @@
 		AEBDB7BD25F4AA02000DC5C6 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				AEAB5D3525F1DA7F00D97446 /* ConfigurationViewModel.swift */,
 				AEAB5D2E25F1D68100D97446 /* ConfigurationsView.swift */,
+				AEAB5D3525F1DA7F00D97446 /* ConfigurationViewModel.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
