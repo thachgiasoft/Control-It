@@ -293,6 +293,7 @@
 		3585086525F30A1700C3FEB6 /* MoodSheet */ = {
 			isa = PBXGroup;
 			children = (
+				AEC219AB25EEF6100046DF59 /* Notification */,
 				35D9B43325F30B8800EC36DD /* MoodSheetView.swift */,
 				356B830C25F325BC00AEE7B7 /* MoodSheetViewModel.swift */,
 			);
@@ -440,7 +441,6 @@
 			children = (
 				35A40D0625F7AA8600C66F28 /* CircularComplication */,
 				3585086525F30A1700C3FEB6 /* MoodSheet */,
-				AEC219AB25EEF6100046DF59 /* Notification */,
 				AEC0174725ED20AB00D13907 /* MoodList */,
 				AEC0172625ED205000D13907 /* Statistics */,
 				AEC0172425ED1FFC00D13907 /* Record */,

@@ -17,9 +17,10 @@ struct MoodListCell: View {
                 .offset(x: -6)
                 .frame(width: 40, height: 40)
                 .padding(.leading)
-            Text(Translation.Moods.feeling(name).capitalized)
+            Text(Translation.Moods.feeling(name).capitalized).font(.system(size: 17, weight: .bold, design: .rounded))
             Spacer()
         }
+        .navigationBarTitle(Text("Mood"))
     }
 }
 
