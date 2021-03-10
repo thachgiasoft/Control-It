@@ -25,8 +25,9 @@ struct Control_ItApp: App {
                 switch value {
                 case .inactive :
                     UpdateComplicationController().update()
+                print("")
                 case .background :
-                    UpdateComplicationController().update()
+                    //UpdateComplicationController().update()
                     print("Background")
                 case .active :
                     print("Active")
