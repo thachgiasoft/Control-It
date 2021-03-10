@@ -24,7 +24,7 @@ class CDHabitRepository : HabitRepository {
         
         description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
         description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
-        description.cloudKitContainerOptions?.databaseScope = .public
+        description.cloudKitContainerOptions?.databaseScope = .private
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
