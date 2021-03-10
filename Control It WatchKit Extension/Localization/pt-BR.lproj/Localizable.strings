@@ -16,10 +16,10 @@
 
 "happy" = "Feliz";
 "sad" = "Triste";
-"tired" = "Cansado(a)";
-"angry" = "Estressado(a)";
-"anxious" = "Ansioso(a)";
-"bored" = "Cansado(a)";
+"tired" = "Cansado";
+"angry" = "Raiva";
+"anxious" = "Ansioso";
+"bored" = "Cansado";
 
 "Marked Habit" = "Você registrou um hábito";
 "Record mood" = "Registrar humor";
