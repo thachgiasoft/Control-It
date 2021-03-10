@@ -8,6 +8,14 @@
 import ClockKit
 import SwiftUI
 
+class UpdateComplicationController {
+    func update() {
+        if let complications = CLKComplicationServer.sharedInstance().activeComplications, let complication = complications.first {
+            CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
+        }
+    }
+}
+
 class ComplicationController: NSObject, CLKComplicationDataSource {
     var dataController: [Habit] = []
     var repository = CDHabitRepository()
@@ -19,10 +27,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         // o init é chamado toda vez que o app dá launch, é aqui que a gente tem que fazer o update da complication
         // na vdd deveria atualizar toda vez que o app fecha, agora pra fazer isso sabe deus
         // 
-        if let complications = CLKComplicationServer.sharedInstance().activeComplications, let complication = complications.first {
-            
-            CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
-        }
+//        if let complications = CLKComplicationServer.sharedInstance().activeComplications, let complication = complications.first {
+//
+//            CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
+//        }
 //        CDHabitRepository().getAllHabit { (result) in
 //            switch result {
 //            case .success(let habits):

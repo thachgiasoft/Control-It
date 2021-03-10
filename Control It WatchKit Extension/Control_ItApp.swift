@@ -9,7 +9,9 @@ import SwiftUI
 
 @main
 struct Control_ItApp: App {
+    @Environment(\.scenePhase) private var scenePhase
     let repository = CDHabitRepository()
+    
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
@@ -19,7 +21,19 @@ struct Control_ItApp: App {
                     MoodList()
                     StatisticsView(viewModel: .init(repository: repository))
                 }.tabViewStyle(PageTabViewStyle())
-            }
+            }.onChange(of: scenePhase, perform: { value in
+                switch value {
+                case .inactive :
+                    UpdateComplicationController().update()
+                case .background :
+                    UpdateComplicationController().update()
+                    print("Background")
+                case .active :
+                    print("Active")
+                @unknown default:
+                    print("sabe deus")
+                }
+            })
         }
 
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")
