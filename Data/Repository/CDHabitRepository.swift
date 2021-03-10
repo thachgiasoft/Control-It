@@ -76,4 +76,17 @@ class CDHabitRepository : HabitRepository {
             }
         }
     }
+    
+    func deleteHabits() {
+        let context = container.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDHabit")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try context.execute(batchDeleteRequest)
+        } catch  {
+            debugPrint("ERROR: \(error)")
+        }
+        
+    }
 }

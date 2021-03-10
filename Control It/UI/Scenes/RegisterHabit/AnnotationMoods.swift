@@ -15,17 +15,19 @@ struct MoodCell : View {
         VStack() {
             Image(mood.rawValue)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                //.padding(.all,5)
-            Text(Translation.Moods.feeling(mood.rawValue).capitalized)
+                .aspectRatio(contentMode: .fill)
+                .padding(.all,5)
+            Text(Translation.Moods.feeling(mood.rawValue).capitalized).font(.system(size: 14, weight: .regular, design: .rounded))
+                .foregroundColor((selectedMood.rawValue == mood.rawValue) ? .init("titleColor") : .init("subtitleColor") )
+                    //)
                 //.padding(.bottom,8)//
             
         }.background((selectedMood.rawValue == mood.rawValue) ? RoundedRectangle(cornerRadius: 13)
-            .foregroundColor(.blue) : RoundedRectangle(cornerRadius: 13)
-                        .foregroundColor(.red))
+            .foregroundColor(.init("CardsBackColor")) : RoundedRectangle(cornerRadius: 13)
+                        .foregroundColor(.clear))
         .onTapGesture {
             selectedMood = mood
-        }
+        }.padding(.leading)
     }
 }
 
@@ -82,10 +84,13 @@ struct AnnotationMoods: View {
                     .frame(height: firstReader.size.height * 0.13)
                     .isHidden(hideMood, remove: hideMood)
                 Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
                 
                 VStack {
                     HStack {
-                        Text(Translation.TextTitles.mood)
+                        Text(Translation.TextTitles.annotations)
                             .font(.system(size: 22, weight: Font.Weight.bold, design: Font.Design.rounded))
                             .bold()
                             .padding(.horizontal)

@@ -7,13 +7,17 @@
 
 import Foundation
 
-enum Mood : String, CaseIterable {    
+enum Mood : String, CaseIterable {
+    case normal
     case happy
+    case anxious
+    case angry
     case sad
     case tired
-    case angry
-    case anxious
-    case bored
+   // case bored
+    
+    
+    
     //case nervous
 }
 
