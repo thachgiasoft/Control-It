@@ -28,6 +28,7 @@ struct StatisticsView: View {
                             }.padding(.leading)
                             Spacer()
                         }.padding(.vertical)
+                        .padding(.bottom,5)
                         
                         IphoneBarChart(xLabels: viewModel.xLabels, barHeights: viewModel.barHeights,backgroundColor: .init("CardsBackColor"), labelColor: .init("titleColor"))
                             .padding(.horizontal,5)

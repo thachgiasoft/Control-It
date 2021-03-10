@@ -49,6 +49,8 @@
 		35E317FC25F130D6006B633D /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E317FB25F130D6006B633D /* Translation.swift */; };
 		35E3181325F13D63006B633D /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3181225F13D63006B633D /* View.swift */; };
 		AE4D81FB25F832D000CB139A /* IphoneBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D81FA25F832D000CB139A /* IphoneBarChart.swift */; };
+		AE5B276625F97E4700A5E684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F4C25E552460001F01D /* Assets.xcassets */; };
+		AE5B276C25F97E4900A5E684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F4C25E552460001F01D /* Assets.xcassets */; };
 		AE5BBC0E25F1966400FF37C7 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5BBC0D25F1966400FF37C7 /* StatisticsViewModel.swift */; };
 		AE5BBC1525F198AE00FF37C7 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5BBC1425F198AE00FF37C7 /* StatisticsView.swift */; };
 		AE6F261E25F5D627008F7890 /* RegisterHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F261D25F5D627008F7890 /* RegisterHabitViewModel.swift */; };
@@ -829,6 +831,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE5B276C25F97E4900A5E684 /* Assets.xcassets in Resources */,
 				EF1B0F7025E552470001F01D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -839,6 +842,7 @@
 			files = (
 				EF1B0F8925E552480001F01D /* Preview Assets.xcassets in Resources */,
 				35E317E625F10E69006B633D /* Localizable.strings in Resources */,
+				AE5B276625F97E4700A5E684 /* Assets.xcassets in Resources */,
 				EF1B0F8625E552480001F01D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

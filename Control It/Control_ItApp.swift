@@ -14,12 +14,13 @@ struct Control_ItApp: App {
     init() {
         // setando uma aparencia pra botar em todas as statusBar
         //repository.deleteHabits()
+        
+        // saporra tá bugada quando dá scroll os itens aparecem na status bar, e quando tem uma transição de tela fica um efeito escrotinho tbm
         let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.configureWithOpaqueBackground()
+        //navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(.init("titleColor"))]
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(.init("titleColor"))]
         navBarAppearance.backgroundColor = UIColor(.init("navbarColor"))
-        
         // setando em todos os tipos de statusBar que existem
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
         UINavigationBar.appearance().compactAppearance = navBarAppearance
@@ -37,17 +38,17 @@ struct Control_ItApp: App {
                 NavigationView {
                     HabitListView(model: .init(habitRepository: repository))
                 }.tabItem {
-                    Label(Translation.ViewTitles.records, systemImage: "rectangle.grid.1x2")
+                    Label(Translation.ViewTitles.records, systemImage: "rectangle.grid.1x2.fill")
                 }
                 NavigationView {
                     StatisticsView(viewModel: .init(repository: repository))
                 }.tabItem {
-                    Label(Translation.ViewTitles.statistics, systemImage: "chart.bar")
+                    Label(Translation.ViewTitles.statistics, systemImage: "chart.bar.fill")
                 }
                 NavigationView {
                     ConfigurationsView(viewModel: .init())
                 }.tabItem {
-                    Label(Translation.ViewTitles.settings, systemImage: "gearshape")
+                    Label(Translation.ViewTitles.settings, systemImage: "gearshape.fill")
                 }
             }.accentColor(Color(red: 0.94, green: 0.39, blue: 0.18, opacity:1))
         }

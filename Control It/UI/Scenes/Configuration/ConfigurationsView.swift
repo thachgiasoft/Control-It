@@ -58,7 +58,7 @@ struct ConfigurationsView: View {
                     }
                 })
             }
-        }
+        }.background(Color(.white))
         .navigationBarTitle(Translation.ViewTitles.settings)
     }
 }

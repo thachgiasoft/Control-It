@@ -12,25 +12,6 @@ struct HabitListView: View {
     
     init(model: HabitListViewModel = .init()) {
         self.model = model
-        //model.getAllHabitsInCloud()
-        
-        // setando uma aparencia pra botar em todas as statusBar
-        let navBarAppearance = UINavigationBarAppearance()
-        navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(.init("titleColor"))]
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(.init("titleColor"))]
-        navBarAppearance.backgroundColor = UIColor(.init("navbarColor"))
-        
-        // setando em todos os tipos de statusBar que existem
-        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-        UINavigationBar.appearance().compactAppearance = navBarAppearance
-        UINavigationBar.appearance().standardAppearance = navBarAppearance
-
-        // isso aqui sabe deus
-        UINavigationBar.appearance().clipsToBounds = true // pra ficar com uma aparencia flat
-        //UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = UIColor(.init("navbarColor"))
-        
     }
     
     var body: some View {
