@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  Control It
+
+  Created by Leonardo Viana on 10/03/21.
+  
+*/
+"NSMicrophoneUsageDescription" = "We need access to your microphone to record how you feel";

@@ -32,6 +32,7 @@
 		3542A26A25E9493200FEA3AD /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A26925E9493200FEA3AD /* AudioPlayerService.swift */; };
 		3542A27125E9493C00FEA3AD /* AudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */; };
 		356B830D25F325BC00AEE7B7 /* MoodSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356B830C25F325BC00AEE7B7 /* MoodSheetViewModel.swift */; };
+		3577B5B825F9905800AC8846 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3577B5BA25F9905800AC8846 /* InfoPlist.strings */; };
 		357C3ACF25EF2D29008102C0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 357C3ACE25EF2D29008102C0 /* CloudKit.framework */; };
 		3585085725F3048900C3FEB6 /* MockAudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3585085625F3048900C3FEB6 /* MockAudioRecorderService.swift */; };
 		3585085825F3048900C3FEB6 /* MockAudioRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3585085625F3048900C3FEB6 /* MockAudioRecorderService.swift */; };
@@ -183,6 +184,9 @@
 		3542A26925E9493200FEA3AD /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
 		3542A27025E9493C00FEA3AD /* AudioRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderService.swift; sourceTree = "<group>"; };
 		356B830C25F325BC00AEE7B7 /* MoodSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSheetViewModel.swift; sourceTree = "<group>"; };
+		3577B5B925F9905800AC8846 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3577B5C025F9905C00AC8846 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		3577B5C125F9905D00AC8846 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		357C3AC825EF2D21008102C0 /* Control It.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Control It.entitlements"; sourceTree = "<group>"; };
 		357C3ACE25EF2D29008102C0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		3585085625F3048900C3FEB6 /* MockAudioRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAudioRecorderService.swift; sourceTree = "<group>"; };
@@ -592,6 +596,7 @@
 				EF1B0F8525E552480001F01D /* Assets.xcassets */,
 				EF1B0F8A25E552480001F01D /* Info.plist */,
 				EF1B0F8725E552480001F01D /* Preview Content */,
+				3577B5BA25F9905800AC8846 /* InfoPlist.strings */,
 			);
 			path = "Control It WatchKit Extension";
 			sourceTree = "<group>";
@@ -844,6 +849,7 @@
 				35E317E625F10E69006B633D /* Localizable.strings in Resources */,
 				AE5B276625F97E4700A5E684 /* Assets.xcassets in Resources */,
 				EF1B0F8625E552480001F01D /* Assets.xcassets in Resources */,
+				3577B5B825F9905800AC8846 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -991,6 +997,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3577B5BA25F9905800AC8846 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3577B5B925F9905800AC8846 /* en */,
+				3577B5C025F9905C00AC8846 /* pt-BR */,
+				3577B5C125F9905D00AC8846 /* es-419 */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		35AC8B9425F265410013B78E /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

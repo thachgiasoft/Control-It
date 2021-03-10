@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Control It WatchKit Extension</string>
+	<string>Curb WatchKit Extension</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -33,7 +33,7 @@
 		<string>com.apple.watchkit</string>
 	</dict>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Precisamos de acesso ao seu microfone para registrar como você se sente</string>
+	<string>We need access to your microphone to record how you feel</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
