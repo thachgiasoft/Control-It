@@ -54,10 +54,10 @@ struct HabitDetailView: View {
                                         .foregroundColor(Color(red: 0.94, green: 0.39, blue: 0.18, opacity:1))
                                 }))
         .actionSheet(isPresented: $viewModel.showActionSheet) {
-            ActionSheet(title: Text("What do you want to do?"),
+            ActionSheet(title: Text(Translation.ActionSheet.message),
                         buttons: [
-                            .default(Text("Save changes")) { },
-                            .destructive(Text("Remove permanently")) {
+                            .default(Text(Translation.ActionSheet.save)) { },
+                            .destructive(Text(Translation.ActionSheet.remove)) {
                                 self.viewModel.shouldDeleteHabit()
                                 self.mode.wrappedValue.dismiss()
                             },

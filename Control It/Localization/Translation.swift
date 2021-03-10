@@ -39,4 +39,10 @@ public class Translation {
         static let every30minutes = NSLocalizedString("Every 30 minutes", comment: "")
         static let everyHour = NSLocalizedString("Every hour", comment: "")
     }
+    
+    public class ActionSheet {
+        static let message = NSLocalizedString("What do you want to do?", comment: "")
+        static let save = NSLocalizedString("Save changes", comment: "")
+        static let remove = NSLocalizedString("Remove permanently", comment: "")
+    }
 }

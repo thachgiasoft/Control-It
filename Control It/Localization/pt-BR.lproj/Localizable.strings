@@ -35,3 +35,8 @@
 "Every 15 minutes" = "A cada 15 minutos";
 "Every 30 minutes" = "A cada 30 minutos";
 "Every hour" = "A cada hora";
+
+/* ActionSheet */
+"What do you want to do?" = "O que você deseja fazer?";
+"Save changes" = "Salvar mudanças";
+"Remove permanently" = "Remover permanentemente";

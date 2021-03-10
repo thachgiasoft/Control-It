@@ -35,3 +35,8 @@
 "Every 15 minutes" = "Every 15 minutes";
 "Every 30 minutes" = "Every 30 minutes";
 "Every hour" = "Every hour";
+
+/* ActionSheet */
+"What do you want to do?" = "What do you want to do?";
+"Save changes" = "Save changes";
+"Remove permanently" = "Remove habit permanently";
