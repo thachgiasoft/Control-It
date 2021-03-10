@@ -10,7 +10,7 @@ import CoreData
 
 class CDHabitRepository : HabitRepository {
     let container: NSPersistentContainer
-
+    
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Storage")
         
@@ -25,7 +25,7 @@ class CDHabitRepository : HabitRepository {
         description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
         description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         description.cloudKitContainerOptions?.databaseScope = .public
-
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -64,7 +64,7 @@ class CDHabitRepository : HabitRepository {
             let cdHabits = try context.fetch(fetchRequest)
             let habits = cdHabits.map { (cdHabit) -> Habit in
                 let habit : Habit = .init(audio: cdHabit.audio, date: cdHabit.date!, mood: Mood(rawValue: cdHabit.mood!)!, annotation: cdHabit.annotation)
-              return habit
+                return habit
                 
             }
             DispatchQueue.main.async {
@@ -75,6 +75,38 @@ class CDHabitRepository : HabitRepository {
                 completionHandler(.failure(error))
             }
         }
+    }
+    
+    func deleteHabit(_ habit: Habit) -> Error? {
+        let context = container.viewContext
+        var error: Error? = nil
+        
+        let fetchRequest = NSFetchRequest<CDHabit>(entityName: "CDHabit")
+        
+        if let annotation = habit.annotation {
+            fetchRequest.predicate = NSPredicate(format:"date = %@ AND mood = %@ AND annotation = %@", habit.date as NSDate, habit.mood.rawValue, annotation)
+        }
+        
+        if let audio = habit.audio {
+            fetchRequest.predicate = NSPredicate(format:"date = %@ AND mood = %@ AND audio = %@", habit.date as NSDate, habit.mood.rawValue, audio)
+        }
+        
+        do {
+            let cdhabits = try context.fetch(fetchRequest)
+            if let deleteHabit = cdhabits.first {
+                context.delete(deleteHabit)
+                do{
+                    try context.save()
+                }catch let saveError{
+                    error = saveError
+                }
+                
+            }
+        } catch let fetchError{
+            error = fetchError
+        }
+        
+        return error
     }
     
     func deleteHabits() {

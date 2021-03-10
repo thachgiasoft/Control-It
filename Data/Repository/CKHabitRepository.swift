@@ -63,5 +63,10 @@ class CKHabitRepository: HabitRepository{
         database.add(operation)
     }
     
+    func deleteHabit(_ habit: Habit) -> Error? {
+        //TO-DO: Implement delete in CK
+        return nil
+    }
+    
 }
 

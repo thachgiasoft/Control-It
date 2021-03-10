@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HabitDetailView: View {
-    
-    var viewModel : HabitDetailViewModel
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    @ObservedObject var viewModel : HabitDetailViewModel
     
     init(habit : Habit) {
         //self.text = newHabit.annotation!
@@ -43,10 +43,28 @@ struct HabitDetailView: View {
                 TextEditor(text: viewModel.bindings.text)
                     .background(Color(.init("CardsBackColor")))
                     .foregroundColor(.init("subtitleColor"))
-                    
             }.padding()
         }.padding()
         .navigationBarTitle(Translation.ViewTitles.review, displayMode: .inline)
+        .navigationBarItems(trailing: Button(
+                                action: {
+                                    self.viewModel.showActionSheet.toggle()
+                                }, label: {
+                                    Image(systemName: "ellipsis")
+                                        .foregroundColor(Color(red: 0.94, green: 0.39, blue: 0.18, opacity:1))
+                                }))
+        .actionSheet(isPresented: $viewModel.showActionSheet) {
+            ActionSheet(title: Text("What do you want to do?"),
+                        buttons: [
+                            .default(Text("Save changes")) { },
+                            .destructive(Text("Remove permanently")) {
+                                self.viewModel.shouldDeleteHabit()
+                                self.mode.wrappedValue.dismiss()
+                            },
+                            .cancel()
+                        ]
+            )
+        }
         
     }
 }

@@ -17,6 +17,9 @@ class HabitDetailViewModel : ObservableObject {
     
     @Published private(set) var habit = Habit(annotation: "", date: Date(), mood: .tired)
     @Published private(set) var states : HabitDetailViewModelStates = .init()
+    @Published var showActionSheet: Bool = false
+    
+    var habitRepository: HabitRepository
     
     var bindings : (
         text : Binding<String>,
@@ -26,21 +29,28 @@ class HabitDetailViewModel : ObservableObject {
             get: {self.states.text},
             set: {self.states.text = $0}
         ),
-            mood : Binding(
-                get: {self.states.mood},
-                set: { self.states.mood = $0}
+        mood : Binding(
+            get: {self.states.mood},
+            set: { self.states.mood = $0}
         )
     )}
     
-    init(habit : Habit) {
+    init(habit : Habit, habitRepository: HabitRepository = CDHabitRepository()) {
         self.habit = habit
+        self.habitRepository = habitRepository
         self.states.text = habit.annotation!
         self.states.mood = habit.mood
     }
-
+    
+    func shouldDeleteHabit(){
+        let deleteHabitError = habitRepository.deleteHabit(habit)
+        if deleteHabitError != nil {
+            debugPrint(deleteHabitError!)
+        }
+    }
     /*func getLocalizedDateInComponents(_ date: Date) -> [String]{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMM HH:mm"
-        return formatter.string(from: date).localizedUppercase.split{ $0 == " " }.map(String.init)
-    }*/
+     let formatter = DateFormatter()
+     formatter.dateFormat = "dd MMM HH:mm"
+     return formatter.string(from: date).localizedUppercase.split{ $0 == " " }.map(String.init)
+     }*/
 }
