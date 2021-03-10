@@ -57,6 +57,7 @@ struct RecordingView: View {
             })
             
         }
+        .navigationBarTitle("Curb")
     }
 }
 

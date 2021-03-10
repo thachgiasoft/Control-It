@@ -8,6 +8,13 @@
 import Foundation
 
 class Translation {
+    public class ViewTitles {
+        static let statistics = NSLocalizedString("Statistics", comment: "")
+        static let mood = NSLocalizedString("Mood", comment: "")
+        static let recordings = NSLocalizedString("Recordings", comment: "")
+    }
+
+    
     class Texts {
         static let deletionWarning = NSLocalizedString("Permanently deletion of recording", comment: "")
         static let noRecordingsAvailable = NSLocalizedString("No recordings", comment: "")

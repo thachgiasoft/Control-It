@@ -20,7 +20,6 @@ struct MoodListCell: View {
             Text(Translation.Moods.feeling(name).capitalized).font(.system(size: 17, weight: .bold, design: .rounded))
             Spacer()
         }
-        .navigationBarTitle(Text("Mood"))
     }
 }
 
@@ -69,8 +68,8 @@ struct MoodList: View {
                         }
                     })
             }
-            
         }
+        .navigationBarTitle(Text(Translation.ViewTitles.mood))
     }
 }
 

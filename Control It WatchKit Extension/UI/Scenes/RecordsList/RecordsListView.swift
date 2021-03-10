@@ -16,7 +16,8 @@ struct RecordsListView: View {
     }
     
     var body: some View {
-        ZStack {
+        ZStack
+        {
             if model.shouldShowDeletePanel {
                 GeometryReader { content in
                     VStack {
@@ -93,6 +94,7 @@ struct RecordsListView: View {
                 }
             }
         }
+        .navigationBarTitle(Translation.ViewTitles.recordings)
     }
 }
 

@@ -22,7 +22,8 @@ struct StatisticsView: View {
                     }
                 }.padding(10)
                 
-        }//.navigationBarTitle("Statistics")
+        }
+        .navigationBarTitle(Translation.ViewTitles.statistics)
     }
 }
 
