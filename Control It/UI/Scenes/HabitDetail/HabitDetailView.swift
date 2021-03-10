@@ -33,7 +33,7 @@ struct HabitDetailView: View {
                             Text(viewModel.habit.time)
                                 .font(.system(.footnote, design: .rounded))
                         }
-                    }
+                    }.foregroundColor(Color(.init("subtitles")))
                     Spacer()
                     Image(viewModel.habit.mood.rawValue)
                         .resizable()

@@ -12,7 +12,7 @@ class StatisticsViewModel : ObservableObject { // tentei fazer essa view model h
     @Published var habits : [Habit] = []
     @Published var yLabels : [Int] = [0,5,10,15,20] // dps posso até fazer um cálculo pra saber esses valores, mas por enquanto vai isso msm
     @Published var xLabels : [String] = Calendar.current.shortWeekdaySymbols
-    @Published var barHeights : [CGFloat] = [0,0,0,0,0,0,0]
+    @Published var barHeights : [Int] = [0,0,0,0,0,0,0]
     @Published var moodsDict : [Mood : Int] = [.angry:0,.sad:0,.bored:0,.happy:0,.tired:0, .anxious:0]
     
     var repository : HabitRepository
@@ -70,8 +70,8 @@ class StatisticsViewModel : ObservableObject { // tentei fazer essa view model h
         return moodsDict
     }
 
-    private func computeBarHeights() -> [CGFloat] {
-        var barHeights : [CGFloat] = [0,0,0,0,0,0,0]
+    private func computeBarHeights() -> [Int] {
+        var barHeights : [Int] = [0,0,0,0,0,0,0]
         if habits.isEmpty {
             return barHeights
         }
@@ -79,7 +79,7 @@ class StatisticsViewModel : ObservableObject { // tentei fazer essa view model h
         var newHabits = habits
         var currentDate = newHabits.removeFirst().date
 
-        var count : CGFloat = 1
+        var count : Int = 1
         
         for habit in newHabits {
             if calendar.isDate(habit.date, inSameDayAs: currentDate) {

@@ -15,10 +15,10 @@ struct StatisticsView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 12)
                 .foregroundColor(.init("DarkGrayColor"))
-            HistoryBarChart(yLabels: viewModel.yLabels, xLabels: viewModel.xLabels, barHeights: viewModel.barHeights,backgroundColor: .init("DarkGrayColor"), labelColor: .init("watchLabelColor"))
+            WatchBarChart(xLabels: viewModel.xLabels, barHeights: viewModel.barHeights,backgroundColor: .init("DarkGrayColor"), labelColor: .init("watchLabelColor"))
                 .onAppear {
                 viewModel.loadAllHabits()
-                }.padding(2)
+                }.padding(10)
         }
     }
 }

@@ -42,8 +42,7 @@ final class CircularComplicationViewModel: ObservableObject {
         }
     }
         
-    
-    func complicationColors() -> [Color]{
+    func getComplicationColorsFrom(habits : [Habit]) -> [Color] {
         var colors: [Color] = []
         
         let habitsOfTheDay = habits.filter { habit in

@@ -12,7 +12,7 @@ struct StatisticsView: View {
     
     var body: some View {
         GeometryReader { sizeReader in
-            VStack { 
+            VStack(spacing: 10) {
                 ZStack(alignment: .top) {
                     RoundedRectangle(cornerRadius: 22).foregroundColor(.init("CardsBackColor"))
                     VStack(alignment: .leading, spacing: 0) {
@@ -29,11 +29,13 @@ struct StatisticsView: View {
                             Spacer()
                         }.padding(.vertical)
                         
-                        HistoryBarChart(yLabels: viewModel.yLabels, xLabels: viewModel.xLabels, barHeights: viewModel.barHeights,backgroundColor: .init("CardsBackColor"), labelColor: .init("titleColor"))
+                        IphoneBarChart(xLabels: viewModel.xLabels, barHeights: viewModel.barHeights,backgroundColor: .init("CardsBackColor"), labelColor: .init("titleColor"))
+                            .padding(.horizontal,5)
+                            .padding(.bottom)
                             .layoutPriority(1)
                         //Rectangle().background(Color(.blue))
                     }
-                }.layoutPriority(1)
+                }//.layoutPriority(1)
                 
                 ZStack(alignment: .top) {
                     RoundedRectangle(cornerRadius: 22).foregroundColor(.init("CardsBackColor"))
@@ -46,24 +48,25 @@ struct StatisticsView: View {
                                 .padding(.leading)
                             Spacer()
                         }
-                        LazyVGrid(columns: [.init(.flexible()),.init(.flexible()),.init(.flexible()),.init(.flexible())],
-                                  spacing:5
-                        ) {
-                            ForEach(Mood.allCases, id: \.rawValue) { mood in
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 14)
-                                        .foregroundColor(.init("moodsGridCellColor"))
-                                    VStack {
-                                        Image(mood.rawValue)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .padding(.top)
-                                        Text("\(viewModel.moodsDict[mood]!)")
-                                            .font(.system(.body, design: .rounded))
-                                            .bold()
-                                            .foregroundColor(.init("titleColor"))
-                                            .padding(.bottom)
-                                    }.padding(.horizontal)
+                        
+                        ForEach(Mood.allCases.dividedIntoGroups(), id: \.self) { moodList in
+                            HStack {
+                                ForEach(moodList, id: \.self) { mood in
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 14)
+                                            .foregroundColor(.init("moodsGridCellColor"))
+                                        HStack(alignment: .center){
+                                            Image(mood.rawValue)
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                //.padding(.top)
+                                            Text("\(viewModel.moodsDict[mood]!)")
+                                                .font(.system(.body, design: .rounded))
+                                                .bold()
+                                                .foregroundColor(.init("titleColor"))
+                                                //.padding(.bottom)
+                                        }.padding()
+                                    }
                                 }
                             }
                         }.padding(.horizontal)
@@ -71,7 +74,8 @@ struct StatisticsView: View {
                 }
             }.onAppear {
                 viewModel.loadAllHabits()
-            }.padding(10)
+            }.padding(.horizontal,20)
+            .padding(.bottom,20)
             .navigationTitle(Translation.ViewTitles.statistics)
         }
     }
@@ -80,5 +84,17 @@ struct StatisticsView: View {
 struct StatisticsView_Previews: PreviewProvider {
     static var previews: some View {
         StatisticsView(viewModel: .init(repository: CDHabitRepository()))
+    }
+}
+
+extension Array {
+    func dividedIntoGroups(of i: Int = 3) -> [[Element]] {
+        var copy = self
+        var res = [[Element]]()
+        while copy.count > i {
+            res.append( (0 ..< i).map { _ in copy.remove(at: 0) } )
+        }
+        res.append(copy)
+        return res
     }
 }

@@ -10,20 +10,20 @@ import SwiftUI
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     var dataController: [Habit] = []
+    var repository = CDHabitRepository()
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     override init() {
         super.init()
-        CDHabitRepository().getAllHabit { (result) in
-            switch result {
-            case .success(let habits):
-                self.dataController = habits
-            case .failure(_):
-                self.dataController = []
-            }
-        }
-        
+//        CDHabitRepository().getAllHabit { (result) in
+//            switch result {
+//            case .success(let habits):
+//                self.dataController = habits
+//            case .failure(_):
+//                self.dataController = []
+//            }
+//        }
     }
     // MARK: - Complication Configuration
 
@@ -45,7 +45,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
         // Call the handler with the last entry date you can currently provide or nil if you can't support future timelines
-        handler(dataController.last?.date)
+        //handler(dataController.last?.date)
+        handler(Date())
     }
     
     func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
@@ -57,24 +58,40 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
-        let template = makeTemplate(complication: complication)
-        if let loadedTemplate = template {
-            let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: loadedTemplate)
-            handler(entry)
+        repository.getAllHabit { result in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let habits):
+                let colors = self.getComplicationColorsFrom(habits: habits)
+                let template = self.makeTemplate(complication: complication,colors: colors)
+                if let loadedTemplate = template {
+                    let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: loadedTemplate)
+                    handler(entry)
+                }
+            }
         }
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         // Call the handler with the timeline entries after the given date
-        var entries: [CLKComplicationTimelineEntry] = []
         
-        let template = makeTemplate(complication: complication)
-        if let loadedTemplate = template {
-            let entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: loadedTemplate)
-            entries.append(entry)
+        repository.getAllHabit { result in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let habits):
+                let colors = self.getComplicationColorsFrom(habits: habits)
+                let template = self.makeTemplate(complication: complication,colors: colors)
+                
+                var entries: [CLKComplicationTimelineEntry] = []
+                if let loadedTemplate = template {
+                    let entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: loadedTemplate)
+                    entries.append(entry)
+                }
+                handler(entries)
+            }
         }
-        
-        handler(entries)
     }
 
     // MARK: - Sample Templates
@@ -86,20 +103,36 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 }
 
 extension ComplicationController {
-  func makeTemplate(
-    complication: CLKComplication
-  ) -> CLKComplicationTemplate? {
-    switch complication.family {
-    case .graphicCircular:
-      return CLKComplicationTemplateGraphicCircularView(
-        CircularComplicationView()
-      )
-    case .graphicCorner:
-      return CLKComplicationTemplateGraphicCornerCircularView(
-        CircularComplicationView()
-      )
-    default:
-      return nil
+    func makeTemplate(complication: CLKComplication, colors : [Color]) -> CLKComplicationTemplate? {
+        switch complication.family {
+            case .graphicCircular:
+              return CLKComplicationTemplateGraphicCircularView(
+                CircularComplicationView(colors: colors)
+              )
+            case .graphicCorner:
+              return CLKComplicationTemplateGraphicCornerCircularView(
+                CircularComplicationView(colors: colors)
+              )
+            default:
+              return nil
+        }
     }
-  }
+        
+    func getComplicationColorsFrom(habits : [Habit]) -> [Color] {
+        var colors: [Color] = []
+        
+        let habitsOfTheDay = habits.filter { habit in
+            Calendar.current.isDateInToday(habit.date)
+        }
+        
+        let orderedHabits = habitsOfTheDay.sorted { (previous, current) -> Bool in
+            previous.mood.rawValue > current.mood.rawValue
+        }
+        
+        orderedHabits.forEach { habit in
+            colors.append(Color(habit.mood.rawValue))
+        }
+        
+        return colors
+    }
 }

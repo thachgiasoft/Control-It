@@ -13,7 +13,7 @@ class StatisticsViewModel : ObservableObject {
     @Published var habits : [Habit] = []
     @Published var yLabels : [Int] = [0,5,10,15,20] // dps posso até fazer um cálculo pra saber esses valores, mas por enquanto vai isso msm
     @Published var xLabels : [String] = Calendar.current.veryShortWeekdaySymbols
-    @Published var barHeights : [CGFloat] = [0,0,0,0,0,0,0]
+    @Published var barHeights : [Int] = [0,0,0,0,0,0,0]
     var repository : HabitRepository
     
     init(repository : HabitRepository) {
@@ -39,8 +39,8 @@ class StatisticsViewModel : ObservableObject {
         }
     }
     
-    private func computeBarHeights() -> [CGFloat] {
-        var barHeights : [CGFloat] = [0,0,0,0,0,0,0]
+    private func computeBarHeights() -> [Int] {
+        var barHeights : [Int] = [0,0,0,0,0,0,0]
         if habits.isEmpty {
             return barHeights
         }
@@ -48,7 +48,7 @@ class StatisticsViewModel : ObservableObject {
         var newHabits = habits
         var currentDate = newHabits.removeFirst().date
 
-        var count : CGFloat = 1
+        var count : Int = 1
         
         for habit in newHabits {
             if calendar.isDate(habit.date, inSameDayAs: currentDate) {
