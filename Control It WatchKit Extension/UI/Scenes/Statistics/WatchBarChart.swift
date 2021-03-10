@@ -14,10 +14,10 @@ struct WatchBarChart : View  {
     var labelColor : Color
     
     init(xLabels : [String], barHeights : [Int], backgroundColor: Color, labelColor: Color) {
-    
+        
         let aux = Double(barHeights.max() ?? 5)
+        self.maxHeight = (aux == 0) ? 5 : ((aux / 5.0).rounded(.up)) * 5
         //self.maxHeight = (aux > 5) ? aux : 5
-        self.maxHeight = ((aux / 5.0).rounded(.up)) * 5
         self.xLabels = xLabels
         self.barHeights = barHeights
         self.labelColor = labelColor
@@ -68,6 +68,6 @@ struct WatchBarChart : View  {
 
 struct HistoryBarChart_Previews: PreviewProvider {
     static var previews: some View {
-        WatchBarChart(xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [1,1,8,12,20,8,10],backgroundColor: .init("DarkGrayColor"), labelColor: .init("watchLabelColor"))
+        WatchBarChart(xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [11,6,5,4,3,2,1],backgroundColor: .init("DarkGrayColor"), labelColor: .init("watchLabelColor"))
     }
 }

@@ -16,8 +16,7 @@ struct IphoneBarChart : View  {
     init(xLabels : [String], barHeights : [Int], backgroundColor: Color, labelColor: Color) {
     
         let aux = Double(barHeights.max() ?? 5)
-        //self.maxHeight = (aux > 5) ? aux : 5
-        self.maxHeight = ((aux / 5.0).rounded(.up)) * 5
+        self.maxHeight = (aux == 0) ? 5 : ((aux / 5.0).rounded(.up)) * 5
         self.xLabels = xLabels
         self.barHeights = barHeights
         self.labelColor = labelColor

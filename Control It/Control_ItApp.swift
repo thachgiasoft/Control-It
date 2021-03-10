@@ -13,6 +13,7 @@ struct Control_ItApp: App {
     
     init() {
         // setando uma aparencia pra botar em todas as statusBar
+        //repository.deleteHabits()
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor(.init("titleColor"))]
@@ -46,7 +47,7 @@ struct Control_ItApp: App {
                 NavigationView {
                     ConfigurationsView(viewModel: .init())
                 }.tabItem {
-                    Label(Translation.ViewTitles.settings, systemImage: "list.dash")
+                    Label(Translation.ViewTitles.settings, systemImage: "gear")
                 }
             }.accentColor(.orange)
         }

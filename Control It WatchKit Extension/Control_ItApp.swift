@@ -12,6 +12,10 @@ struct Control_ItApp: App {
     @Environment(\.scenePhase) private var scenePhase
     let repository = CDHabitRepository()
     
+    init() {
+        repository.deleteHabits()
+    }
+    
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
