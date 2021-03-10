@@ -68,5 +68,11 @@ class CKHabitRepository: HabitRepository{
         return nil
     }
     
+    func updateHabit(newHabit: Habit) -> Error? {
+        //TO-DO: Implement update in CK
+        return nil
+    }
+
+    
 }
 

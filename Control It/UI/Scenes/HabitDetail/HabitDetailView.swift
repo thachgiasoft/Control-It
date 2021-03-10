@@ -56,7 +56,10 @@ struct HabitDetailView: View {
         .actionSheet(isPresented: $viewModel.showActionSheet) {
             ActionSheet(title: Text(Translation.ActionSheet.message),
                         buttons: [
-                            .default(Text(Translation.ActionSheet.save)) { },
+                            .default(Text(Translation.ActionSheet.save)) {
+                                self.viewModel.shouldUpdateHabit()
+                                self.mode.wrappedValue.dismiss()
+                            },
                             .destructive(Text(Translation.ActionSheet.remove)) {
                                 self.viewModel.shouldDeleteHabit()
                                 self.mode.wrappedValue.dismiss()

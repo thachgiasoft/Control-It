@@ -23,10 +23,10 @@
 /* Moods */
 "happy" = "Feliz";
 "sad" = "Triste";
-"tired" = "Cansado(a)";
-"angry" = "Estressado(a)";
-"anxious" = "Ansioso(a)";
-"bored" = "Cansado(a)";
+"tired" = "Cansado";
+"angry" = "Raiva";
+"anxious" = "Ansioso";
+"bored" = "Cansado";
 
 /* Placeholders */
 "Type here" = "Digite aqui...";

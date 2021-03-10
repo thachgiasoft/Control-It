@@ -109,6 +109,34 @@ class CDHabitRepository : HabitRepository {
         return error
     }
     
+    func updateHabit(newHabit: Habit) -> Error? {
+        let context = container.viewContext
+        var error: Error? = nil
+        
+        let fetchRequest = NSFetchRequest<CDHabit>(entityName: "CDHabit")
+        
+        fetchRequest.predicate = NSPredicate(format:"date = %@", newHabit.date as NSDate)
+        
+        do {
+            let cdhabits = try context.fetch(fetchRequest)
+            if let updateHabit = cdhabits.first {
+                updateHabit.annotation = newHabit.annotation
+                updateHabit.audio = newHabit.audio
+                updateHabit.mood = newHabit.mood.rawValue
+                do{
+                    try context.save()
+                }catch let saveError{
+                    error = saveError
+                }
+                
+            }
+        } catch let fetchError{
+            error = fetchError
+        }
+        
+        return error
+    }
+    
     func deleteHabits() {
         let context = container.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDHabit")

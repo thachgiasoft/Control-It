@@ -48,6 +48,13 @@ class HabitDetailViewModel : ObservableObject {
             debugPrint(deleteHabitError!)
         }
     }
+    
+    func shouldUpdateHabit(){
+        let updatedMood = habitRepository.updateHabit(newHabit: .init(annotation: states.text, date: habit.date, mood: states.mood))
+        if updatedMood != nil {
+            debugPrint(updatedMood!)
+        }
+    }
     /*func getLocalizedDateInComponents(_ date: Date) -> [String]{
      let formatter = DateFormatter()
      formatter.dateFormat = "dd MMM HH:mm"
