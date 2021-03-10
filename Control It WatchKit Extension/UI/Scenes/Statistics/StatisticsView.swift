@@ -17,9 +17,12 @@ struct StatisticsView: View {
                 .foregroundColor(.init("DarkGrayColor"))
             WatchBarChart(xLabels: viewModel.xLabels, barHeights: viewModel.barHeights,backgroundColor: .init("DarkGrayColor"), labelColor: .init("watchLabelColor"))
                 .onAppear {
-                viewModel.loadAllHabits()
+                    withAnimation {
+                        viewModel.loadAllHabits()
+                    }
                 }.padding(10)
-        }
+                
+        }//.navigationBarTitle("Statistics")
     }
 }
 

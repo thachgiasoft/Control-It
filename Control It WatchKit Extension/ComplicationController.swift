@@ -16,6 +16,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     override init() {
         super.init()
+        // o init é chamado toda vez que o app dá launch, é aqui que a gente tem que fazer o update da complication
+        // na vdd deveria atualizar toda vez que o app fecha, agora pra fazer isso sabe deus
+        // 
+        if let complications = CLKComplicationServer.sharedInstance().activeComplications, let complication = complications.first {
+            
+            CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
+        }
 //        CDHabitRepository().getAllHabit { (result) in
 //            switch result {
 //            case .success(let habits):
@@ -42,10 +49,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
 
     // MARK: - Timeline Configuration
-    
+    // chama primeiro
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
         // Call the handler with the last entry date you can currently provide or nil if you can't support future timelines
         //handler(dataController.last?.date)
+        
+        
         handler(Date())
     }
     
@@ -55,7 +64,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
 
     // MARK: - Timeline Population
-    
+    // chama segundo
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
         repository.getAllHabit { result in

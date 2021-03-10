@@ -43,7 +43,7 @@ struct WatchBarChart : View  {
                             "\(Int(Double(maxHeight / 5) * Double(index)))"
                         )
                         .font(.system(size: 14, weight: .bold, design: .rounded))
-                        .padding(.horizontal)
+                        .padding(.leading)
                         //.font(.system(size: 14, weight: .bold, design: .rounded))
                         .animation(nil)
                         Spacer()
@@ -68,6 +68,6 @@ struct WatchBarChart : View  {
 
 struct HistoryBarChart_Previews: PreviewProvider {
     static var previews: some View {
-        WatchBarChart(xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [5,1,8,12,20,8,10],backgroundColor: .init("DarkGrayColor"), labelColor: .init("watchLabelColor"))
+        WatchBarChart(xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [1,1,8,12,20,8,10],backgroundColor: .init("DarkGrayColor"), labelColor: .init("watchLabelColor"))
     }
 }
