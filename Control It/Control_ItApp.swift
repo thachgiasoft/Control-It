@@ -37,7 +37,7 @@ struct Control_ItApp: App {
                 NavigationView {
                     HabitListView(model: .init(habitRepository: repository))
                 }.tabItem {
-                    Label(Translation.ViewTitles.records, systemImage: "list.dash")
+                    Label(Translation.ViewTitles.records, systemImage: "rectangle.grid.1x2")
                 }
                 NavigationView {
                     StatisticsView(viewModel: .init(repository: repository))
@@ -47,9 +47,9 @@ struct Control_ItApp: App {
                 NavigationView {
                     ConfigurationsView(viewModel: .init())
                 }.tabItem {
-                    Label(Translation.ViewTitles.settings, systemImage: "gear")
+                    Label(Translation.ViewTitles.settings, systemImage: "gearshape")
                 }
-            }.accentColor(.orange)
+            }.accentColor(Color(red: 0.94, green: 0.39, blue: 0.18, opacity:1))
         }
     }
 }
