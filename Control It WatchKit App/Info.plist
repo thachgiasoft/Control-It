@@ -26,7 +26,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.app.curb</string>
+	<string>br.com.gapp.curb</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>

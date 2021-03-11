@@ -1158,7 +1158,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.curb.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gapp.curb.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1183,7 +1183,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.curb.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gapp.curb.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1204,7 +1204,7 @@
 				DEVELOPMENT_TEAM = SCF6DTLWM7;
 				IBSC_MODULE = Control_It_WatchKit_Extension;
 				INFOPLIST_FILE = "Control It WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.curb.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gapp.curb.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1224,7 +1224,7 @@
 				DEVELOPMENT_TEAM = SCF6DTLWM7;
 				IBSC_MODULE = Control_It_WatchKit_Extension;
 				INFOPLIST_FILE = "Control It WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.curb.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gapp.curb.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1251,7 +1251,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.curb;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gapp.curb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -1275,7 +1275,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.curb;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.gapp.curb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
