@@ -7,13 +7,13 @@
       "screen-width" : "<=145"
     },
     {
-      "filename" : "44x44 complication-1.png",
+      "filename" : "84complication.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">161"
     },
     {
-      "filename" : "compliações imagem.png",
+      "filename" : "44x44 complication-1.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">145"
