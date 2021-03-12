@@ -1,21 +1,25 @@
 {
   "images" : [
     {
+      "filename" : "imgonline-com-ua-resize-SdNYlv1r7T77ws4.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : "<=145"
     },
     {
+      "filename" : "smallCircle-1.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">161"
     },
     {
+      "filename" : "smallCircle.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">145"
     },
     {
+      "filename" : "imgonline-com-ua-resize-M5WweKxyS8Ni.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">183"

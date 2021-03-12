@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+
 extension String {
     func removeCharactersContained(in characters : String) -> String {
         let newString = self.filter {!characters.contains($0)}

@@ -70,6 +70,10 @@ class ConfigurationViewModel : ObservableObject {
         self.userConfigurationsRepository = userConfigurationsRepository
     }
     
+    func requestPermission() {
+        notificationService.askUserNotificationPermission()
+    }
+    
     func prepareNotification(on time : UserNotificationTimeKeys) {
         //removeAllPendingNotificationsFor(time: time)
         var timeValue = 15

@@ -44,7 +44,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [
-            CLKComplicationDescriptor(identifier: "complication", displayName: "Habits Counter", supportedFamilies: [.graphicCircular,.graphicCorner,.graphicExtraLarge])
+            CLKComplicationDescriptor(identifier: "complication", displayName: "Habits Counter", supportedFamilies: [.circularSmall,.graphicCircular,.graphicCorner,.graphicExtraLarge])
             // Multiple complication support can be added here with more descriptors
         ]
         
@@ -105,15 +105,23 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                     }
                 }
             case .circularSmall:
-                let template = self.makeTemplate(complication: complication, colors: [])
-                if let loadedTemplate = template {
-                    let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: loadedTemplate)
-                    handler(entry)
+                repository.getAllHabit { result in
+                    switch result {
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    case .success(let habits):
+                        let colors = self.getComplicationColorsFrom(habits: habits)
+                        let template = self.makeTemplate(complication: complication, colors: colors)
+                        if let loadedTemplate = template {
+                            let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: loadedTemplate)
+                            handler(entry)
+                        }
+                    }
                 }
+                
             default:
                 handler(nil)
         }
-        
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
