@@ -31,7 +31,7 @@ struct StatisticsView: View {
                         .padding(.bottom,5)
                         
                         IphoneBarChart(xLabels: viewModel.xLabels, barHeights: viewModel.barHeights,backgroundColor: .init("CardsBackColor"), labelColor: .init("titleColor"))
-                            .padding(.horizontal,5)
+                            .padding(.horizontal)
                             .padding(.bottom)
                             .layoutPriority(1)
                         //Rectangle().background(Color(.blue))

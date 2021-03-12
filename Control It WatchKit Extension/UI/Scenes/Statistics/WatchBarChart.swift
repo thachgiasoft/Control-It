@@ -69,6 +69,6 @@ struct WatchBarChart : View  {
 
 struct HistoryBarChart_Previews: PreviewProvider {
     static var previews: some View {
-        WatchBarChart(xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [11,6,5,4,3,2,1],backgroundColor: .init("DarkGrayColor"), labelColor: .init("watchLabelColor"))
+        WatchBarChart(xLabels: ["D","S","T","Q","Q","S","S"], barHeights: [11,6,5,4,3,2,12],backgroundColor: .init("DarkGrayColor"), labelColor: .init("watchLabelColor"))
     }
 }

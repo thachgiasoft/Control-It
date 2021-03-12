@@ -43,14 +43,14 @@ struct IphoneBarChart : View  {
                             "\(Int(Double(maxHeight / 5) * Double(index)))"
                         )
                         .font(.system(size: 14, weight: .bold, design: .rounded))
-                        .padding(.horizontal)
+                        //.padding(.leading)
                         //.font(.system(size: 14, weight: .bold, design: .rounded))
                         .animation(nil)
                         Spacer()
                     }
                     Text(" ")
                         .font(.system(size: 14, weight: .bold, design: .rounded))
-                        .padding(.horizontal)
+                        //.padding(.leading,3)
                 }.layoutPriority(1)
                 
                 ForEach(0..<barHeights.count) { index in
