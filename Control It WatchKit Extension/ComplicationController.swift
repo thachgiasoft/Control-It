@@ -44,7 +44,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [
-            CLKComplicationDescriptor(identifier: "complication", displayName: "Control It", supportedFamilies: CLKComplicationFamily.allCases)
+            CLKComplicationDescriptor(identifier: "complication", displayName: "Control It", supportedFamilies: [.circularSmall,.graphicCircular,.graphicCorner,.graphicExtraLarge])
             // Multiple complication support can be added here with more descriptors
         ]
         
@@ -75,41 +75,104 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // chama segundo
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
-        repository.getAllHabit { result in
-            switch result {
-            case .failure(let error):
-                print(error.localizedDescription)
-            case .success(let habits):
-                let colors = self.getComplicationColorsFrom(habits: habits)
-                let template = self.makeTemplate(complication: complication,colors: colors)
+        switch complication.family {
+            case .graphicCircular:
+                repository.getAllHabit { result in
+                    switch result {
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    case .success(let habits):
+                        let colors = self.getComplicationColorsFrom(habits: habits)
+                        let template = self.makeTemplate(complication: complication,colors: colors)
+                        if let loadedTemplate = template {
+                            let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: loadedTemplate)
+                            handler(entry)
+                        }
+                    }
+                }
+            case .graphicCorner:
+                repository.getAllHabit { result in
+                    switch result {
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    case .success(let habits):
+                        let colors = self.getComplicationColorsFrom(habits: habits)
+                        let template = self.makeTemplate(complication: complication,colors: colors)
+                        if let loadedTemplate = template {
+                            let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: loadedTemplate)
+                            handler(entry)
+                        }
+                    }
+                }
+            case .circularSmall:
+                let template = self.makeTemplate(complication: complication, colors: [])
                 if let loadedTemplate = template {
                     let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: loadedTemplate)
                     handler(entry)
                 }
-            }
+            default:
+                handler(nil)
         }
+        
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         // Call the handler with the timeline entries after the given date
         
-        repository.getAllHabit { result in
-            switch result {
-            case .failure(let error):
-                print(error.localizedDescription)
-            case .success(let habits):
-                let colors = self.getComplicationColorsFrom(habits: habits)
-                let template = self.makeTemplate(complication: complication,colors: colors)
-                
-                var entries: [CLKComplicationTimelineEntry] = []
-                if let loadedTemplate = template {
-                    let entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: loadedTemplate)
-                    entries.append(entry)
+        switch complication.family {
+            case .graphicCircular:
+                repository.getAllHabit { result in
+                    switch result {
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    case .success(let habits):
+                        let colors = self.getComplicationColorsFrom(habits: habits)
+                        let template = self.makeTemplate(complication: complication,colors: colors)
+                        var entries: [CLKComplicationTimelineEntry] = []
+                        if let loadedTemplate = template {
+                            let entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: loadedTemplate)
+                            entries.append(entry)
+                        }
+                        handler(entries)
+                    }
                 }
-                handler(entries)
-            }
+            case .graphicCorner:
+                repository.getAllHabit { result in
+                    switch result {
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    case .success(let habits):
+                        let colors = self.getComplicationColorsFrom(habits: habits)
+                        let template = self.makeTemplate(complication: complication,colors: colors)
+                        var entries: [CLKComplicationTimelineEntry] = []
+                        if let loadedTemplate = template {
+                            let entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: loadedTemplate)
+                            entries.append(entry)
+                        }
+                        handler(entries)
+                    }
+                }
+            case .circularSmall:
+                repository.getAllHabit { result in
+                    switch result {
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    case .success(let habits):
+                        let colors = self.getComplicationColorsFrom(habits: habits)
+                        let template = self.makeTemplate(complication: complication,colors: colors)
+                        var entries: [CLKComplicationTimelineEntry] = []
+                        if let loadedTemplate = template {
+                            let entry = CLKComplicationTimelineEntry(date: date, complicationTemplate: loadedTemplate)
+                            entries.append(entry)
+                        }
+                        handler(entries)
+                    }
+                }
+               
+            default:
+                handler(nil)
         }
-    }
+}
 
     // MARK: - Sample Templates
     
@@ -123,13 +186,24 @@ extension ComplicationController {
     func makeTemplate(complication: CLKComplication, colors : [Color]) -> CLKComplicationTemplate? {
         switch complication.family {
             case .graphicCircular:
-              return CLKComplicationTemplateGraphicCircularView(
-                CircularComplicationView(colors: colors)
-              )
+                return CLKComplicationTemplateGraphicCircularView(
+                    CircularComplicationView(colors: colors)
+                )
             case .graphicCorner:
-              return CLKComplicationTemplateGraphicCornerCircularView(
-                CircularComplicationView(colors: colors)
-              )
+                return CLKComplicationTemplateGraphicCornerCircularView(
+                    CircularComplicationView(colors: colors)
+                )
+            case .circularSmall:
+                let template = CLKComplicationTemplateCircularSmallSimpleText()
+                template.textProvider = CLKSimpleTextProvider(text: String(colors.count))
+                return template
+//                return CLKComplicationTemplateCircularSmallRingImage(
+//                    imageProvider: .init(onePieceImage: .add),
+//                    fillFraction: 0.1, ringStyle: .open)
+            case .graphicExtraLarge:
+                return CLKComplicationTemplateGraphicExtraLargeCircularView(
+                    CircularComplicationView(colors: colors)
+                )
             default:
               return nil
         }

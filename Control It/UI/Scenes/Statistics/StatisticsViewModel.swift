@@ -7,11 +7,17 @@
 
 import Foundation
 import SwiftUI
-
+extension String {
+    func removeCharactersContained(in characters : String) -> String {
+        let newString = self.filter {!characters.contains($0)}
+        return newString
+    }
+}
 class StatisticsViewModel : ObservableObject { // tentei fazer essa view model herdar da outra do watch, mas com o @Published isso não funciona, sad
     @Published var habits : [Habit] = []
     @Published var yLabels : [Int] = [0,5,10,15,20] // dps posso até fazer um cálculo pra saber esses valores, mas por enquanto vai isso msm
-    @Published var xLabels : [String] = Calendar.current.shortWeekdaySymbols
+    @Published var xLabels : [String] = Calendar.current.shortWeekdaySymbols.map { $0.capitalized.removeCharactersContained(in: ".")
+    }
     @Published var barHeights : [Int] = [0,0,0,0,0,0,0]
     @Published var moodsDict : [Mood : Int] = [.angry:0,.sad:0,.normal:0,.happy:0,.tired:0, .anxious:0]
     
