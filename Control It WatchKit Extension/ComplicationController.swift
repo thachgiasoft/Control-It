@@ -44,7 +44,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
         let descriptors = [
-            CLKComplicationDescriptor(identifier: "complication", displayName: "Control It", supportedFamilies: [.circularSmall,.graphicCircular,.graphicCorner,.graphicExtraLarge])
+            CLKComplicationDescriptor(identifier: "complication", displayName: "Habits Counter", supportedFamilies: [.graphicCircular,.graphicCorner,.graphicExtraLarge])
             // Multiple complication support can be added here with more descriptors
         ]
         

@@ -32,11 +32,9 @@ class StatisticsViewModel : ObservableObject { // tentei fazer essa view model h
         repository.getAllHabit { (result) in
             switch result {
             case .success(let newHabits):
-                if !newHabits.isEmpty {
-                    self.habits = self.getCurrentWeek(habits: newHabits)
-                    self.barHeights = self.computeBarHeights()
-                    self.moodsDict = self.computeMoodsDict()
-                }
+                self.habits = self.getCurrentWeek(habits: newHabits)
+                self.barHeights = self.computeBarHeights()
+                self.moodsDict = self.computeMoodsDict()
             case .failure(let error):
                 print(error)
             }
