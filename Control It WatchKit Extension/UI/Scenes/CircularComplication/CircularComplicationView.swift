@@ -18,8 +18,17 @@ struct CircularComplicationView: View {
         return ZStack(alignment: .center) {
             Circle()
                 .stroke(conic, lineWidth: 10)
-            Text("\(colors.count)x")
-                .font(.system(.title3, design: .rounded))
+            HStack(spacing: 0) {
+                Text("\(colors.count)")
+                    .font(.system(.title3, design: .rounded))
+                VStack() {
+                    Spacer()
+                    Spacer()
+                    Text("x")
+                    Spacer()
+                }
+            }
+            
         }
     }
 }

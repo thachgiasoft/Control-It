@@ -24,6 +24,14 @@ class Translation {
         static let recordMood = NSLocalizedString("Record mood with audio", comment: "")
     }
     
+    public class Conectives {
+        static let of = NSLocalizedString("of", comment: "")
+    }
+    
+    public class NotificationTexts {
+        static let subtitle = NSLocalizedString("NotificationSubtitle", comment: "")
+    }
+    
     class Buttons {
         static let delete = NSLocalizedString("Delete", comment: "")
         static let cancel = NSLocalizedString("Cancel", comment: "")

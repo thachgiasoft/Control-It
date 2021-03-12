@@ -55,6 +55,7 @@
 		AE5BBC0E25F1966400FF37C7 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5BBC0D25F1966400FF37C7 /* StatisticsViewModel.swift */; };
 		AE5BBC1525F198AE00FF37C7 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5BBC1425F198AE00FF37C7 /* StatisticsView.swift */; };
 		AE6F261E25F5D627008F7890 /* RegisterHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F261D25F5D627008F7890 /* RegisterHabitViewModel.swift */; };
+		AE7C6D4A25FB489D00CB9891 /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */; };
 		AEA42BDF25EAF3DB00D348E2 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA42BDE25EAF3DB00D348E2 /* StatisticsViewModel.swift */; };
 		AEAB5D2F25F1D68100D97446 /* ConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAB5D2E25F1D68100D97446 /* ConfigurationsView.swift */; };
 		AEAB5D3625F1DA7F00D97446 /* ConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAB5D3525F1DA7F00D97446 /* ConfigurationViewModel.swift */; };
@@ -71,7 +72,6 @@
 		AEC0174E25ED3D2D00D13907 /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */; };
 		AEC0174F25ED3D2D00D13907 /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */; };
 		AEC0175025ED3D2D00D13907 /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */; };
-		AEC0175125ED3D2D00D13907 /* UserNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC0174D25ED3D2D00D13907 /* UserNotificationService.swift */; };
 		AEC0175725ED3DFE00D13907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F8525E552480001F01D /* Assets.xcassets */; };
 		AEC0175D25ED3DFF00D13907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F8525E552480001F01D /* Assets.xcassets */; };
 		AEC0176325ED3DFF00D13907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1B0F8525E552480001F01D /* Assets.xcassets */; };
@@ -942,6 +942,7 @@
 				EF3FCD8125E68D0F0050DA98 /* Storage.xcdatamodeld in Sources */,
 				EF40AECD25E9350000D0F038 /* RegisterMood.swift in Sources */,
 				353DBFEE25E7FC8E0022088D /* RecordingViewModel.swift in Sources */,
+				AE7C6D4A25FB489D00CB9891 /* UserNotificationService.swift in Sources */,
 				35A40D1425F7BB4700C66F28 /* CircularComplicationViewModel.swift in Sources */,
 				EF1B0F7E25E552480001F01D /* ContentView.swift in Sources */,
 				3542A26A25E9493200FEA3AD /* AudioPlayerService.swift in Sources */,
@@ -961,7 +962,6 @@
 				AEA42BDF25EAF3DB00D348E2 /* StatisticsViewModel.swift in Sources */,
 				3585085A25F3048900C3FEB6 /* MockAudioRecorderService.swift in Sources */,
 				353DBFE725E7DC650022088D /* RecordingView.swift in Sources */,
-				AEC0175125ED3D2D00D13907 /* UserNotificationService.swift in Sources */,
 				EF84187025E6922E00451368 /* CDHabitRepository.swift in Sources */,
 				EF84189925E6990700451368 /* Habit.swift in Sources */,
 				3542A27125E9493C00FEA3AD /* AudioRecorderService.swift in Sources */,

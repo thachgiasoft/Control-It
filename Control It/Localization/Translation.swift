@@ -24,6 +24,14 @@ public class Translation {
         static let notificationTime = NSLocalizedString("Notifications time", comment: "")
     }
     
+    public class Conectives {
+        static let of = NSLocalizedString("of", comment: "")
+    }
+    
+    public class NotificationTexts {
+        static let subtitle = NSLocalizedString("NotificationSubtitle", comment: "")
+    }
+    
     public class Moods {
         static func feeling(_ value: String) -> String{
             return NSLocalizedString(value, comment: "")
@@ -32,6 +40,7 @@ public class Translation {
     
     public class Placeholders {
         static let typeHere = NSLocalizedString("Type here", comment: "")
+        static let save = NSLocalizedString("Save", comment: "")
     }
     
     public class ToggleTexts {

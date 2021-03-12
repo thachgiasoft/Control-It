@@ -30,3 +30,9 @@
 
 "Statistics" = "Estatísticas";
 "Mood" = "Humor";
+
+/* Notification Texts */
+"NotificationSubtitle" = "Você fez algum tipo de mal hábito?";
+
+/* Conectives Texts */
+"of" = "de";

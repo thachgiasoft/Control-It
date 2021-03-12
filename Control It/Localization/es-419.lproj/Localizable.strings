@@ -30,6 +30,7 @@
 
 /* Placeholders */
 "Type here" = "Escribe aquí...";
+"Save" = "Guardar";
 
 /* Toggle */
 "Every 15 minutes" = "Cada 15 minutos";
@@ -40,3 +41,9 @@
 "What do you want to do?" = "Qué quieres hacer?";
 "Save changes" = "Guardar ediciones";
 "Remove permanently" = "Borrar permanentemente";
+
+/* Notification Texts */
+"NotificationSubtitle" = "¿Hiciste algún tipo de mal hábito?";
+
+/* Conectives Texts */
+"of" = "de";

@@ -59,8 +59,8 @@ class UserNotificationService {
         notificationCenter.setNotificationCategories([category])
         
         let content = UNMutableNotificationContent()
-        content.title = "Controll It"
-        content.subtitle = "Mania"
+        content.title = "Curb"
+        content.subtitle = Translation.NotificationTexts.subtitle
         content.sound = UNNotificationSound.default
         content.categoryIdentifier = "myCategory"
         

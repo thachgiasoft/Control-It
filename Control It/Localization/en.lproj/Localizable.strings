@@ -30,6 +30,7 @@
 
 /* Placeholders */
 "Type here" = "Type here...";
+"Save" = "Save";
 
 /* Toggle */
 "Every 15 minutes" = "Every 15 minutes";
@@ -40,3 +41,9 @@
 "What do you want to do?" = "What do you want to do?";
 "Save changes" = "Save changes";
 "Remove permanently" = "Remove habit permanently";
+
+/* Notification Texts */
+"NotificationSubtitle" = "Did you do some kind of bad habit?";
+
+/* Conectives Texts */
+"of" = "of";

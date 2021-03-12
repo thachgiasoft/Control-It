@@ -128,7 +128,7 @@ struct AnnotationMoods: View {
             viewModel.saveHabit(habit)
             presentation.wrappedValue.dismiss()
         }, label: {
-            Text("Save")
+            Text(Translation.Placeholders.save)
         }))
         }
     }

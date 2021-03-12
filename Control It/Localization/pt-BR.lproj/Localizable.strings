@@ -15,7 +15,7 @@
 
 /* Titles */
 "Mood" = "Humor";
-"Anotações" = "Anotações";
+"Annotations" = "Anotações";
 "Repeats per day" = "Repetições por dia";
 "Frequent feelings" = "Humores frequentes";
 "Notifications time" = "Defina o tempo de notificação";
@@ -30,6 +30,7 @@
 
 /* Placeholders */
 "Type here" = "Digite aqui...";
+"Save" = "Salvar";
 
 /* Toggle */
 "Every 15 minutes" = "A cada 15 minutos";
@@ -40,3 +41,9 @@
 "What do you want to do?" = "O que você deseja fazer?";
 "Save changes" = "Salvar mudanças";
 "Remove permanently" = "Remover permanentemente";
+
+/* Notification Texts */
+"NotificationSubtitle" = "Você fez algum tipo de mal hábito?";
+
+/* Conectives Texts */
+"of" = "de";

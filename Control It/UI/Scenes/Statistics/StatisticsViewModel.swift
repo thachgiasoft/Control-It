@@ -47,13 +47,12 @@ class StatisticsViewModel : ObservableObject { // tentei fazer essa view model h
         let dayOfWeek = calendar.component(.weekday, from: day)
         let weekdays = calendar.range(of: .weekday, in: .weekOfYear, for: day)!
         let days = (weekdays.lowerBound ..< weekdays.upperBound)
-            .compactMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: day) }  // use `flatMap` in Xcode versions before 9.3
-            //.filter { !calendar.isDateInWeekend($0) }
+            .compactMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: day) }
         let firstWeekDay = days.first!.getLocalizedDateInComponents()[0]
         let lastWeekDay = days.last!.getLocalizedDateInComponents()[0]
         let month = day.getLocalizedDateInComponents()[1].capitalized
         
-        return "\(firstWeekDay)-\(lastWeekDay) of \(month)"
+        return "\(firstWeekDay)-\(lastWeekDay) \(Translation.Conectives.of) \(month)"
     }
 
     private func getCurrentWeek(habits newHabits : [Habit]) -> [Habit] {
