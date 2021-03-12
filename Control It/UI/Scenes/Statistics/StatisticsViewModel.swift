@@ -31,13 +31,17 @@ class StatisticsViewModel : ObservableObject { // tentei fazer essa view model h
 
     func loadAllHabits() {
         repository.getAllHabit { (result) in
-            switch result {
-            case .success(let newHabits):
-                self.habits = self.getCurrentWeek(habits: newHabits)
-                self.barHeights = self.computeBarHeights()
-                self.moodsDict = self.computeMoodsDict()
-            case .failure(let error):
-                print(error)
+            DispatchQueue.main.async {
+                withAnimation {
+                    switch result {
+                    case .success(let newHabits):
+                        self.habits = self.getCurrentWeek(habits: newHabits)
+                        self.barHeights = self.computeBarHeights()
+                        self.moodsDict = self.computeMoodsDict()
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
             }
         }
     }

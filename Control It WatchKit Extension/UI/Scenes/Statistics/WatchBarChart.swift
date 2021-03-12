@@ -12,6 +12,7 @@ struct WatchBarChart : View  {
     var maxHeight : Double
     var backgroundColor : Color
     var labelColor : Color
+    var labelSize : CGFloat = 14
     
     init(xLabels : [String], barHeights : [Int], backgroundColor: Color, labelColor: Color) {
         
@@ -33,7 +34,7 @@ struct WatchBarChart : View  {
                     Divider()
                     Spacer()
                 }
-                Text(" ").font(.system(size: 14, weight: .bold, design: .rounded))
+                Text(" ").font(.system(size: labelSize, weight: .bold, design: .rounded))
             }
             
             HStack() {
@@ -42,13 +43,13 @@ struct WatchBarChart : View  {
                         Text(
                             "\(Int(Double(maxHeight / 5) * Double(index)))"
                         )
-                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .font(.system(size: labelSize, weight: .bold, design: .rounded))
                         .padding(.leading)
                         //.font(.system(size: 14, weight: .bold, design: .rounded))
                         .animation(nil)
                         Spacer()
                     }
-                    Text(" ").font(.system(size: 14, weight: .bold, design: .rounded))
+                    Text(" ").font(.system(size: labelSize, weight: .bold, design: .rounded))
                 }.layoutPriority(1)
                 
                 ForEach(0..<barHeights.count) { index in
@@ -58,7 +59,7 @@ struct WatchBarChart : View  {
                             .scaleEffect(y:CGFloat(Double(barHeights[index]) / Double(maxHeight)) ,anchor: .bottom)
                         
                         Text(xLabels[index])
-                            .font(.system(size: 14, weight: .bold, design: .rounded))
+                            .font(.system(size: labelSize, weight: .bold, design: .rounded))
                     }
                 }
             }

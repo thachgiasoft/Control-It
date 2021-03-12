@@ -13,15 +13,12 @@ struct StatisticsView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 12)
-                .foregroundColor(.init("DarkGrayColor"))
+//            RoundedRectangle(cornerRadius: 12)
+//                .foregroundColor(.init("DarkGrayColor"))
             WatchBarChart(xLabels: viewModel.xLabels, barHeights: viewModel.barHeights,backgroundColor: .init("DarkGrayColor"), labelColor: .init("watchLabelColor"))
                 .onAppear {
-                    withAnimation {
-                        viewModel.loadAllHabits()
-                    }
-                }.padding(10)
-                
+                    viewModel.loadAllHabits()
+                }
         }
         .navigationBarTitle(Translation.ViewTitles.statistics)
     }
