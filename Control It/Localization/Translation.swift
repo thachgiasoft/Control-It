@@ -41,6 +41,7 @@ public class Translation {
     public class Placeholders {
         static let typeHere = NSLocalizedString("Type here", comment: "")
         static let save = NSLocalizedString("Save", comment: "")
+        static let emptyList = NSLocalizedString("Empty List", comment: "")
     }
     
     public class ToggleTexts {

@@ -31,11 +31,12 @@
 /* Placeholders */
 "Type here" = "Escribe aquí...";
 "Save" = "Guardar";
+"Empty List" = "Empty List";
 
 /* Toggle */
 "Every 15 minutes" = "Cada 15 minutos";
 "Every 30 minutes" = "Cada 30 minutos";
-"Every hour" = "Cada hora";
+"Every hour" = "No hay registros!";
 
 /* ActionSheet */
 "What do you want to do?" = "Qué quieres hacer?";

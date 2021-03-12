@@ -15,17 +15,26 @@ struct HabitListView: View {
     }
     
     var body: some View {
-        ScrollView {
-            ForEach(Array(model.loadedHabits.enumerated()),id: \.element) { _, item in
-                NavigationLink(destination: HabitDetailView(habit: item)) {
-                    HabitListItem(
-                        itemText: item.annotation ?? "",
-                        moodImageName: item.mood.rawValue,
-                        day: model.getLocalizedDateInComponents(item.date)[0],
-                        month: model.getLocalizedDateInComponents(item.date)[1],
-                        time: model.getLocalizedDateInComponents(item.date)[2]
-                    )
-                    .padding(.horizontal, 20)
+        ZStack {
+            ScrollView {
+                ForEach(Array(model.loadedHabits.enumerated()),id: \.element) { _, item in
+                    NavigationLink(destination: HabitDetailView(habit: item)) {
+                        HabitListItem(
+                            itemText: item.annotation ?? "",
+                            moodImageName: item.mood.rawValue,
+                            day: model.getLocalizedDateInComponents(item.date)[0],
+                            month: model.getLocalizedDateInComponents(item.date)[1],
+                            time: model.getLocalizedDateInComponents(item.date)[2]
+                        )
+                        .padding(.horizontal, 20)
+                    }
+                }
+            }
+            
+            if model.loadedHabits.isEmpty {
+                VStack {
+                    Text(Translation.Placeholders.emptyList).font(.system(.body ,design: .rounded))
+                        .fontWeight(.bold).foregroundColor(Color(.init("CardsBackColor")))
                 }
             }
         }

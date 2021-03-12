@@ -31,6 +31,7 @@
 /* Placeholders */
 "Type here" = "Digite aqui...";
 "Save" = "Salvar";
+"Empty List" = "Sem registros!";
 
 /* Toggle */
 "Every 15 minutes" = "A cada 15 minutos";

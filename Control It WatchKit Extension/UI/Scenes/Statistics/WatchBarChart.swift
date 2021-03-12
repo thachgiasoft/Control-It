@@ -44,6 +44,8 @@ struct WatchBarChart : View  {
                             "\(Int(Double(maxHeight / 5) * Double(index)))"
                         )
                         .font(.system(size: labelSize, weight: .bold, design: .rounded))
+                        .foregroundColor(labelColor)
+
                         .padding(.leading)
                         //.font(.system(size: 14, weight: .bold, design: .rounded))
                         .animation(nil)
@@ -60,6 +62,8 @@ struct WatchBarChart : View  {
                         
                         Text(xLabels[index])
                             .font(.system(size: labelSize, weight: .bold, design: .rounded))
+                            .foregroundColor(labelColor)
+
                     }
                 }
             }

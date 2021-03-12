@@ -31,6 +31,7 @@
 /* Placeholders */
 "Type here" = "Type here...";
 "Save" = "Save";
+"Empty List" = "No records!";
 
 /* Toggle */
 "Every 15 minutes" = "Every 15 minutes";
